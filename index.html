@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+	<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+	<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+	<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+	<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- IE compatibility mode issue 
+this messed up Modernizr flex detection
+	<meta content="IE=9; IE=8; IE=7" http-equiv="X-UA-Compatible">
+-->
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Andrew Sykes" name="author" />
+    <title>The Burton</title>
+    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+      document.cookie =
+        "resolution=" + Math.max(screen.width, screen.height) + "; path=/";
+    </script>
+    <script src="js/modernizr.js"></script>
+  </head>
+
+  <body>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="#">The Story</a></li>
+          <li><a href="./contactus.php">Contact Details</a></li>
+          <li><a href="#">Tariff</a></li>
+          <li><a href="./pubsetc.html">Pubs &amp; Catering</a></li>
+          <li><a href="./attractions.php">Attractions</a></li>
+        </ul>
+        <div id="viewer">
+            <div class="control"><a href=".">&gt;</a></div>
+            <div id="slides"><div class="slide">image1</div><div class="slide">image2</div><div class="slide">image3</div><div class="slide">image4</div><div class="slide">image5</div><div class="slide">image6</div><div class="slide">image7</div><div class="slide">image8</div><div class="slide">image9</div><div class="slide">image0</div><div class="slide">imageV</div><div class="slide">imageX</div><div class="slide">imageY</div></div>
+            <div class="control"><a href="." id="bk">&lt;</a></div>
+        </div>
+
+      <div id="pagetext">
+        Escape the demands of modern day life and find sanctuary in the Eden
+        Valleys hidden secret! Quietly resting at the foot of Wildboar Fell
+        beneath infinite skies over looking iconic countryside is The Burton.
+        Our newly restored traditional Gypsy Showman&apos;s wagon is everything
+        you would desire from self contained accommodation. The perfect retreat
+        for 2 to relax and unwind in the uniquely designed showmanship wagon
+        comprising hand crafted double bed, wet room, bespoke kitchenette dinner
+        and wood burning stove with as many logs as you desire whilst you snugly
+        while away the hours. Time could be spent on the raised decking ideal
+        viewing platform to observe the diverse and plentiful wildlife or
+        alternatively gazing at the constellations while snuggled around the
+        dancing flames of the fire pit listening to the rummaging badgers and
+        snuffling hedgehogs. The showman&apos;s wagon is only a gentle meander
+        across a couple of fields to the local pub and a stone&apos;s throw from
+        the local amenities of Ravenstonedale and Kirkby Stephen.
+      </div>
+    </div>
+<script>
+const control = document.querySelector('.control a'),
+slides = document.getElementById('slides'),
+extent = document.querySelectorAll('.slide').length,
+viewer = document.getElementById('viewer');
+let px = 0,
+factor = 4,
+fraction = extent / factor,
+item = document.querySelector('.slide').offsetWidth,
+inc = item * factor,
+limit = (inc * fraction),
+last,
+state = false,
+float = fraction % 1,
+apply = (pix) => {
+    slides.classList.add('foo');
+    slides.style.transform = `translate(${pix}px,0)`;
+
+},
+correct = (i) => {
+    i -= inc;
+    i -= inc;
+    return i += (inc * float);
+
+};
+viewer.style.width = inc + 'px';
+viewer.addEventListener('click', e => {
+    e.preventDefault();
+    if(e.target.id) {
+        state = false;
+        px -= inc;
+        px = Math.max(0, px);
+        apply(px * -1);
+    }
+    if(!state && !e.target.id) {
+        px += inc;
+        last = px + inc;
+        if(last > limit){
+            state = true;
+            last = correct(last);
+        }
+        apply((state ? last : px) * -1);
+    }
+});
+</script>
+  </body>
+</html>

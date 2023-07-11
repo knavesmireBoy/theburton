@@ -1,0 +1,78 @@
+<script type="text/javascript">
+			
+			// example how to integrate with a previewer
+
+			var current = 0,
+				$preview = $( '#preview' ),
+				$carouselEl = $( '#carousel' ),
+				$carouselItems = $carouselEl.children(),
+				carousel = $carouselEl.elastislide( {
+					current : current,
+					minItems : 4,
+					onClick : function( el, pos, evt ) {
+
+						changeImage( el, pos );
+						evt.preventDefault();
+
+					},
+					onReady : function() {
+
+						changeImage( $carouselItems.eq( current ), current );
+						
+					}
+				} );
+
+			function changeImage( el, pos ) {
+
+				$preview.attr( 'src', el.data( 'preview' ) );
+				$carouselItems.removeClass( 'current-img' );
+				el.addClass( 'current-img' );
+				carousel.setCurrent( pos );
+
+			}
+
+		</script>
+
+		<script>
+			$(document).ready (function () {		
+			$.preloadImages = function() {
+			  for (var i = 0; i < arguments.length; i++) {
+			    $("<img />").attr("src", arguments[i]);
+			  }
+			}
+
+			$.preloadImages(
+				"images/large/1.jpg","images/small/1.jpg",
+				"images/large/3.jpg","images/small/3.jpg",
+				"images/large/2.jpg","images/small/2.jpg",
+				"images/large/4.jpg","images/small/4.jpg",
+				"images/large/6.jpg","images/small/6.jpg",
+				"images/large/9.jpg","images/small/9.jpg",
+				"images/large/12.jpg","images/small/12.jpg",
+				"images/large/14.jpg","images/small/14.jpg",
+				"images/large/16.jpg","images/small/16.jpg",
+				"images/large/17.jpg","images/small/17.jpg",
+				"images/large/18.jpg","images/small/18.jpg",
+				"images/large/20.jpg","images/small/20.jpg",
+				"images/large/21.jpg","images/small/21.jpg",
+				"images/large/25.jpg","images/small/25.jpg",
+				"images/large/27.jpg","images/small/27.jpg",
+				"images/large/34.jpg","images/small/34.jpg",
+				"images/large/37.jpg","images/small/37.jpg",
+				"images/large/39.jpg","images/small/39.jpg",
+				"images/large/46.jpg","images/small/46.jpg",
+				"images/large/47.jpg","images/small/47.jpg",
+				"images/large/49.jpg","images/small/49.jpg"
+				);		
+			});
+		</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-300503-26', 'auto');
+  ga('send', 'pageview');
+
+</script>
