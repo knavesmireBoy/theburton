@@ -6,9 +6,6 @@
 
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size:1em;
-	background-repeat:repeat-x;
-	height: 880px;
 }
 	
 #content {
@@ -297,4 +294,74 @@ div#gallerycontainer {
 .slide {
 	background-color: rgb(183, 251, 232);
 	outline: solid 1px white;
+}
+body {
+	font-size: .8em;
+}
+
+#wrap {
+	width: 80%;
+	text-align: center;
+	margin: 2% auto;
+	border: solid 1px;
+	background-image: url('../img/the-burton-23_cs_large_gallery_preview.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#wrap > div { 
+	display: flex;
+	text-align: left;
+	border: solid white .5em;
+}
+
+#wrap > div > section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1em;
+	margin: .75em;
+	background-color: rgba(255, 255, 255, .6);
+}
+
+#wrap > div > * {
+	flex: 2 1 1em;
+}
+
+#wrap > div > main {
+	flex: 7 1 1em;
+}
+
+main > article {
+	background-color: rgba(255, 255, 255, .6);
+	padding: 1em 1em 1em;
+	margin: 44em .75em .75em 0;
+}
+main > article p {
+	margin: .25em 0;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 70%;
+	font-size: .95em;
+	font-family: Whisper;
+}
+
+nav ul li{
+	margin: 0 0 .5em;
+}
+
+nav ul li a{
+	padding: .5em .5em .5em 1.5em;
+	background-color: rgb(237, 237, 183);
+	color: #7c4d19;
+	border-radius: 8px;
+	display: block;
+	border: solid 1px grey;
+	text-decoration: none;
+}
+nav ul li a:hover {
+	color: #669900;
 }
