@@ -297,6 +297,18 @@ div#gallerycontainer {
 }
 body {
 	font-size: .8em;
+	background-image: linear-gradient(white, hsl(32, 30%, 70%));
+}
+
+.external {
+	margin: 1em 0 0;
+}
+.external a {
+	text-decoration: none;
+	color: #7c4d19;
+}
+.external a:hover {
+	color: #669900;
 }
 
 #wrap {
@@ -307,6 +319,7 @@ body {
 	background-image: url('../img/the-burton-23_cs_large_gallery_preview.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	position: relative;
 }
 #wrap > div { 
@@ -324,23 +337,79 @@ body {
 	padding: 1em;
 	margin: .75em;
 	background-color: rgba(255, 255, 255, .6);
+	background-image: url("../img/burton.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right top;
 }
 
-#wrap > div > * {
-	flex: 2 1 1em;
+#wrap > div > section {
+	flex: 2 0 0;
+	min-width: 13.2em;
 }
 
 #wrap > div > main {
 	flex: 7 1 1em;
 }
 
-main > article {
-	background-color: rgba(255, 255, 255, .6);
-	padding: 1em 1em 1em;
+#home main > article {
 	margin: 44em .75em .75em 0;
+}
+
+main > article {
+	background-color: rgba(255, 255, 255, .8);
+	padding: 1em 1em 1em;
+	color: hsl(0, 0%, 40%);
+}
+main > article > h2 {
+	color: black;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: normal;
+	font-size: 1.7em;
+	margin: 0 0 .5em;
+}
+.outings main > article  {
+	margin: .75em;
+}
+.outings main > article > section {
+	display: flex;
+	align-content: start;
+	margin: 0 0 5em;
+}
+.outings main > article > section:first-of-type {
+	margin: 2em 0 5em;
+}
+
+main > article > section > article {
+	flex: 6 1 1em;
+	border-top: solid 1px black;
+}
+main > article > section > aside {
+	flex: 1 1 1em;
+	margin: 0 3em 0 0;
+}
+.outings main > article > section > article {
+	padding: .5em 1em 0;
 }
 main > article p {
 	margin: .25em 0;
+}
+
+article > section > aside {
+	margin: 0 2em 0 0;
+	align-self: top;
+}
+article > section > aside a, article > section > aside a img {
+	display: block;
+}
+article > section > aside a img {
+	width: 100%;
+	border: solid black 1px;
+}
+
+main > article > section h2 {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
 }
 
 nav ul {
@@ -348,7 +417,6 @@ nav ul {
 	margin: 0;
 	list-style: none;
 	width: 70%;
-	font-size: .95em;
 	z-index: 1;
 	position: relative;
 }
@@ -359,7 +427,7 @@ nav ul li{
 
 nav ul li a{
 	padding: .5em .5em .5em 1.5em;
-	background-color: rgb(237, 237, 183);
+	background-color: rgb(240, 237, 183);
 	color: #7c4d19;
 	border-radius: 8px;
 	display: block;
@@ -376,7 +444,6 @@ nav ul li a:hover {
 	line-height: 10;
 	position: relative;
 	z-index: 2;
-	
 	transform: rotate(270deg);
 	transform-origin: right;
 	position: absolute;
