@@ -307,11 +307,14 @@ body {
 	background-image: url('../img/the-burton-23_cs_large_gallery_preview.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: relative;
 }
 #wrap > div { 
 	display: flex;
 	text-align: left;
 	border: solid white .5em;
+	position: relative;
+
 }
 
 #wrap > div > section {
@@ -346,7 +349,8 @@ nav ul {
 	list-style: none;
 	width: 70%;
 	font-size: .95em;
-	font-family: Whisper;
+	z-index: 1;
+	position: relative;
 }
 
 nav ul li{
@@ -364,4 +368,20 @@ nav ul li a{
 }
 nav ul li a:hover {
 	color: #669900;
+}
+
+#burton {
+	font-family: Whisper;
+	font-size: 13em;
+	line-height: 10;
+	position: relative;
+	z-index: 2;
+	
+	transform: rotate(270deg);
+	transform-origin: right;
+	position: absolute;
+	top: .2em;
+	left: -30%;
+	z-index: 0;
+	
 }
