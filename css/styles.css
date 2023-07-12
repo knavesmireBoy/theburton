@@ -279,6 +279,10 @@ div#gallerycontainer {
 	overflow: hidden;
 }
 
+#viewer.start .control #back, #viewer.end .control #forward {
+	display: none;
+}
+
 #slides {
 	display: flex;
 	font-size: 2em;
