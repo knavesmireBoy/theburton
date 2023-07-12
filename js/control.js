@@ -1,11 +1,4 @@
-const control = document.querySelector(".control a"),
-  slides = document.getElementById("slides"),
-  extent = document.querySelectorAll(".slide").length,
-  viewer = document.getElementById("viewer"),
-  forward = document.getElementById("forward"),
-  back = document.getElementById("back"),
-  item = document.querySelector(".slide").offsetWidth,
-  always = (x) => () => x,
+const always = (x) => () => x,
   negate = (x) => () => !x,
   doPartial = (flag) => {
     return function p(f, ...args) {
@@ -26,13 +19,19 @@ const control = document.querySelector(".control a"),
   defer = doPartial(true),
   curry3 = (fn) => (c) => (b) => (a) => fn(a, b, c),
   invokeSub = (o, m, k, v) => o[m][k](v),
+  control = document.querySelector(".control a"),
+  slides = document.getElementById("slides"),
+  extent = document.querySelectorAll(".slide").length,
+  viewer = document.getElementById("viewer"),
+  forward = document.getElementById("forward"),
+  back = document.getElementById("back"),
+  item = document.querySelector(".slide").offsetWidth,
   doKlas = ptL(invokeSub, viewer, "classList"),
   doKlasDefer = defer(invokeSub, viewer, "classList"),
   doShow = doKlas("add"),
   doShowStart = doWhenPred((x) => !x, doKlasDefer("add")("start")),
   doShowEnd = doWhenPred((a, b) => a !== b, doKlasDefer("add")("end")),
-  doHide = doKlas("remove");
-let px = 0,
+  doHide = doKlas("remove"),
   factor = 4,
   fraction = extent / factor,
   inc = item * factor,
@@ -48,6 +47,7 @@ let px = 0,
   validateButton = (tgt) => {
     return tgt.nodeName === "A";
   };
+let px = 0;
 viewer.style.width = inc + "px";
 back.addEventListener("click", (e) => {
   e.preventDefault();
