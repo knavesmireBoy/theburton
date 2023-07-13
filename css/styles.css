@@ -356,10 +356,11 @@ body {
 	margin: 44em .75em .75em 0;
 }
 
-main > article {
+.outings main {
 	background-color: rgba(255, 255, 255, .8);
-	padding: 1em 1em 1em;
 	color: hsl(0, 0%, 40%);
+	margin: .75em;
+	padding: 1em;
 }
 main > article > h2 {
 	color: black;
@@ -368,64 +369,66 @@ main > article > h2 {
 	font-size: 1.7em;
 	margin: 0 0 .5em;
 }
-.outings main > article  {
-	margin: .75em;
-}
-.outings main > article > section {
+
+.outings main > section {
 	display: flex;
 	align-content: start;
 	margin: 0 0 5em;
 }
-.outings main > article > section:first-of-type {
+.outings main > section:first-of-type {
 	margin: 2em 0 5em;
 }
 
-main > article > section > article {
+main > section > article {
 	flex: 6 1 1em;
 	border-top: solid 1px black;
 }
-main > article > section > aside {
+main > section > aside {
 	flex: 1 1 1em;
 	margin: 0 3em 0 0;
 }
-.outings main > article > section > article {
+.outings main > section > article {
 	padding: .5em 1em 0;
 }
-main > article p {
+main > p {
 	margin: .25em 0;
 }
 
-article > section > aside {
+main > section > aside {
 	margin: 0 2em 0 0;
 	align-self: top;
 }
-article > section > aside a, article > section > aside a img {
+main > section > aside a {
 	display: block;
 }
-article > section > aside a img {
+main > section > aside a img {
 	width: 100%;
 	border: solid black 1px;
+	display: block;
 }
 
-main > article > section h2 {
+main > section h2 {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: bold;
 }
 
-nav ul {
+ul {
+	list-style: none;
+}
+
+#wrap > div > section > nav ul {
 	padding: 0;
 	margin: 0;
-	list-style: none;
 	width: 70%;
 	z-index: 1;
 	position: relative;
 }
 
-nav ul li{
+#wrap > div > section > nav ul li{
 	margin: 0 0 .5em;
 }
 
-nav ul li a{
+#wrap > div > section > nav ul li a{
 	padding: .5em .5em .5em 1.5em;
 	background-color: rgb(240, 237, 183);
 	color: #7c4d19;
@@ -434,7 +437,7 @@ nav ul li a{
 	border: solid 1px grey;
 	text-decoration: none;
 }
-nav ul li a:hover {
+#wrap > div > section > nav ul li a:hover {
 	color: #669900;
 }
 
@@ -450,5 +453,9 @@ nav ul li a:hover {
 	top: .2em;
 	left: -30%;
 	z-index: 0;
-	
+}
+
+main > nav > ul > li {
+	display: inline-block;
+	margin: 0 .2em;
 }
