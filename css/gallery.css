@@ -34,9 +34,9 @@
   padding: 4px;
 }
 
-#viewer.start .control #back,
-#viewer.end .control #forward {
-  display: none;
+#viewer.start #back,
+#viewer.end #forward {
+  opacity: .2;
 }
 #slides {
   font-size: 2em;
@@ -51,8 +51,6 @@
 
 .js #slides a {
   flex: 0 0 25%;
-}
-.js #slides a:first-child {
 }
 
 .no-js #gallery #wrap > div > main {
@@ -88,8 +86,8 @@
   filter: saturate(1.8);
 }
 
-#slides.foo {
-  transition: all 1s ease-out;
+#slides a.foo {
+  transition: transform 1s ease-out;
 }
 
 .slide {
@@ -101,7 +99,7 @@ html body {
 }
 
 .prev {
-  width: 95%;
+  width: 94%;
   display: block;
   margin: auto;
 }

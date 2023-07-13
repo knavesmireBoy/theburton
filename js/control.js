@@ -22,6 +22,8 @@ const always = (x) => () => x,
   $ = (id) => document.getElementById(id),
   slides = $("slides"),
   lead_slide = document.querySelector("#slides a"),
+  slice = Array.prototype.slice,
+  all_slides = slice.call(document.querySelectorAll("#slides a")),
   viewer = $("viewer"),
   forward = $("forward"),
   back = $("back"),
@@ -39,10 +41,10 @@ const always = (x) => () => x,
   inc = item * factor,
   limit = inc * fraction,
   apply = (pix) => {
-    slides.classList.add("foo");
-    console.log(3, pix);
-    //slides.style.transform = `translate(${pix}px,0)`;
-    lead_slide.style.marginLeft = `${pix}px`;
+    all_slides.forEach(element => {
+      element.style.transform = `translateX(${pix}px)`;
+      element.classList.add('foo');
+    });
   },
   doAdvance = (px, limit, inc) => px !== limit - inc,
   mayAdvance = curry3(doAdvance)(inc)(limit),
@@ -53,30 +55,29 @@ const always = (x) => () => x,
   };
 let px = 0;
 //viewer.style.width = inc + "px";
-/*
+
 back.addEventListener("click", (e) => {
   e.preventDefault();
   if (validateButton(e.target)) {
-    doHide("end");
+   doHide("end");
     px -= inc;
     px = Math.max(0, px);
-    doShowStart(px);
+   doShowStart(px);
     apply(px * -1);
   }
 });
-*/
+
 forward.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(e.target);
   if (validateButton(e.target)) {
-    //if (mayAdvance(px)) {
-      //doHide("start");
+    if (mayAdvance(px)) {
+      doHide("start");
       px += inc;
       let pix = doGetNext(px);
-     // doShowEnd(px, pix);
+     doShowEnd(px, pix);
       px = pix;
       apply(px * -1);
-    //}
+    }
     
 
   }
