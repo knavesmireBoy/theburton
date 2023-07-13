@@ -1,10 +1,8 @@
 #gallery main {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  background-color: blanchedalmond;
-
+  flex-direction: column;
+  margin: 1em 1em 1em 0.25em;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 #viewer {
@@ -12,18 +10,23 @@
   overflow: hidden;
   width: auto;
   background-color: white;
-}
-
-#wrap div {
-    width: 100%;
+  display: flex;
 }
 
 .js #viewer {
-    width:  50%;
-    margin: auto;
+  margin: auto;
+  padding: 3% 2%;
+  width: 90%;
+  border: solid 0;
+  background-color: black;
+  border-radius: 20px 20px 0 0;
 }
 
-#gallery main article{
+#gallery main article {
+  background-color: white;
+  width: 69.25%;
+  padding: 1em 0;
+  margin: 15% auto;
 }
 
 .no-js #viewer {
@@ -35,20 +38,22 @@
 #viewer.end .control #forward {
   display: none;
 }
-
 #slides {
   font-size: 2em;
   position: relative;
-  transform: translateX(0px);
 }
 
 .js #slides {
   display: flex;
+  margin: 0 2%;
+  overflow: hidden;
 }
 
 .js #slides a {
-    flex: 0 0 96px;
-  }
+  flex: 0 0 25%;
+}
+.js #slides a:first-child {
+}
 
 .no-js #gallery #wrap > div > main {
   flex: 5 1 1em;
@@ -68,13 +73,19 @@
   vertical-align: top;
 }
 
-
-#slides img {
-  border: solid 1px black;
+.js #slides img {
+  border-radius: 10px;
 }
 
+.js #slides a {
+  border-radius: 10px;
+}
+
+.no-js #slides a:hover img {
+  border-color: blue;
+}
 #slides a:hover img {
-  border: solid 1px blue;
+  filter: saturate(1.8);
 }
 
 #slides.foo {
@@ -87,4 +98,40 @@
 }
 html body {
   background-image: none;
+}
+
+.prev {
+  width: 95%;
+  display: block;
+  margin: auto;
+}
+
+.prev img {
+  width: 100%;
+  display: block;
+}
+
+div.control {
+  height: 1.5em;
+  overflow: hidden;
+  background-color: #666;
+  background-image: url("../img/nav.png");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  opacity: 0.8;
+  cursor: pointer;
+  margin: auto;
+  flex: 0 0 1.5em;
+}
+
+#forward {
+  background-position: -15% 107%;
+}
+
+#back {
+  background-position: -15% -5%;
+}
+
+.control:hover {
+  opacity: 1;
 }

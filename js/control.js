@@ -21,6 +21,7 @@ const always = (x) => () => x,
   invokeSub = (o, m, k, v) => o[m][k](v),
   $ = (id) => document.getElementById(id),
   slides = $("slides"),
+  lead_slide = document.querySelector("#slides a"),
   viewer = $("viewer"),
   forward = $("forward"),
   back = $("back"),
@@ -39,17 +40,20 @@ const always = (x) => () => x,
   limit = inc * fraction,
   apply = (pix) => {
     slides.classList.add("foo");
-    slides.style.transform = `translate(${pix}px,0)`;
+    console.log(3, pix);
+    //slides.style.transform = `translate(${pix}px,0)`;
+    lead_slide.style.marginLeft = `${pix}px`;
   },
   doAdvance = (px, limit, inc) => px !== limit - inc,
   mayAdvance = curry3(doAdvance)(inc)(limit),
   getNext = (px, limit, inc) => (px + inc > limit ? limit - inc : px),
   doGetNext = curry3(getNext)(inc)(limit),
   validateButton = (tgt) => {
-    return tgt.nodeName === "A";
+    return tgt.classList.contains('control');
   };
 let px = 0;
-viewer.style.width = inc + "px";
+//viewer.style.width = inc + "px";
+/*
 back.addEventListener("click", (e) => {
   e.preventDefault();
   if (validateButton(e.target)) {
@@ -60,17 +64,20 @@ back.addEventListener("click", (e) => {
     apply(px * -1);
   }
 });
-
+*/
 forward.addEventListener("click", (e) => {
   e.preventDefault();
+  console.log(e.target);
   if (validateButton(e.target)) {
-    if (mayAdvance(px)) {
-      doHide("start");
+    //if (mayAdvance(px)) {
+      //doHide("start");
       px += inc;
       let pix = doGetNext(px);
-      doShowEnd(px, pix);
+     // doShowEnd(px, pix);
       px = pix;
       apply(px * -1);
-    }
+    //}
+    
+
   }
 });
