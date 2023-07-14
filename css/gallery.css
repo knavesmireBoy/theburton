@@ -21,6 +21,11 @@
   background-color: black;
   border-radius: 20px 20px 0 0;
 }
+.prev {
+    width: 94%;
+    display: block;
+    margin: auto;
+  }
 
 #gallery main article {
   background-color: white;
@@ -45,9 +50,10 @@
 
 .js #slides {
   display: flex;
-  margin: 0 2%;
   overflow: hidden;
+  flex: 1 1 1em;
 }
+
 
 .js #slides a {
   flex: 0 0 25%;
@@ -98,12 +104,6 @@ html body {
   background-image: none;
 }
 
-.prev {
-  width: 94%;
-  display: block;
-  margin: auto;
-}
-
 .prev img {
   width: 100%;
   display: block;
@@ -124,10 +124,12 @@ div.control {
 
 #forward {
   background-position: -15% 107%;
+  margin-left: 1%;
 }
 
 #back {
   background-position: -15% -5%;
+    margin-right: 1%;
 }
 
 .control:hover {
