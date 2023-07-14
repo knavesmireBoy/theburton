@@ -1,8 +1,12 @@
 body {
   font-size: 0.8em;
   font-family: Verdana, Arial, Helvetica, sans-serif;
-
   background-image: linear-gradient(white, hsl(32, 30%, 70%));
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }
 
 .external a {
@@ -199,16 +203,17 @@ main > nav > ul > li {
   margin: 0 0.2em;
 }
 
-main.one section:nth-of-type(n+5) {
+main.one section:nth-of-type(n + 5) {
   display: none;
 }
 
 /*https://css-tricks.com/nth-child-between-two-fixed-indexes/*/
-main.two section:nth-of-type(-n+4), main.two section:nth-last-of-type(-n+4) {
+main.two section:nth-of-type(-n + 4),
+main.two section:nth-last-of-type(-n + 4) {
   display: none;
 }
 
-main.three section:nth-of-type(-n+8) {
+main.three section:nth-of-type(-n + 8) {
   display: none;
 }
 
@@ -218,11 +223,14 @@ main.three section:nth-of-type(-n+8) {
   display: block;
   text-align: center;
   text-decoration: none;
-  background-color: #555;;
+  background-color: #555;
   color: white;
   border-radius: 50%;
   line-height: 2;
 }
-#pagination a:hover, .one #pagination li:nth-child(1) a, .two #pagination li:nth-child(2) a, .three #pagination li:nth-child(3) a {
+#pagination a:hover,
+.one #pagination li:nth-child(1) a,
+.two #pagination li:nth-child(2) a,
+.three #pagination li:nth-child(3) a {
   background-color: black;
 }
