@@ -81,8 +81,7 @@ const always = (x) => () => x,
   doHide = doKlas("remove"),
   apply = (pix, flag = false) => {
     //bit of a bodge
-    let i = 0,
-    inc = 1;
+    let i = 0;
     if(window.viewportSize.getWidth() < 1140){
       i = (1280 / window.viewportSize.getWidth()) * 1.1;
     }
