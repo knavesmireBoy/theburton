@@ -26,7 +26,7 @@ nav input {
   text-align: center;
   margin: 2% auto;
   border: solid 1px;
-  background-image: url("../img/the-burton-23_cs_large_gallery_preview.jpeg");
+  background-image: url("../img/06.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -51,11 +51,15 @@ nav input {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right top;
+  box-shadow: 1px 1px 3px black;
+  border: solid 1px white;
+
 }
 
 #wrap > div > section {
   flex: 2 0 0;
   min-width: 13.2em;
+  border-radius: 16px;
 }
 
 #wrap > div > main {
@@ -63,9 +67,11 @@ nav input {
 }
 
 #home main > article {
-  margin: 44em 0.75em 0.75em 0;
+  margin: 44em 3em 0.75em 0;
   padding: 1em;
   background-color: rgba(255, 255, 255, 0.6);
+  border: solid 1px white;
+  box-shadow: 1px 1px 3px black;
 }
 
 .outings main {
@@ -152,10 +158,12 @@ ul {
   width: 70%;
   z-index: 1;
   position: relative;
+  font: bold 1em Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .accordion ul li {
-  margin: 0 0 0.5em;
+  margin: 0 0 .5em;
 }
 
 .accordion ul li a {
@@ -187,7 +195,6 @@ ul {
 
 .accordion ul > li {
   display: block;
-  margin: 0 0.2em;
 }
 
 main.one section:nth-of-type(n + 5) {
@@ -214,6 +221,11 @@ main.three section:nth-of-type(-n + 8) {
   color: white;
   border-radius: 50%;
   line-height: 2;
+}
+
+#pagination li {
+  display: inline-block;
+  margin: 0 .2em 0 0;
 }
 #pagination a:hover,
 .one #pagination li:nth-child(1) a,
@@ -303,10 +315,10 @@ main.three section:nth-of-type(-n + 8) {
     height: 2.5em;
   }
   .accordion ul > li {
-		height: 0;
-		line-height: 2.4;
-		transition: height .9s ease-out;
-	}
+    height: 0;
+    line-height: 2.4;
+    transition: height 0.9s ease-out;
+  }
   .accordion ul {
     width: 8rem;
     position: absolute;
@@ -329,11 +341,11 @@ main.three section:nth-of-type(-n + 8) {
   .accordion ul li a {
     border-radius: 0;
     padding: 0 0.5em;
-    background-color: rgba(0, 0, 20, .7);
+    background-color: rgba(0, 0, 20, 0.7);
     color: white;
   }
   .accordion ul li a:hover {
-    background-color: rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, 0.9);
     color: hsl(208, 100%, 90%);
   }
   #home main article {
@@ -345,4 +357,93 @@ main.three section:nth-of-type(-n + 8) {
   #home main article p:first-child {
     margin: 0;
   }
+}
+
+#circle {
+  position: absolute;
+  right: 0em;
+  bottom: 1em;
+  width: 12vw;
+  height: 12vw;
+  border: red solid 0;
+  text-decoration: none;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1;
+  font-size: 1.2em;
+}
+/*
+#circle:after {
+  display: block;
+  position: relative;
+  content: "";
+  width: 8vw;
+  height: 8vw;
+  background: red url("../img/edit_img_alt.png") no-repeat center /
+    cover;
+  margin: -10vw 0 0 5.75vw;
+  z-index: 1;
+  border: red solid 1px;
+  border-radius: 50%;
+}
+*/
+#circle img {
+  width: 100%;
+  display: block;
+}
+
+#circle:before {
+  display: block;
+  position: relative;
+  content: "Call/text: Selina";
+  z-index: 1;
+  border: red solid 0;
+  text-align: right;
+  bottom: -4.5em;
+}
+
+#circle:after {
+  display: block;
+  position: relative;
+  content: "07966 702640";
+  margin: -6vw 0 0 2.5vw;
+  width: 100%;
+  z-index: 1;
+  font-size: 1.2em;
+  border: red solid 0;
+  color: #BD1550;
+  font-style: italic;
+}
+
+#home article {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  border-radius: 14px;
+}
+#home article p {
+  margin: 0 0 .5em 0;
+}
+
+#home article p:nth-child(4) {
+  margin: 0.5em 7em 0 0;
+}
+
+#home article p:nth-child(1) {
+  font-size: 1.4em;
+  color: #BD1550;
+}
+
+#home article p span {
+  font-weight: bold;
+}
+
+#home h1 {
+  background-color: #BD1550;
+  padding: .1em .5em;
+  text-align: right;
+  float: right;
+  color: hsl(60, 100%, 70%);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
