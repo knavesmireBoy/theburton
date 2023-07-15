@@ -37,6 +37,39 @@ this messed up Modernizr flex detection
           <li><a href="./attractions.php">Attractions</a></li>
         </ul>
       </div>
+      <form action="./contactus.php" method="post">
+        <fieldset>
+          <legend>Name</legend>
+          <label for="first_name">First name(s)</label>
+          <input id="first_name" name="first_name" type="text" value="">
+          <br clear="all">
+          <label for="surname">Surname</label>
+          <input id="surname" name="surname" type="text" value="">
+        </fieldset>  
+        <fieldset>
+          <legend>Email</legend>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="text" value="">
+          <br clear="all">
+          <label for="emailconfirm">Confirm Email</label>
+          <input id="emailconfirm" name="emailconfirm" type="text" value="">
+        </fieldset>
+      
+        <fieldset>
+          <legend>Phone (optional)</legend>
+          <label for="comment">&nbsp;</label>
+          <input id="phone" name="phone" type="text" value="">
+        </fieldset>
+        <fieldset>
+          <legend>Other</legend>
+          <label for="comment">Date/Comments</label>
+          <textarea id="comment" name="comment" rows="15" cols="78"></textarea>
+          <br clear="all">
+        </fieldset>
+        <div style="text-align:center">
+        <input id="save" type="submit" value="Submit" name="Save" accesskey="S">
+        </div>
+      </form>
 
       <div id="phone">Call / text:<br />Selina: 07966 702640</div>
 

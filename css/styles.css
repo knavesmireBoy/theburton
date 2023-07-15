@@ -53,7 +53,6 @@ nav input {
   background-position: right top;
   box-shadow: 1px 1px 3px black;
   border: solid 1px white;
-
 }
 
 #wrap > div > section {
@@ -65,9 +64,22 @@ nav input {
 #wrap > div > main {
   flex: 7 1 1em;
 }
-
+#home main > h2 {
+  margin: 10em 0 0.5em 0;
+  padding: 0.1em 1em 0.1em 0.1em;
+  color: hsl(107, 77%, 70%);
+  font: 3.8em/0.8 Whisper, Georgia, "Times New Roman", Times, serif;
+  text-align: right;
+  text-shadow: 2px 2px 2px black;
+  background-color: hsla(360, 84%, 15%, 0.8);
+  border-radius: 1em 0 0 1em;
+}
+h2 small {
+  color: white;
+  font-size: 0.7em;
+}
 #home main > article {
-  margin: 44em 3em 0.75em 0;
+  margin: 0 3em 0.75em 0;
   padding: 1em;
   background-color: rgba(255, 255, 255, 0.6);
   border: solid 1px white;
@@ -158,18 +170,18 @@ ul {
   width: 70%;
   z-index: 1;
   position: relative;
-  font: bold 1em Georgia, 'Times New Roman', Times, serif;
-
+  font: bold 1em Georgia, "Times New Roman", Times, serif;
 }
 
 .accordion ul li {
-  margin: 0 0 .5em;
+  margin: 0 0 0.5em;
 }
 
 .accordion ul li a {
   padding: 0.5em 0.5em 0.5em 1.5em;
-  background-color: hsl(57, 66%, 83%);
+  background-color: rgba(255, 255, 255, 0.8);
   color: #7c4d19;
+  color: hsla(360, 84%, 25%, 1);
   border-radius: 8px;
   display: block;
   border: solid 1px grey;
@@ -225,7 +237,7 @@ main.three section:nth-of-type(-n + 8) {
 
 #pagination li {
   display: inline-block;
-  margin: 0 .2em 0 0;
+  margin: 0 0.2em 0 0;
 }
 #pagination a:hover,
 .one #pagination li:nth-child(1) a,
@@ -368,7 +380,7 @@ main.three section:nth-of-type(-n + 8) {
   border: red solid 0;
   text-decoration: none;
   color: black;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 1;
   font-size: 1.2em;
 }
@@ -399,51 +411,82 @@ main.three section:nth-of-type(-n + 8) {
   z-index: 1;
   border: red solid 0;
   text-align: right;
-  bottom: -4.5em;
+  bottom: -4em;
+  color: hsl(107, 100%, 30%);
 }
 
 #circle:after {
   display: block;
   position: relative;
   content: "07966 702640";
-  margin: -6vw 0 0 2.5vw;
+  margin: -7vw 2vw 0 0vw;
   width: 100%;
   z-index: 1;
-  font-size: 1.2em;
+  font-size: 2.5em;
+  text-align: right;
   border: red solid 0;
-  color: #BD1550;
-  font-style: italic;
+  color: #bd1550;
+  font: 2.8em/0.6 Whisper, Georgia, "Times New Roman", Times, serif;
 }
 
 #home article {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2em;
   border-radius: 14px;
 }
 #home article p {
-  margin: 0 0 .5em 0;
+  margin: 0 0 0.5em 0;
+  line-height: 1.3;
 }
 
-#home article p:nth-child(4) {
-  margin: 0.5em 7em 0 0;
+#home article p:first-child {
+  font-size: 1.1em;
+}
+#home article p:nth-child(n+3) {
+  margin: 0.5em 5em 0 0;
 }
 
-#home article p:nth-child(1) {
-  font-size: 1.4em;
-  color: #BD1550;
+#home article p strong {
+  color: hsla(360, 84%, 25%, 1);
 }
 
-#home article p span {
-  font-weight: bold;
+/*https://codepen.io/t_afif/pen/dyZOBex*/
+.ribbon-2 {
+  --f: 10px; /* control the folded part*/
+  --r: 15px; /* control the ribbon shape */
+  --t: 10px; /* the top offset */
+  color: whitesmoke;
+  font: 1.75em Georgia, "Times New Roman", Times, serif;
+  position: absolute;
+  inset: var(--t) calc(-1 * var(--f)) auto auto;
+  padding: 10px 10px 20px calc(10px + var(--r));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--f)),
+    calc(100% - var(--f)) 100%,
+    calc(100% - var(--f)) calc(100% - var(--f)),
+    0 calc(100% - var(--f)),
+    var(--r) calc(50% - var(--f) / 2)
+  );
+  background: rgba(49, 2, 73, 1);
+  color: pink;
+  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
 }
 
-#home h1 {
-  background-color: #BD1550;
-  padding: .1em .5em;
-  text-align: right;
-  float: right;
-  color: hsl(60, 100%, 70%);
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+a#FacebookBadge {
+  width: 50%;
+  display: block;
+  padding: 3px 0;
+  border-radius: 4px;
+  background-color: hsla(360, 84%, 25%, 1);
+  
+
+}
+a#FacebookBadge img {
+  display: block;
+  width: 100%;
+  padding: 0;
+
+
 }
