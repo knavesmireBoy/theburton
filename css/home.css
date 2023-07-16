@@ -38,16 +38,16 @@ article {
 }
 #circle {
   text-align: left;
-  flex: 0 0 14em;
   color: #444;
   text-decoration: none;
   border-radius: 50%;
-  padding: 5.5em 0;
   background-color: white;
-  margin: auto 0 -2em -7em;
-  display: block;
   border: solid 5px white;
   box-shadow: 1px 1px 3px black;
+  flex: 0 0 14em;
+  padding: 5.5em 0;
+  margin: auto 0 -2em -7em;
+  font-size: 1em;
 }
 #circle strong {
   font-size: 1.25em;
@@ -80,26 +80,3 @@ article {
   color: hsla(360, 84%, 25%, 1);
 }
 
-/*https://codepen.io/t_afif/pen/dyZOBex*/
-.ribbon-2 {
-  --f: 10px; /* control the folded part*/
-  --r: 15px; /* control the ribbon shape */
-  --t: 10px; /* the top offset */
-  color: whitesmoke;
-  font: 1.75em Georgia, "Times New Roman", Times, serif;
-  position: absolute;
-  inset: var(--t) calc(-1 * var(--f)) auto auto;
-  padding: 10px 10px 20px calc(10px + var(--r));
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - var(--f)),
-    calc(100% - var(--f)) 100%,
-    calc(100% - var(--f)) calc(100% - var(--f)),
-    0 calc(100% - var(--f)),
-    var(--r) calc(50% - var(--f) / 2)
-  );
-  background: rgba(49, 2, 73, 1);
-  color: pink;
-  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
-}

@@ -1,6 +1,6 @@
 body {
   font-size: 0.8em;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-image: linear-gradient(white, hsl(32, 30%, 70%));
 }
 
@@ -12,12 +12,13 @@ nav input {
   display: none;
 }
 
-.external a {
+p.external a {
   text-decoration: none;
   color: #7c4d19;
+  font: .9em Arial, Helvetica, sans-serif;
 }
 .external a:hover {
-  color: #669900;
+  color: hsl(80, 100%, 25%);
 }
 
 #wrap {
@@ -71,13 +72,12 @@ nav input {
 
 .outings main {
   background-color: rgba(255, 255, 255, 0.8);
-  color: hsl(0, 0%, 40%);
+  color: rgba(49, 2, 73, 1);
   margin: 0.75em;
   padding: 1em;
 }
 main > h2 {
   color: black;
-  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
   font-size: 1.7em;
   margin: 0 0 0.5em;
@@ -101,6 +101,11 @@ main h2 {
   border-top: solid 1px black;
   display: flex;
   flex-direction: column;
+}
+.outings article p {
+  margin: 0;
+  color: #444;
+  font-size: 1.2em;
 }
 
 main > section > aside {
@@ -139,7 +144,6 @@ main > section > aside a:hover {
 }
 
 main > section h2 {
-  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
 }
 
@@ -153,7 +157,7 @@ ul {
   width: 70%;
   z-index: 1;
   position: relative;
-  font: bold 1em Georgia, "Times New Roman", Times, serif;
+  font: 1em Arial, Helvetica, sans-serif;
 }
 
 .accordion ul li {
@@ -172,7 +176,7 @@ ul {
 }
 .accordion ul li a:hover {
   background-color: white;
-  color: #669900;
+  color: hsl(80, 100%, 25%);
 }
 #burton {
   font-family: Whisper;
@@ -212,7 +216,7 @@ main.three section:nth-of-type(-n + 8) {
   display: block;
   text-align: center;
   text-decoration: none;
-  background-color: #555;
+  background-color: hsl(280, 95%, 15%);
   color: white;
   border-radius: 50%;
   line-height: 2;
@@ -226,7 +230,8 @@ main.three section:nth-of-type(-n + 8) {
 .one #pagination li:nth-child(1) a,
 .two #pagination li:nth-child(2) a,
 .three #pagination li:nth-child(3) a {
-  background-color: black;
+  background-color: hsl(280, 95%, 25%);
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -234,7 +239,6 @@ main.three section:nth-of-type(-n + 8) {
     min-width: 900px;
   }
   body {
-    background-color: #669900;
   }
 }
 
@@ -369,4 +373,70 @@ a#FacebookBadge img {
   display: block;
   width: 100%;
   padding: 0;
+}
+
+/*https://codepen.io/t_afif/pen/dyZOBex*/
+.ribbon-2 {
+  --f: 10px; /* control the folded part*/
+  --r: 15px; /* control the ribbon shape */
+  --t: 10px; /* the top offset */
+  color: whitesmoke;
+  position: absolute;
+  inset: var(--t) calc(-1 * var(--f)) auto auto;
+  padding: 10px 10px 20px calc(10px + var(--r));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--f)),
+    calc(100% - var(--f)) 100%,
+    calc(100% - var(--f)) calc(100% - var(--f)),
+    0 calc(100% - var(--f)),
+    var(--r) calc(50% - var(--f) / 2)
+  );
+  background: rgba(49, 2, 73, 1);
+  color: pink;
+  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+  margin: .5em 0 0;
+  font-size: 1.5em;
+}
+#triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: solid 100px white;
+  width: 0px;
+  border-color: transparent  hsl(80, 50%, 50%) hsl(80, 50%, 50%)
+  transparent;
+}
+
+#triangle:before {
+  content: "07966 702640";
+  display: block;
+  position: absolute;
+  bottom: -60px;
+  right: 1em;
+  color: white;
+  width: 100%;
+white-space: nowrap;
+font-size: 1.3em;
+text-shadow: 1px 1px 1px black;
+
+}
+#triangle:after {
+  content: "call/text Selina";
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  right: 1em;
+  color: white;
+  width: 100%;
+white-space: nowrap;
+font-size: 1.3em;
+text-shadow: 1px 1px 1px black;
+}
+
+.intro {
+  margin: 4em 0 1em;
+  font: 1em Arial, Helvetica, sans-serif;
 }
