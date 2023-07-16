@@ -22,6 +22,7 @@ nav input {
 
 #wrap {
   width: 1024px;
+  width: 80%;
   min-width: 720px;
   text-align: center;
   margin: 2% auto;
@@ -47,6 +48,8 @@ nav input {
   padding: 1em;
   margin: 0.75em;
   background-color: rgba(255, 255, 255, 0.6);
+  background-color: hsla(34, 78%, 91%, .6);
+
   background-image: url("../img/burtonfont.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -168,7 +171,7 @@ ul {
   text-decoration: none;
 }
 .accordion ul li a:hover {
-  background-color: hsl(50, 66%, 88%);
+  background-color: white;
   color: #669900;
 }
 #burton {
@@ -358,6 +361,9 @@ a#FacebookBadge {
   padding: 3px 0;
   border-radius: 4px;
   background-color: hsla(360, 84%, 25%, 1);
+}
+a#FacebookBadge:hover {
+  background-color: #4267B2;
 }
 a#FacebookBadge img {
   display: block;
