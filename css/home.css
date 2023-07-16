@@ -1,4 +1,4 @@
-#home main > h2 {
+main > h2 {
     margin: 10em 0 0.5em 0;
     padding: 0.1em 1em 0.1em 0.1em;
     color: hsl(107, 77%, 70%);
@@ -12,30 +12,47 @@
     color: white;
     font-size: 0.7em;
   }
-  #home main .article {
-    margin: 0 3em 0.75em 0;
+  section.article {
+    display: flex;
+    justify-content: space-between;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    overflow: hidden;
+  }
+
+
+article {
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.6);
     border: solid 1px white;
     box-shadow: 1px 1px 3px black;
+    border-radius: 14px;
+    font-size: 1.2em;
+    background-color: hsl(34, 78%, 91%, .9);
+    flex: 0 0 90%;
+    margin: 0 0 .75em;
   }
+ 
 #circle {
-  position: absolute;
-  right: 0em;
-  bottom: 1em;
-  width: 12vw;
-  height: 12vw;
-  border: red solid 0;
-  text-decoration: none;
-  color: black;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  line-height: 1;
-  font-size: 1.2em;
+  text-align: center;
+  flex: 1 1 1em;
+color: #444;
+text-decoration: none;
+border-radius: 50%;
+padding: 5em 0;
+background-color: yellowgreen;
+margin: auto 0 0 0;
+    margin: auto 0 0 -10em;
+}
+#circle strong {
+    display: block;
+    font-size: 1.3em;
+    color: hotpink;
 }
 
 #circle img {
   width: 100%;
   display: block;
+  margin-bottom: -6.2em;
 }
 /*
 #circle:before {
@@ -63,12 +80,7 @@
   font: 2.8em/0.6 Whisper, Georgia, "Times New Roman", Times, serif;
 }
 */
-.article {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  border-radius: 14px;
-  font-size: 1.2em;
-  flex-direction: row;
-}
+
 .article p {
   margin: 0 0 0.5em 0;
   line-height: 1.3;
@@ -77,9 +89,13 @@
 .article p:first-child {
   font-size: 1.1em;
 }
-.article p:nth-child(n+3) {
-  margin: 0.5em 5em 0 0;
+.article p:nth-child(3) {
+  margin: 0.5em 4em 0 0;
 }
+
+.article p:nth-child(4) {
+    margin: 0.5em 5em 0 0;
+  }
 
 .article p strong {
   color: hsla(360, 84%, 25%, 1);
