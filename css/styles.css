@@ -406,7 +406,7 @@ a#FacebookBadge img {
   display: block;
   border: solid 100px white;
   width: 0px;
-  border-color: transparent  hsl(80, 50%, 50%) hsl(80, 50%, 50%)
+  border-color: transparent  hsl(90, 65%, 60%) hsl(90, 65%, 60%)
   transparent;
 }
 
