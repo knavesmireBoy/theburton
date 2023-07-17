@@ -185,10 +185,6 @@ a#FacebookBadge img {
   padding: 0;
 }
 
-main {
-  position: relative;
-}
-
 .ribbon-1 {
   position: fixed;
   background:rgba(49, 2, 73, 1);
@@ -375,7 +371,7 @@ p.external a {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 812px) {
   html,
   body {
     margin: 0;
@@ -402,6 +398,9 @@ p.external a {
     background-position: 0 0;
     background-size: 70%;
     height: 4em;
+    box-shadow: none;
+    border-width: 0;
+    border-radius: 0;
   }
   #wrap {
     min-width: auto;
@@ -446,6 +445,11 @@ p.external a {
     -o-transition: transform 1s;
     transition: transform 1s;
   }
+  .menu:hover {
+		background-position: 50% 100%;
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 
   /*no need to fix advanced selectors for ie as mobile only layout*/
   .accordion input:checked + ul > li {
@@ -491,4 +495,44 @@ p.external a {
   #home main article p:first-child {
     margin: 0;
   }
+  a#FacebookBadge {
+    display: none;
+  }
+.ribbon-2 {
+  position: relative;
+  padding: 0;
+  clip-path: none;
+  inset: 0 0 0 0;
+  background: none;
+  color: rgba(49, 2, 73, 1);
+  box-shadow: none;
+  margin: 0.5em 0 0;
+  font-size: 1.8em;
+  border: solid 1px;
+  font-weight: bold;
+  border-width: 0 0 1px;;
+}
+.intro {
+  margin: 1em 0;
+}
+main a#FacebookBadge {
+  display: block;
+  width: 7.8em;
+}
+
+#triangle {
+  border-width: 12vw;
+}
+#triangle:before, #triangle:after  {
+font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
+}
+#triangle:before {
+  right: 2.5em;
+  bottom: calc(-50px - (10) * (100vw - 320px) / (812 - 320));
+  font-size: calc(12px + (6) * (100vw - 320px) / (812 - 320));
+}
+#triangle:after {
+  bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
+  right: 1.5em;
+}
 }
