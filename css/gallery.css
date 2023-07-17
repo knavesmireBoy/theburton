@@ -149,3 +149,11 @@ div.control {
   margin: 10% auto;
 }
 }
+
+@media only screen and (max-width: 668px) {
+
+  #gallery main article {
+    width: 100%;
+    margin: 5% auto;
+  }
+}

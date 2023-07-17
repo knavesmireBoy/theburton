@@ -9,7 +9,8 @@ ul {
   margin: 0;
   list-style: none;
 }
-form, fieldset {
+form,
+fieldset {
   width: auto;
 }
 nav input {
@@ -119,7 +120,7 @@ main > section h2 {
   padding: 0.5em 0.5em 0.5em 1.5em;
   background-color: rgba(255, 255, 255, 0.8);
   color: #7c4d19;
-  color:  hsla(0, 68%, 30%, 1);
+  color: hsla(0, 68%, 30%, 1);
   border-radius: 8px;
   display: block;
   border: solid 1px grey;
@@ -194,7 +195,7 @@ a#FacebookBadge img {
 
 .ribbon-1 {
   position: fixed;
-  background:rgba(49, 2, 73, 1);
+  background: rgba(49, 2, 73, 1);
   background-color: hsla(0, 68%, 30%, 1);
 
   box-shadow: 0 0 0 999px hsla(0, 68%, 30%, 1);
@@ -234,7 +235,7 @@ a#FacebookBadge img {
   font-size: 1.5em;
 }
 #contact .ribbon-2 {
-  margin: .5em 0 0;
+  margin: 0.5em 0 0;
 }
 #triangle {
   position: absolute;
@@ -288,8 +289,7 @@ fieldset {
 }
 legend {
   font-size: 1.5em;
-  font-size: calc(1em + (.5em) * (100vw - 564px) / (1280 - 564));
-
+  font-size: calc(1em + (0.5em) * (100vw - 564px) / (1280 - 564));
 }
 
 fieldset label:first-of-type {
@@ -318,10 +318,10 @@ fieldset:last-of-type label {
   grid-row: 1/2;
   grid-column: 1/2;
 }
-fieldset:last-of-type  {
+fieldset:last-of-type {
   margin: 0 0 1em;
 }
-form  {
+form {
   text-align: center;
 }
 form #save {
@@ -334,12 +334,13 @@ label {
 p.external a {
   text-decoration: none;
   color: hsl(32, 66%, 29%);
-  font: .9em Arial, Helvetica, sans-serif;
+  font: 0.9em Arial, Helvetica, sans-serif;
 }
 .external a:hover {
   color: hsl(80, 100%, 25%);
 }
-.outings main, #contact main {
+.outings main,
+#contact main {
   background-color: rgba(255, 255, 255, 0.8);
   color: rgba(49, 2, 73, 1);
   color: hsla(0, 68%, 30%, 1);
@@ -392,7 +393,6 @@ main #FacebookBadge {
 }
 
 @media only screen and (max-width: 1024px) {
-  
   fieldset input:first-of-type {
     grid-column: 3/5;
   }
@@ -401,11 +401,11 @@ main #FacebookBadge {
     grid-column: 3/5;
   }
 
-  fieldset:last-of-type label{
+  fieldset:last-of-type label {
     text-align: left;
   }
-  
-  fieldset:last-of-type textarea{
+
+  fieldset:last-of-type textarea {
     margin: 0 0 1em;
     grid-row: 2/4;
     grid-column: 1/5;
@@ -489,10 +489,10 @@ main #FacebookBadge {
     background-color: firebrick;
   }
   .menu:hover {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-    background-color:  hsl(0, 68%, 33%);
-	}
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background-color: hsl(0, 68%, 33%);
+  }
 
   /*no need to fix advanced selectors for ie as mobile only layout*/
   .accordion input:checked + ul > li {
@@ -525,7 +525,8 @@ main #FacebookBadge {
     background-color: hsla(0, 68%, 30%, 1);
     color: white;
   }
-  .accordion ul li a:hover, .accordion ul li.hi a {
+  .accordion ul li a:hover,
+  .accordion ul li.hi a {
     background-color: hsla(0, 88%, 10%, 1);
     color: palegoldenrod;
   }
@@ -533,54 +534,55 @@ main #FacebookBadge {
   a#FacebookBadge {
     display: none;
   }
-.ribbon-2 {
-  position: relative;
-  padding: 0;
-  clip-path: none;
-  inset: 0 0 0 0;
-  background: none;
-  color: hsla(0, 68%, 30%, 1);
-  box-shadow: none;
-  margin: 0.5em 0 0;
-  font-size: 1.8em;
-  border: solid 1px;
-  font-weight: bold;
-  border-width: 0 0 1px;;
-}
-.intro {
-  margin: 1em 0;
-}
-main a#FacebookBadge {
-  display: block;
-  width: 6em;
-  float: right;
-  position: absolute;
-  right: .3em;
-  bottom: 1.8em;
-  z-index: 1;
-  margin-top: -2em;
-  background-color: transparent;
-}
+  .ribbon-2 {
+    position: relative;
+    padding: 0;
+    clip-path: none;
+    inset: 0 0 0 0;
+    background: none;
+    color: hsla(0, 68%, 30%, 1);
+    box-shadow: none;
+    margin: 0.5em 0 0;
+    font-size: 1.8em;
+    border: solid 1px;
+    font-weight: bold;
+    border-width: 0 0 1px;
+  }
+  .intro {
+    margin: 1em 0;
+  }
+  main a#FacebookBadge {
+    display: block;
+    width: 6em;
+    float: right;
+    position: absolute;
+    right: 0.3em;
+    bottom: 1.8em;
+    z-index: 1;
+    margin-top: -2em;
+    background-color: transparent;
+  }
 
-#triangle {
-  border-width: 12vw;
-}
-.outings #triangle:before, .outings #triangle:after  {
-  content: "";
-}
-#triangle:before, #triangle:after  {
-font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
-}
-#triangle:before {
-  right: 2.5em;
-  bottom: calc(-50px - (10) * (100vw - 320px) / (812 - 320));
-  font-size: calc(12px + (6) * (100vw - 320px) / (812 - 320));
-}
-#triangle:after {
-  bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
-  right: 1.5em;
-}
-
+  #triangle {
+    border-width: 12vw;
+  }
+  .outings #triangle:before,
+  .outings #triangle:after {
+    content: "";
+  }
+  #triangle:before,
+  #triangle:after {
+    font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
+  }
+  #triangle:before {
+    right: 2.5em;
+    bottom: calc(-50px - (10) * (100vw - 320px) / (812 - 320));
+    font-size: calc(12px + (6) * (100vw - 320px) / (812 - 320));
+  }
+  #triangle:after {
+    bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
+    right: 1.5em;
+  }
 }
 @media only screen and (max-width: 668px) {
   .external {
@@ -592,11 +594,14 @@ font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
   #pagination {
     font-size: 1.5em;
   }
+
 }
 
 @media only screen and (max-width: 520px) {
   #triangle {
     border-width: 16vw;
   }
-
+  fieldset {
+    grid-template-columns: 10em 10px auto 15em;
+  }
 }
