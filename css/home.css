@@ -7,8 +7,10 @@ main > h2 {
   line-height: 0.8;
   text-align: right;
   text-shadow: 2px 2px 2px black;
-  background-color: hsla(360, 84%, 15%, 0.8);
+  background-color: hsla(20, 88%, 25%, 0.8);
   border-radius: 1em 0 0 1em;
+  position: relative;
+  top: -4em;
 }
 h2 small {
   color: white;
