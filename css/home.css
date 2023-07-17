@@ -25,32 +25,38 @@ article {
   border: solid 1px white;
   box-shadow: 1px 1px 3px black;
   border-radius: 14px;
-  font-size: 1.2em;
+  font-size: 1.14em;
   background-color: hsla(34, 78%, 91%, 0.9);
   flex: 0 0 90%;
   margin: 0 0 0.75em;
 }
+/*
 #circle:before {
   content: " call/text Selina";
   display: block;
   font-size: 1.15em;
   margin: 0 0 0 1.5em;
 }
+*/
 #circle {
-  text-align: left;
-  color: #444;
+  color: #333;
   text-decoration: none;
   border-radius: 50%;
   background-color: white;
-  border: solid 5px white;
   box-shadow: 1px 1px 3px black;
-  flex: 0 0 14em;
-  padding: 5.5em 0;
+  flex: 0 0 12em;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  font-size: 1.2em;
+  height: 11em;
+  flex-direction: column;
   margin: auto 0 -2em -7em;
-  font-size: 1em;
+  border: 10px solid white;
+  padding: 0 0 1em 0;
 }
 #circle strong {
-  font-size: 1.25em;
+  font-size: 1.2em;
   color: hotpink;
 }
 
@@ -69,14 +75,13 @@ article {
   font-size: 1.1em;
 }
 .article p:nth-child(3) {
-  margin: 0.5em 4em 0 0;
+  margin: 0.5em 5em 0 0;
 }
 
 .article p:nth-child(4) {
-  margin: 0.5em 5em 0 0;
+  margin: 0.5em 5.5em 0 0;
 }
 
 .article p strong {
   color: hsla(360, 84%, 25%, 1);
 }
-

@@ -440,3 +440,15 @@ text-shadow: 1px 1px 1px black;
   margin: 4em 0 1em;
   font: 1em Arial, Helvetica, sans-serif;
 }
+
+fieldset {
+  display: flex;
+}
+
+fieldset > * {
+  margin: 0 .5em;
+}
+
+fieldset input {
+  flex: 2 1 2em;
+}
