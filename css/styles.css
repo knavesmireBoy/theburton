@@ -157,7 +157,7 @@ main.three section:nth-of-type(-n + 8) {
   display: block;
   text-align: center;
   text-decoration: none;
-  background-color: hsl(280, 95%, 15%);
+  background-color: hsl(340, 95%, 15%);
   color: white;
   border-radius: 50%;
   line-height: 2;
@@ -171,7 +171,7 @@ main.three section:nth-of-type(-n + 8) {
 .one #pagination li:nth-child(1) a,
 .two #pagination li:nth-child(2) a,
 .three #pagination li:nth-child(3) a {
-  background-color: hsl(280, 95%, 25%);
+  background-color: hsl(340, 95%, 25%);
 }
 
 a#FacebookBadge {
@@ -587,7 +587,7 @@ main #FacebookBadge {
     display: none;
   }
   .outings main > section > article {
-    flex: 5 1 1em;
+    flex: 3 1 1em;
   }
   #pagination {
     font-size: 1.5em;
