@@ -78,18 +78,15 @@ main h2 {
 main > section > aside {
   flex: 1 1 1em;
   margin: 0 3em 0 0;
+  margin: 0 2em 0 0;
+  align-self: top;
 }
 
 main > p {
   margin: 0.25em 0;
 }
-main > section > aside {
-  margin: 0 2em 0 0;
-  align-self: top;
-}
-main > section > aside a {
-  display: block;
-}
+
+
 main > section > aside a {
   border: solid black 1px;
   display: block;
@@ -97,6 +94,7 @@ main > section > aside a {
 
 main > section > aside a:hover {
   filter: saturate(2);
+  border-color: blue;
 }
 
 main > section h2 {

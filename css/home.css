@@ -1,16 +1,18 @@
 main > h2 {
-  margin: 6em 0 0.5em 0;
-  padding: 0.1em 1em 0.1em 0.1em;
-  color: hsl(107, 77%, 70%);
+  margin: 8em 0 0.5em 0;
+  padding: 0 1.5em 0 0;
+  color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(30px + (20) * (100vw - 812px) / (1280 - 812));
+  font-size: calc(32px + (10) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 1px 1px 2px black;
   background-color: hsla(20, 88%, 25%, 0.8);
+  background: none;
   border-radius: 1em 0 0 1em;
   position: relative;
-  top: -4em;
+  bottom: calc(150px + (100) * (100vw - 812px) / (1280 - 812));
+
 }
 h2 small {
   color: white;
@@ -34,8 +36,7 @@ article {
   border: solid 1px white;
   box-shadow: 1px 1px 3px black;
   border-radius: 14px;
-  font-size: 1.14em;
-  background-color: hsla(34, 78%, 91%, 0.9);
+  background-color: hsla(34, 78%, 91%, 0.7);
   flex: 0 0 90%;
   margin: 0 0 0.75em;
 }
@@ -82,7 +83,7 @@ article {
 }
 
 .article p:first-child {
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 .article p:nth-child(3) {
   margin: 0.5em 4.5em 0 0;
@@ -126,17 +127,17 @@ article {
   }
   main h2 {
     font-size: calc(24px + (28) * (100vw - 320px) / (812 - 320));
-    border-radius: 0;
-    border: double 4px white;
-    border-width: 5px 0;
-    border-style: double;
+    font-size: calc(20px + (20) * (100vw - 320px) / (812 - 320));
     margin: 0;
+    width: 70%;
+    bottom: 240px;
+
   }
   .banner p {
     display: flex;
     padding: 1em 2em 0;
     flex-direction: column;
-    background-color: hotpink;
+    background-color: hsla(330, 100%, 71%, .9);
     text-align: center;
     position: relative;
     z-index: 1;
@@ -154,16 +155,18 @@ article {
   }
   .ribbon-2 {
     color: yellow;
+    text-shadow: 1px 1px 1px black;
   }
   .banner strong {
     font-size: 1.6em;
     color: yellow;
+    text-shadow: 1px 1px 1px black;
   }
   .banner:after {
     content: "";
     border: solid 4em;
     font-size: 1.25em;
-    border-color: hotpink hotpink transparent hotpink;
+    border-color: hsla(330, 100%, 71%, .88) hsla(330, 100%, 71%, .88) transparent hsla(330, 100%, 71%, .88);
     position: relative;
     top: -4em;
   }
