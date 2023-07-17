@@ -1,5 +1,5 @@
 main > h2 {
-  margin: 10em 0 0.5em 0;
+  margin: 6em 0 0.5em 0;
   padding: 0.1em 1em 0.1em 0.1em;
   color: hsl(107, 77%, 70%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
@@ -101,7 +101,7 @@ article {
 }
 
 @media only screen and (max-width: 812px) {
-  #home main article {
+  main article {
     margin: 0em 1em 1em 1em;
   }
   #home main article p:last-child {
@@ -138,6 +138,7 @@ article {
     position: relative;
     z-index: 1;
     width: 6em;
+
   }
   .banner {
     display: flex;
@@ -163,7 +164,11 @@ article {
     position: relative;
     top: -4em;
   }
-
-  @media only screen and (max-width: 736px) {
+  main article {
+    margin: 0;
+    flex-basis: 94%;
+  }
+  .article {
+    padding: 0;
   }
 }

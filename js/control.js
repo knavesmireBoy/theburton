@@ -83,7 +83,7 @@ const always = (x) => () => x,
     //bit of a bodge
     let i = 0;
     if(window.viewportSize.getWidth() < 1140){
-      i = (1280 / window.viewportSize.getWidth()) * 1.1;
+      i = (1280 / window.viewportSize.getWidth()) * .5;
     }
     let p = Math.ceil(pix) * (400 + i) / slides.clientWidth;
     all_slides.forEach((element) => {
