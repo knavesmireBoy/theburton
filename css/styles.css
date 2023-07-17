@@ -273,7 +273,7 @@ a#FacebookBadge img {
 
 .intro {
   margin: 4em 0 1em;
-  font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: black;
 }
 body#contact main > article {
@@ -580,5 +580,23 @@ font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
   bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
   right: 1.5em;
 }
+
+}
+@media only screen and (max-width: 668px) {
+  .external {
+    display: none;
+  }
+  .outings main > section > article {
+    flex: 5 1 1em;
+  }
+  #pagination {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  #triangle {
+    border-width: 16vw;
+  }
 
 }
