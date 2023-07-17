@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: .75em .75em .75em 0;
   background-color: rgba(255, 255, 255, 0.4);
+  background-color: hsla(34, 78%, 91%, 0.6);
 }
 
 #viewer {
@@ -135,4 +136,16 @@ div.control {
 
 .control:hover {
   opacity: 1;
+}
+
+@media only screen and (max-width: 812px) {
+
+#gallery main {
+  margin: 0;
+  padding: .75em;
+}
+#gallery main article {
+  width: 80%;
+  margin: 10% auto;
+}
 }

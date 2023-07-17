@@ -9,7 +9,9 @@ ul {
   margin: 0;
   list-style: none;
 }
-
+form, fieldset {
+  width: auto;
+}
 nav input {
   display: none;
 }
@@ -127,6 +129,10 @@ main > section h2 {
   background-color: white;
   color: hsl(80, 100%, 25%);
 }
+.accordion ul li.hi a {
+  background-color: white;
+  color: hsl(80, 100%, 25%);
+}
 
 .accordion ul > li {
   display: block;
@@ -224,7 +230,7 @@ a#FacebookBadge img {
   font-size: 1.5em;
 }
 #contact .ribbon-2 {
-  margin: 0;
+  margin: .5em 0 0;
 }
 #triangle {
   position: absolute;
@@ -277,6 +283,8 @@ fieldset {
 }
 legend {
   font-size: 1.5em;
+  font-size: calc(1em + (.5em) * (100vw - 564px) / (1280 - 564));
+
 }
 
 fieldset label:first-of-type {
@@ -320,7 +328,7 @@ label {
 
 p.external a {
   text-decoration: none;
-  color: #7c4d19;
+  color: hsl(32, 66%, 29%);
   font: .9em Arial, Helvetica, sans-serif;
 }
 .external a:hover {
@@ -364,10 +372,37 @@ p.external a {
 .outings main article p:last-child {
   margin-top: auto;
 }
+#contact main {
+  background-color: hsla(34, 78%, 91%, 0.9);
+}
+main #FacebookBadge {
+  display: none;
+}
 /*/////////////////////////////////////////////*/
 @media only screen and (min-width: 1024px) {
   #wrap {
     min-width: 900px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  
+  fieldset input:first-of-type {
+    grid-column: 3/5;
+  }
+
+  fieldset input:last-of-type {
+    grid-column: 3/5;
+  }
+
+  fieldset:last-of-type label{
+    text-align: left;
+  }
+  
+  fieldset:last-of-type textarea{
+    margin: 0 0 1em;
+    grid-row: 2/4;
+    grid-column: 1/5;
   }
 }
 
@@ -478,23 +513,14 @@ p.external a {
   .accordion ul li a {
     border-radius: 0;
     padding: 0 0.5em;
-    background-color: rgba(0, 0, 20, 0.7);
+    background-color: rgba(0, 0, 20, 0.95);
     color: white;
   }
   .accordion ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgb(0, 0, 0);
     color: hsl(208, 100%, 90%);
   }
 
-  #home main article {
-    margin: 44em 1em 1em 1em;
-  }
-  #home main article p:last-child {
-    margin: 0;
-  }
-  #home main article p:first-child {
-    margin: 0;
-  }
   a#FacebookBadge {
     display: none;
   }
@@ -517,11 +543,21 @@ p.external a {
 }
 main a#FacebookBadge {
   display: block;
-  width: 7.8em;
+  width: 6em;
+  float: right;
+  position: absolute;
+  right: .3em;
+  bottom: 1.8em;
+  z-index: 1;
+  margin-top: -2em;
+  background-color: transparent;
 }
 
 #triangle {
   border-width: 12vw;
+}
+.outings #triangle:before, .outings #triangle:after  {
+  content: "";
 }
 #triangle:before, #triangle:after  {
 font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
@@ -535,4 +571,5 @@ font-size: calc(8px + (8) * (100vw - 320px) / (812 - 320));
   bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
   right: 1.5em;
 }
+
 }
