@@ -178,3 +178,13 @@ article {
     padding: 0;
   }
 }
+
+@media only screen and (orientation: portrait) and (max-width: 480px) {
+.banner {
+  display: none;
+}
+main h2 {
+  font-size: calc(30px + (20) * (100vw - 320px) / (812 - 320));
+  background-color: blueviolet;
+}
+}
