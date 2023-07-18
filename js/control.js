@@ -88,7 +88,6 @@ const tagTester = (name) => {
     console.log(x);
     return x;
   },
-  invoke = (f, o) => f(o),
   lead_slide = document.querySelector("#slides a"),
   $slides = $("slides"),
   $viewer = $("viewer"),
@@ -173,7 +172,7 @@ $slides.addEventListener("click", (e) => {
     $("preview").setAttribute("src", src);
   }
 });
-
+/*
 let rtime,
   timeout = false,
   delta = 200,
@@ -197,3 +196,4 @@ window.addEventListener("resize", () => {
     setTimeout(resizeend, delta);
   }
 });
+*/
