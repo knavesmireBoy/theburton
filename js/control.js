@@ -60,58 +60,71 @@ const always = (x) => () => x,
   },
   ptL = doPartial(),
   defer = doPartial(true),
-  curry3 = (fn) => (c) => (b) => (a) => fn(a, b, c),
+  pass = (f) => (o) => {
+    f(o);
+    return o;
+  },
+  comp = (...fns) =>
+  fns.reduce(
+    (f, g) =>
+      (...vs) =>
+        f(g(...vs))
+  ),
+  curry2 = (f) => (b) => (a) => f(a, b),
+  curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
+  curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
+  isArray = tagTester("Array"),
+  F = (o) => isFunction(o) ? o() : o,
+  getProp = (o, p) => o[p],
+  invokeMethod = (o, m, v) => F(o)[m](v),
+  invokeMethodPair = (o, m, p, v) => getRes(o)[m](p, v),
   invokeSub = (o, m, k, v) => o[m][k](v),
   $ = (id) => document.getElementById(id),
+  $$ = (id) => () => document.getElementById(id),
   slice = Array.prototype.slice,
+  mittel = (m) => (o) => ptL(invokeMethod, o, m),
+  mittelRev = (m) => (v) => curry3(invokeMethod)(v)(m),
+  mittelPair = (m, p) => (v) => curry4(invokeMethodPair)(v)(p)(m),
+  mittelSub = (m, p) => (v) => curry4(invokeSub)(v)(p)(m),
+  con = (x) => {
+    console.log(x);
+    return x;
+  },
+  lead_slide = document.querySelector("#slides a"),
+  $article = document.querySelector('main > article'),
+  parent = curry2(getProp)("parentNode"),
+  appendChild = ptL(invokeMethod, $article, 'appendChild'),
+  doMake = ptL(invokeMethod, document, "createElement"),
+  doMakeDefer = defer(invokeMethod, document, "createElement"),
+  andAppend = comp(appendChild, doMake),
+  setId = pass(mittelPair("setAttribute", "id")),
+  setAlt = pass(mittelPair("setAttribute", "alt")("preview pic")),
+  setSrc = pass(mittelPair("setAttribute", "src")(lead_slide.getAttribute('href'))),
+  doControlKlas = mittelSub('classList', 'add')('control'),
+  doPreviewKlas = mittelSub('classList', 'add')('prev'),
+
+  doPic = comp(setId, setAlt, setSrc, doMakeDefer('img')),
+
+  setFore = comp(doControlKlas, setId('forward')),
+  setAft = comp(doControlKlas, setId('back')),
   factor = 4,
   extent = document.querySelectorAll("#slides img").length,
   fraction = extent / factor,
   slides = $("slides"),
-  lead_slide = document.querySelector("#slides a"),
   all_slides = slice.call(document.querySelectorAll("#slides a")),
-  viewer = $("viewer"),
+  $viewer = $("viewer"),
   forward = $("forward"),
   back = $("back"),
-  doKlas = ptL(invokeSub, viewer, "classList"),
-  doKlasDefer = defer(invokeSub, viewer, "classList"),
-  doShow = doKlas("add"),
-  doShowStart = doWhenPred((x) => !x, doKlasDefer("add")("start")),
-  doShowEnd = doWhenPred((a, b) => a !== b, doKlasDefer("add")("end")),
-  doHide = doKlas("remove"),
-  apply = (pix, flag = false) => {
-    //bit of a bodge
-    let i = 0;
-    if(window.viewportSize.getWidth() < 1140){
-      i = (1280 / window.viewportSize.getWidth()) * .5;
-    }
-    let p = Math.floor(pix) * (400) / slides.clientWidth;
-    all_slides.forEach((element) => {
-      element.style.transform = `translateX(${Math.floor(p)}%)`;
-      if (!flag) element.classList.add("foo");
-    });
-  },
-  doAdvance = (pix, lmt, incr) => pix !== lmt - incr,
-  getNext = (pix, lmt, incr) => (pix + incr > lmt ? lmt - incr : pix),
-  mayAdvanceDefer = curry3(doAdvance),
-  doGetNextDefer = curry3(getNext),
-  validateButton = (tgt) => {
-    return tgt.classList.contains("control");
-  },
-  getInc = () => {
-    let item = document.querySelector("#slides img").clientWidth,
-      inc = item * factor,
-      limit = inc * fraction;
-    return [inc, limit];
-  },
-  getOffset = () => {
-    let style = window.getComputedStyle(lead_slide, null),
-      values = style.transform.match(/-?\d+\.?\d*/g);
-    return values ? Math.abs(Math.ceil(values[4])) : 0;
-  };
+  doViewKlas = ptL(invokeSub, $viewer, "classList"),
+  doViewKlasDefer = defer(invokeSub, $viewer, "classList");
+  
+comp(doPreviewKlas, andAppend)('a');
+con(doPic())
+doPreviewKlas($article);
 
-let px = getOffset();
 
+//let px = getOffset();
+/*
 back.addEventListener("click", (e) => {
   e.preventDefault();
   if (validateButton(e.target)) {
@@ -143,7 +156,7 @@ forward.addEventListener("click", (e) => {
     }
   }
 });
-
+*/
 slides.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.nodeName === "IMG") {
