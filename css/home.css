@@ -1,9 +1,9 @@
 main > h2 {
   margin: 8em 0 0.5em 0;
-  padding: 0 1.5em 0 0;
+  padding: 0 1em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(32px + (10) * (100vw - 812px) / (1280 - 812));
+  font-size: calc(31px + (16) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
   text-shadow: 1px 1px 2px black;
@@ -11,8 +11,7 @@ main > h2 {
   background: none;
   border-radius: 1em 0 0 1em;
   position: relative;
-  bottom: calc(150px + (100) * (100vw - 812px) / (1280 - 812));
-
+  bottom: calc(150px + (140) * ((100vw - 812px) / (1280 - 812)));
 }
 h2 small {
   color: white;
@@ -24,10 +23,11 @@ h2 em {
 }
 
 section.article {
-  display: flex;
   justify-content: space-between;
   font-family: Georgia, "Times New Roman", Times, serif;
   overflow: hidden;
+  align-items: end;
+  display: flex;
 }
 
 article {
@@ -37,34 +37,26 @@ article {
   box-shadow: 1px 1px 3px black;
   border-radius: 14px;
   background-color: hsla(34, 78%, 91%, 0.7);
-  flex: 0 0 90%;
   margin: 0 0 0.75em;
+  flex: 0 0 87%;
 }
-/*
-#circle:before {
-  content: " call/text Selina";
-  display: block;
-  font-size: 1.15em;
-  margin: 0 0 0 1.5em;
-}
-*/
+
 #circle {
+  display: flex;
   color: #333;
   text-decoration: none;
   border-radius: 50%;
-  background-color: white;
+  background-image: radial-gradient(yellow 0, white 70%);
   box-shadow: 1px 1px 3px black;
-  flex: 0 0 12em;
-  display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   font-size: 1.2em;
   font-size: calc(7px + (4) * (100vw - 320px) / (812 - 320));
-  height: 11em;
   flex-direction: column;
   margin: auto 0 -2em calc(-90px - (10) * (100vw - 812px) / (1280 - 812));
+  width: 8em;
   border: 10px solid white;
-  padding: 0 0 1em 0;
+  height: 8em;
 }
 #circle strong {
   font-size: 1.2em;
@@ -100,6 +92,16 @@ article {
   display: none;
 }
 
+div.ribbon-2 a {
+  color: pink;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+}
+
+div.ribbon-2 a:hover {
+  color: white;
+}
+
 @media only screen and (max-width: 1024px) {
 }
 
@@ -122,8 +124,11 @@ article {
   #home main .article {
     padding: 0.75em;
   }
-  #home .ribbon-2 {
+  .ribbon-2 {
     margin: 0.5em 0.75em 0;
+  }
+  div.ribbon-2 a {
+    color:  yellow;
   }
   main h2 {
     font-size: calc(24px + (28) * (100vw - 320px) / (812 - 320));
@@ -179,7 +184,7 @@ article {
   }
 }
 
-@media only screen and (orientation: portrait) and (max-width: 480px) {
+@media only screen and (orientation: portrait) and (max-width: 550px) {
 .banner {
   display: none;
 }
