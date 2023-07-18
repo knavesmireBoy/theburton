@@ -45,14 +45,6 @@ const $ = (id) => document.getElementById(id),
     };
   },
   ptL = doPartial(),
-  invokeMethodSafe = (o, m, v) => {
-    // console.log(o,m,v);
-    try {
-      return getResult(o)[m](v);
-    } catch (e) {
-      return getResult(o)[m](getResult(v));
-    }
-  },
   invokeMethod = (o, m, v) => F(o)[m](v),
   invokeMethodPair = (o, m, p, v) => F(o)[m](p, v),
   invoke = (f) => f(),

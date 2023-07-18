@@ -407,6 +407,10 @@ main #FacebookBadge {
     text-align: left;
   }
 
+  fieldset:last-of-type {
+    row-gap: 10px;
+  }
+
   fieldset:last-of-type textarea {
     margin: 0 0 1em;
     grid-row: 2/4;
@@ -459,9 +463,6 @@ main #FacebookBadge {
   main {
     margin: 0;
   }
-  .accordion ul {
-  }
-
   .accordion ul li {
     margin: 0;
   }

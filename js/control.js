@@ -1,3 +1,40 @@
+function insertAlready(el, ref) {
+  ref.parentNode.insertBefore(el, ref);
+  return el;
+}
+
+function backButtonCB(e) {
+  e.preventDefault();
+  if (validateButton(e.target)) {
+    let [inc] = getInc();
+    doHide("end");
+    px -= inc;
+    px = Math.max(0, Math.ceil(px));
+    doShowStart(px);
+    apply(px * -1);
+  }
+}
+
+function foreButtonCB(e) {
+  e.preventDefault();
+  if (validateButton(e.target)) {
+    let [inc, limit] = getInc(),
+      mayAdvance = mayAdvanceDefer(inc)(limit),
+      doGetNext = doGetNextDefer(inc)(limit);
+    //https://stackoverflow.com/questions/11160227/translate-x-and-y-percentage-values-based-on-elements-height-and-width
+    //https://stackoverflow.com/questions/43065579/how-to-convert-css-transform-matrix-back-to-its-component-properties
+    px = getOffset();
+    if (mayAdvance(px)) {
+      doHide("start");
+      px += inc;
+      let pix = doGetNext(Math.ceil(px));
+      doShowEnd(px, pix);
+      px = pix;
+      apply(px * -1);
+    }
+  }
+}
+
 const tagTester = (name) => {
     const tag = "[object " + name + "]";
     return function (obj) {
@@ -5,44 +42,6 @@ const tagTester = (name) => {
     };
   },
   isFunction = tagTester("Function"),
-  getRes = function (arg) {
-    if (isFunction(arg)) {
-      return arg();
-    }
-    return arg;
-  };
-
-function doGetComputedStyle(element, property) {
-  const toCamelCase = function (variable) {
-    return variable.replace(/-([a-z])/g, function (str, letter) {
-      return letter.toUpperCase();
-    });
-  };
-  element = getRes(element);
-  if (!element || !property) {
-    return null;
-  }
-  let computedStyle = null,
-    def = document.defaultView || window;
-  if (typeof element.currentStyle !== "undefined") {
-    computedStyle = element.currentStyle;
-  } else if (def && def.getComputedStyle && isFunction(def.getComputedStyle)) {
-    computedStyle = def.getComputedStyle(element, null);
-  }
-  if (computedStyle) {
-    try {
-      return (
-        computedStyle.getPropertyValue(property) ||
-        computedStyle.getPropertyValue(toCamelCase(property))
-      );
-    } catch (e) {
-      return computedStyle[property] || computedStyle[toCamelCase(property)];
-    }
-  }
-}
-
-const always = (x) => () => x,
-  negate = (x) => () => !x,
   doPartial = (flag) => {
     return function p(f, ...args) {
       if (f.length === args.length) {
@@ -65,23 +64,22 @@ const always = (x) => () => x,
     return o;
   },
   comp = (...fns) =>
-  fns.reduce(
-    (f, g) =>
-      (...vs) =>
-        f(g(...vs))
-  ),
+    fns.reduce(
+      (f, g) =>
+        (...vs) =>
+          f(g(...vs))
+    ),
   curry2 = (f) => (b) => (a) => f(a, b),
   curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
   curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
   isArray = tagTester("Array"),
-  F = (o) => isFunction(o) ? o() : o,
+  slice = Array.prototype.slice,
+  F = (o) => (isFunction(o) ? o() : o),
   getProp = (o, p) => o[p],
   invokeMethod = (o, m, v) => F(o)[m](v),
-  invokeMethodPair = (o, m, p, v) => getRes(o)[m](p, v),
+  invokeMethodPair = (o, m, p, v) => F(o)[m](p, v),
   invokeSub = (o, m, k, v) => o[m][k](v),
   $ = (id) => document.getElementById(id),
-  $$ = (id) => () => document.getElementById(id),
-  slice = Array.prototype.slice,
   mittel = (m) => (o) => ptL(invokeMethod, o, m),
   mittelRev = (m) => (v) => curry3(invokeMethod)(v)(m),
   mittelPair = (m, p) => (v) => curry4(invokeMethodPair)(v)(p)(m),
@@ -90,74 +88,85 @@ const always = (x) => () => x,
     console.log(x);
     return x;
   },
+  invoke = (f, o) => f(o),
   lead_slide = document.querySelector("#slides a"),
-  $article = document.querySelector('main > article'),
-  parent = curry2(getProp)("parentNode"),
-  appendChild = ptL(invokeMethod, $article, 'appendChild'),
+  $slides = $("slides"),
+  $viewer = $("viewer"),
+  $article = document.querySelector("main > article"),
+  appendArticle = ptL(invokeMethod, $article, "appendChild"),
+  appendViewer = ptL(invokeMethod, $viewer, "appendChild"),
   doMake = ptL(invokeMethod, document, "createElement"),
   doMakeDefer = defer(invokeMethod, document, "createElement"),
-  andAppend = comp(appendChild, doMake),
-  setId = pass(mittelPair("setAttribute", "id")),
+  doControlKlas = pass(mittelSub("classList", "add")("control")),
+  articleAppend = comp(appendArticle, doMake),
+  viewerAppend = comp(appendViewer, doControlKlas, doMake),
+  setId = mittelPair("setAttribute", "id"),
   setAlt = pass(mittelPair("setAttribute", "alt")("preview pic")),
-  setSrc = pass(mittelPair("setAttribute", "src")(lead_slide.getAttribute('href'))),
-  doControlKlas = mittelSub('classList', 'add')('control'),
-  doPreviewKlas = mittelSub('classList', 'add')('prev'),
-
-  doPic = comp(setId, setAlt, setSrc, doMakeDefer('img')),
-
-  setFore = comp(doControlKlas, setId('forward')),
-  setAft = comp(doControlKlas, setId('back')),
+  setSrc = pass(
+    mittelPair("setAttribute", "src")(lead_slide.getAttribute("href"))
+  ),
+  doPreviewKlas = mittelSub("classList", "add")("prev"),
+  doPic = comp(
+    pass(mittelPair("setAttribute", "id")("preview")),
+    setAlt,
+    setSrc,
+    doMake
+  ),
+  setFore = comp(doControlKlas, setId("forward")),
+  setAft = comp(doControlKlas, setId("back")),
   factor = 4,
   extent = document.querySelectorAll("#slides img").length,
   fraction = extent / factor,
-  slides = $("slides"),
+  slideAppend = curry2(insertAlready)($slides),
   all_slides = slice.call(document.querySelectorAll("#slides a")),
-  $viewer = $("viewer"),
-  forward = $("forward"),
-  back = $("back"),
   doViewKlas = ptL(invokeSub, $viewer, "classList"),
-  doViewKlasDefer = defer(invokeSub, $viewer, "classList");
-  
-comp(doPreviewKlas, andAppend)('a');
-con(doPic())
-doPreviewKlas($article);
-
-
-//let px = getOffset();
-/*
-back.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (validateButton(e.target)) {
-    let [inc] = getInc();
-    doHide("end");
-    px -= inc;
-    px = Math.max(0, Math.ceil(px));
-    doShowStart(px);
-    apply(px * -1);
-  }
-});
-
-forward.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (validateButton(e.target)) {
-    let [inc, limit] = getInc(),
-      mayAdvance = mayAdvanceDefer(inc)(limit),
-      doGetNext = doGetNextDefer(inc)(limit);
-    //https://stackoverflow.com/questions/11160227/translate-x-and-y-percentage-values-based-on-elements-height-and-width
-    //https://stackoverflow.com/questions/43065579/how-to-convert-css-transform-matrix-back-to-its-component-properties
-    px = getOffset();
-    if (mayAdvance(px)) {
-      doHide("start");
-      px += inc;
-      let pix = doGetNext(Math.ceil(px));
-      doShowEnd(px, pix);
-      px = pix;
-      apply(px * -1);
+  doViewKlasDefer = defer(invokeSub, $viewer, "classList"),
+  $link = comp(mittel("appendChild"), pass(doPreviewKlas), articleAppend)("a"),
+  doShow = doViewKlas("add"),
+  doShowStart = doWhenPred((x) => !x, doViewKlasDefer("add")("start")),
+  doShowEnd = doWhenPred((a, b) => a !== b, doViewKlasDefer("add")("end")),
+  doHide = doViewKlas("remove"),
+  apply = (pix, flag = false) => {
+    //bit of a bodge
+    let i = 0;
+    if (window.viewportSize.getWidth() < 1140) {
+      i = (1280 / window.viewportSize.getWidth()) * 0.5;
     }
-  }
-});
-*/
-slides.addEventListener("click", (e) => {
+    let p = (Math.floor(pix) * 400) / slides.clientWidth;
+    all_slides.forEach((element) => {
+      element.style.transform = `translateX(${Math.floor(p)}%)`;
+      if (!flag) element.classList.add("foo");
+    });
+  },
+  doAdvance = (pix, lmt, incr) => pix !== lmt - incr,
+  getNext = (pix, lmt, incr) => (pix + incr > lmt ? lmt - incr : pix),
+  mayAdvanceDefer = curry3(doAdvance),
+  doGetNextDefer = curry3(getNext),
+  validateButton = (tgt) => {
+    return tgt.classList.contains("control");
+  },
+  getInc = () => {
+    let item = document.querySelector("#slides img").clientWidth,
+      inc = item * factor,
+      limit = inc * fraction;
+    return [inc, limit];
+  },
+  getOffset = () => {
+    let style = window.getComputedStyle(lead_slide, null),
+      values = style.transform.match(/-?\d+\.?\d*/g);
+    return values ? Math.abs(Math.ceil(values[4])) : 0;
+  },
+  backCB = curry4(invokeMethodPair)(backButtonCB)("click")("addEventListener"),
+  forwardCB =
+    curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener");
+
+comp($link, doPic)("img");
+comp(forwardCB, pass(setId("forward")), viewerAppend)("div");
+comp(backCB, slideAppend, pass(setId("back")), doControlKlas, doMake)("div");
+
+let px = getOffset();
+
+$slides.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.nodeName === "IMG") {
     let src = e.target.getAttribute("src");
