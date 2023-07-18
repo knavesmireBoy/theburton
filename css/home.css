@@ -3,7 +3,7 @@ main > h2 {
   padding: 0 1em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(31px + (16) * (100vw - 812px) / (1280 - 812));
+  font-size: calc(31px + (15) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
   text-shadow: 1px 1px 2px black;
@@ -11,7 +11,7 @@ main > h2 {
   background: none;
   border-radius: 1em 0 0 1em;
   position: relative;
-  bottom: calc(150px + (140) * ((100vw - 812px) / (1280 - 812)));
+  bottom: calc(170px + (110) * ((100vw - 812px) / (1280 - 812)));
 }
 h2 small {
   color: white;
@@ -39,6 +39,7 @@ article {
   background-color: hsla(34, 78%, 91%, 0.7);
   margin: 0 0 0.75em;
   flex: 0 0 87%;
+  font-size: 1.1em;
 }
 
 #circle {
@@ -51,11 +52,11 @@ article {
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
-  font-size: calc(7px + (4) * (100vw - 320px) / (812 - 320));
+  font-size: calc(13px + (2) * (100vw - 812px) / (1280 - 812));
   flex-direction: column;
   margin: auto 0 -2em calc(-90px - (10) * (100vw - 812px) / (1280 - 812));
   width: 8em;
-  border: 10px solid white;
+  border: 8px solid white;
   height: 8em;
 }
 #circle strong {
@@ -75,10 +76,10 @@ article {
 }
 
 .article p:first-child {
-  font-size: 1.3em;
+  font-size: 1.18em;
 }
 .article p:nth-child(3) {
-  margin: 0.5em 4.5em 0 0;
+  margin: 0.5em 1em 0 0;
 }
 
 .article p:nth-child(4) {
@@ -128,26 +129,23 @@ div.ribbon-2 a:hover {
     margin: 0.5em 0.75em 0;
   }
   div.ribbon-2 a {
-    color:  yellow;
+    color: yellow;
   }
   main h2 {
-    font-size: calc(24px + (28) * (100vw - 320px) / (812 - 320));
-    font-size: calc(20px + (20) * (100vw - 320px) / (812 - 320));
+    font-size: calc(24px + 9 * (100vw - 320px) / (812 - 550));
     margin: 0;
     width: 70%;
     bottom: 240px;
-
   }
   .banner p {
     display: flex;
     padding: 1em 2em 0;
     flex-direction: column;
-    background-color: hsla(330, 100%, 71%, .9);
+    background-color: hsla(330, 100%, 71%, 0.9);
     text-align: center;
     position: relative;
     z-index: 1;
     width: 6em;
-
   }
   .banner {
     display: flex;
@@ -171,7 +169,8 @@ div.ribbon-2 a:hover {
     content: "";
     border: solid 4em;
     font-size: 1.25em;
-    border-color: hsla(330, 100%, 71%, .88) hsla(330, 100%, 71%, .88) transparent hsla(330, 100%, 71%, .88);
+    border-color: hsla(330, 100%, 71%, 0.88) hsla(330, 100%, 71%, 0.88)
+      transparent hsla(330, 100%, 71%, 0.88);
     position: relative;
     top: -4em;
   }
@@ -179,19 +178,22 @@ div.ribbon-2 a:hover {
     margin: 0;
     flex-basis: 94%;
   }
-  .article {
+
+  section.article {
+    display: block;
     padding: 0;
   }
 }
 
-@media only screen and (orientation: portrait) and (max-width: 550px) {
-.banner {
-  display: none;
-}
-main h2 {
-  width: 90%;
-  bottom: 0px;
-  font-size: 2.8em;
-  margin: .5em 0 6em 0;
-}
+@media only screen and (max-width: 550px) {
+  .banner {
+    display: none;
+  }
+  main h2 {
+    width: 90%;
+    bottom: 0px;
+    font-size: 2.8em;
+    margin: 0.5em .5em 6em;
+  }
+  
 }
