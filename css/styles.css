@@ -78,7 +78,7 @@ main h2 {
 main > section > aside {
   flex: 1 1 1em;
   margin: 0 3em 0 0;
-  margin: 0 2em 0 0;
+  margin: 0 1em 0 0;
   align-self: top;
 }
 
@@ -107,7 +107,7 @@ main > section h2 {
   width: 70%;
   z-index: 1;
   position: relative;
-  font: 1em Arial, Helvetica, sans-serif;
+  font: 1em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .accordion ul li {
@@ -115,7 +115,7 @@ main > section h2 {
 }
 
 .accordion ul li a {
-  padding: 0.5em 0.5em 0.5em 1.5em;
+  padding: 0.5em;
   background-color: rgba(255, 255, 255, 0.8);
   color: #7c4d19;
   color: hsla(0, 68%, 30%, 1);
@@ -131,6 +131,7 @@ main > section h2 {
 .accordion ul li.hi a {
   background-color: white;
   color: hsl(80, 100%, 25%);
+  font-weight: bold;
 }
 
 .accordion ul > li {
@@ -272,7 +273,7 @@ a#FacebookBadge img {
 
 .intro {
   margin: 4em 0 1em;
-  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: black;
 }
 body#contact main > article {
@@ -332,7 +333,7 @@ label {
 p.external a {
   text-decoration: none;
   color: hsl(32, 66%, 29%);
-  font: 0.9em Arial, Helvetica, sans-serif;
+  font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .external a:hover {
   color: hsl(80, 100%, 25%);
@@ -371,7 +372,7 @@ p.external a {
   width: 100%;
 }
 .outings main > section > article {
-  padding: 0.5em 1em 0;
+  padding: 0.5em .5em 0;
 }
 /*https://wpbeaches.com/aligning-last-item-bottom-container-flexbox/*/
 .outings main article p:last-child {
@@ -407,6 +408,9 @@ main #FacebookBadge {
     margin: 0 0 1em;
     grid-row: 2/4;
     grid-column: 1/5;
+  }
+  .external {
+    display: none;
   }
 }
 
@@ -583,9 +587,7 @@ main #FacebookBadge {
   }
 }
 @media only screen and (max-width: 668px) {
-  .external {
-    display: none;
-  }
+
   .outings main > section > article {
     flex: 3 1 1em;
   }
