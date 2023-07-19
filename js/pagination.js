@@ -89,7 +89,7 @@ const $ = (id) => document.getElementById(id),
   },
   $nav = comp(
     paginate,
-    curry2(insertAlready)($("triangle")),
+    curry2(insertAlready)($("curl")),
     setId,
     ptL(doKids, "nav")
   )(doKids("ul", lists));
