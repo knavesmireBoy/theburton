@@ -43,13 +43,16 @@ function select(e) {
   }
 }
 
-const tagTester = (name) => {
-    const tag = "[object " + name + "]";
+const slice = Array.prototype.slice,
+  $ = (id) => document.getElementById(id),
+  tagTester = (name) => {
+    let tag = "[object " + name + "]";
     return function (obj) {
       return toString.call(obj) === tag;
     };
   },
   isFunction = tagTester("Function"),
+  isArray = tagTester("Array"),
   doPartial = (flag) => {
     return function p(f, ...args) {
       if (f.length === args.length) {
@@ -80,15 +83,11 @@ const tagTester = (name) => {
   curry2 = (f) => (b) => (a) => f(a, b),
   curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
   curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
-  isArray = tagTester("Array"),
-  slice = Array.prototype.slice,
   F = (o) => (isFunction(o) ? o() : o),
-  getProp = (o, p) => o[p],
   invokeMethod = (o, m, v) => F(o)[m](v),
   invokeMethodPair = (o, m, p, v) => F(o)[m](p, v),
   invokeSub = (o, m, k, v) => o[m][k](v),
-  $ = (id) => document.getElementById(id),
-  mittel4 = f => (m, p) => (v) => curry4(f)(v)(p)(m),
+  mittel4 = (f) => (m, p) => (v) => curry4(f)(v)(p)(m),
   prepAnchor = (m) => (o) => ptL(invokeMethod, o, m),
   mittelPair = mittel4(invokeMethodPair),
   mittelSub = mittel4(invokeSub),
@@ -127,7 +126,11 @@ const tagTester = (name) => {
   all_slides = slice.call(document.querySelectorAll("#slides a")),
   doViewKlas = ptL(invokeSub, $viewer, "classList"),
   doViewKlasDefer = defer(invokeSub, $viewer, "classList"),
-  $link = comp(prepAnchor("appendChild"), pass(doPreviewKlas), comp(appendArticle, doMake))("a"),
+  $link = comp(
+    prepAnchor("appendChild"),
+    pass(doPreviewKlas),
+    comp(appendArticle, doMake)
+  )("a"),
   doShow = doViewKlas("add"),
   doShowStart = doWhenPred((x) => !x, doViewKlasDefer("add")("start")),
   doShowEnd = doWhenPred((a, b) => a !== b, doViewKlasDefer("add")("end")),
@@ -138,7 +141,7 @@ const tagTester = (name) => {
     if (window.viewportSize.getWidth() < 1140) {
       i = (1280 / window.viewportSize.getWidth()) * 0.5;
     }
-    let p = (Math.floor(pix) * 400) / slides.clientWidth;
+    let p = (Math.floor(pix) * 400) / $slides.clientWidth;
     all_slides.forEach((element) => {
       element.style.transform = `translateX(${Math.floor(p)}%)`;
       if (!flag) element.classList.add("foo");
@@ -165,7 +168,7 @@ const tagTester = (name) => {
   backCB = curry4(invokeMethodPair)(backButtonCB)("click")("addEventListener"),
   forwardCB =
     curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener"),
-    selectCB = curry4(invokeMethodPair)(select)("click")("addEventListener");
+  selectCB = curry4(invokeMethodPair)(select)("click")("addEventListener");
 
 comp($link, doPic)("img");
 comp(forwardCB, pass(setId("forward")), viewerAppend)("div");
