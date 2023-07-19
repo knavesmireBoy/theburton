@@ -1,4 +1,4 @@
-#gallery main {
+ main {
   display: flex;
   flex-direction: column;
   margin: .75em .75em .75em 0;
@@ -28,7 +28,7 @@
     margin: auto;
   }
 
-.js #gallery main article {
+.js main article {
   background-color: white;
   width: 70%;
   padding: 1em 0;
@@ -135,13 +135,22 @@ div.control {
   opacity: 1;
 }
 
+@media only screen and (max-width: 1024px) {
+
+
+  .js main article {
+   width: 90%;
+   margin: 20% auto;
+ }
+ }
+
 @media only screen and (max-width: 812px) {
 
-#gallery main {
+ main {
   margin: 0;
   padding: .75em;
 }
-#gallery main article {
+ .js main article {
   width: 80%;
   margin: 10% auto;
 }
@@ -149,7 +158,7 @@ div.control {
 
 @media only screen and (max-width: 668px) {
 
-  #gallery main article {
+   .js main article {
     width: 100%;
     margin: 5% auto;
   }

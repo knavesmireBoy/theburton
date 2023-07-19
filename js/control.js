@@ -35,6 +35,14 @@ function foreButtonCB(e) {
   }
 }
 
+function select(e) {
+  e.preventDefault();
+  if (e.target.nodeName === "IMG") {
+    let src = e.target.getAttribute("src");
+    $("preview").setAttribute("src", src);
+  }
+}
+
 const tagTester = (name) => {
     const tag = "[object " + name + "]";
     return function (obj) {
@@ -80,10 +88,10 @@ const tagTester = (name) => {
   invokeMethodPair = (o, m, p, v) => F(o)[m](p, v),
   invokeSub = (o, m, k, v) => o[m][k](v),
   $ = (id) => document.getElementById(id),
-  mittel = (m) => (o) => ptL(invokeMethod, o, m),
-  mittelRev = (m) => (v) => curry3(invokeMethod)(v)(m),
-  mittelPair = (m, p) => (v) => curry4(invokeMethodPair)(v)(p)(m),
-  mittelSub = (m, p) => (v) => curry4(invokeSub)(v)(p)(m),
+  mittel4 = f => (m, p) => (v) => curry4(f)(v)(p)(m),
+  prepAnchor = (m) => (o) => ptL(invokeMethod, o, m),
+  mittelPair = mittel4(invokeMethodPair),
+  mittelSub = mittel4(invokeSub),
   con = (x) => {
     console.log(x);
     return x;
@@ -97,7 +105,6 @@ const tagTester = (name) => {
   doMake = ptL(invokeMethod, document, "createElement"),
   doMakeDefer = defer(invokeMethod, document, "createElement"),
   doControlKlas = pass(mittelSub("classList", "add")("control")),
-  articleAppend = comp(appendArticle, doMake),
   viewerAppend = comp(appendViewer, doControlKlas, doMake),
   setId = mittelPair("setAttribute", "id"),
   setAlt = pass(mittelPair("setAttribute", "alt")("preview pic")),
@@ -120,7 +127,7 @@ const tagTester = (name) => {
   all_slides = slice.call(document.querySelectorAll("#slides a")),
   doViewKlas = ptL(invokeSub, $viewer, "classList"),
   doViewKlasDefer = defer(invokeSub, $viewer, "classList"),
-  $link = comp(mittel("appendChild"), pass(doPreviewKlas), articleAppend)("a"),
+  $link = comp(prepAnchor("appendChild"), pass(doPreviewKlas), comp(appendArticle, doMake))("a"),
   doShow = doViewKlas("add"),
   doShowStart = doWhenPred((x) => !x, doViewKlasDefer("add")("start")),
   doShowEnd = doWhenPred((a, b) => a !== b, doViewKlasDefer("add")("end")),
@@ -157,21 +164,15 @@ const tagTester = (name) => {
   },
   backCB = curry4(invokeMethodPair)(backButtonCB)("click")("addEventListener"),
   forwardCB =
-    curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener");
+    curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener"),
+    selectCB = curry4(invokeMethodPair)(select)("click")("addEventListener");
 
 comp($link, doPic)("img");
 comp(forwardCB, pass(setId("forward")), viewerAppend)("div");
 comp(backCB, slideAppend, pass(setId("back")), doControlKlas, doMake)("div");
-
+selectCB($slides);
 let px = getOffset();
 
-$slides.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (e.target.nodeName === "IMG") {
-    let src = e.target.getAttribute("src");
-    $("preview").setAttribute("src", src);
-  }
-});
 /*
 let rtime,
   timeout = false,
@@ -197,3 +198,5 @@ window.addEventListener("resize", () => {
   }
 });
 */
+
+console.time();
