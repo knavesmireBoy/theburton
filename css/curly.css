@@ -59,6 +59,8 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(242, 242, 242, 0.9) 20%, rgba(187, 187, 187, 0.85) 38%, rgba(171, 171, 171, 0.8) 44%, rgba(135, 135, 135, 0.75) 50%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.3) 80%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 0.4s ease;
+    width: 70px;
+    height: 70px;
   }
   figure.snip0022:hover .curl {
     width: 100px;
@@ -68,6 +70,15 @@
     opacity: 0.7;
     -webkit-transition-delay: 0.15s;
     transition-delay: 0.15s;
+  }
+}
+@media only screen and (max-width: 813px) {
+  .curl {
+    width: 70px;
+    height: 70px;
+  }
+  #x {
+    opacity: 1;
   }
 }
 

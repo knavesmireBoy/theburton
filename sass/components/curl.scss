@@ -75,6 +75,8 @@
       );
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       transition: all 0.4s ease;
+      width: 70px;
+      height: 70px;
     }
     &:hover .curl {
       width: 100px;
@@ -87,4 +89,16 @@
       transition-delay: 0.15s;
     }
   }
+}
+
+@media only screen and (max-width: 813px) {
+  .curl {
+    width: 70px;
+    height: 70px;
+  }
+  #x {
+    opacity: 1;
+  }
+
+
 }
