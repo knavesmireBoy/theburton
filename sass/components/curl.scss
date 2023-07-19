@@ -22,6 +22,7 @@ figure.snip0022 {
     color: white;
     z-index: 4;
     background: url("../img/phone.png") no-repeat center top/60%;
+    text-shadow: 1px 1px 1px black;
   }
 
   > * {
@@ -90,7 +91,7 @@ figure.snip0022 {
     transition-delay: 0.15s;
   }
   &:hover aside {
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 2px 2px 2px black;
   }
 }
 

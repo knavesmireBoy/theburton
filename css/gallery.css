@@ -99,9 +99,6 @@
   background-color: rgb(183, 251, 232);
   outline: solid 1px white;
 }
-html body {
-  background-image: none;
-}
 
 .prev img {
   width: 100%;

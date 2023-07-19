@@ -2,6 +2,7 @@ body {
   font-size: 0.8em;
   font-family: Georgia, "Times New Roman", Times, serif;
   background-image: linear-gradient(white, hsl(32, 30%, 70%));
+  background-image: url("../img/wood.jpg");
 }
 
 ul {
@@ -29,6 +30,7 @@ nav input {
   background-size: cover;
   background-position: center;
   position: relative;
+  box-shadow: 0 0 50px black;
 }
 
 #wrap > div {
@@ -36,6 +38,7 @@ nav input {
   text-align: left;
   border: solid white 0.5em;
   position: relative;
+  box-shadow: 0 0 50px black;
 }
 
 #wrap > div > section {

@@ -22,6 +22,7 @@ figure.snip0022 aside {
   color: white;
   z-index: 4;
   background: url("../img/phone.png") no-repeat center top/60%;
+  text-shadow: 1px 1px 1px black;
 }
 figure.snip0022 > * {
   -webkit-box-sizing: border-box;
@@ -73,7 +74,7 @@ figure.snip0022:hover #x {
   transition-delay: 0.15s;
 }
 figure.snip0022:hover aside {
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 2px 2px black;
 }
 
 @media only screen and (max-width: 813px) {
@@ -84,8 +85,8 @@ figure.snip0022:hover aside {
   #x {
     opacity: 1;
   }
-  figure aside strong, a:link {
-    color: yellow;
+  figure aside strong:hover, a:link {
+    color: beige;
   }
 }
 
