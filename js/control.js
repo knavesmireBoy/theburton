@@ -102,7 +102,6 @@ const slice = Array.prototype.slice,
   appendArticle = ptL(invokeMethod, $article, "appendChild"),
   appendViewer = ptL(invokeMethod, $viewer, "appendChild"),
   doMake = ptL(invokeMethod, document, "createElement"),
-  doMakeDefer = defer(invokeMethod, document, "createElement"),
   doControlKlas = pass(mittelSub("classList", "add")("control")),
   viewerAppend = comp(appendViewer, doControlKlas, doMake),
   setId = mittelPair("setAttribute", "id"),
@@ -201,5 +200,3 @@ window.addEventListener("resize", () => {
   }
 });
 */
-
-console.time();
