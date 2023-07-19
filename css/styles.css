@@ -431,6 +431,27 @@ main #FacebookBadge {
     padding: 0;
     background-image: none;
   }
+  .outings #wrap, #gallery #wrap {
+    background-image: url("../img/wood.jpg");
+  }
+
+  .outings #wrap > div{
+    background-color:hsla(28, 77%, 12%, .5);
+  }
+
+  main, .outings main, #gallery main {
+    color: white;
+    background-color: transparent;
+  }
+  .outings article p, .intro {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  main section h2, .ribbon-2 {
+    color: hsl(26, 100%, 70%);
+    text-shadow: 1px 1px 1px black;
+  }
   nav {
     background-color: transparent;
   }
@@ -552,7 +573,6 @@ main #FacebookBadge {
     clip-path: none;
     inset: 0 0 0 0;
     background: none;
-    color: hsla(0, 68%, 30%, 1);
     box-shadow: none;
     margin: 0.5em 0 0;
     font-size: 1.8em;
