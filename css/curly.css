@@ -84,6 +84,9 @@ figure.snip0022:hover aside {
   #x {
     opacity: 1;
   }
+  figure aside strong, a:link {
+    color: yellow;
+  }
 }
 
 /*# sourceMappingURL=curly.css.map */
