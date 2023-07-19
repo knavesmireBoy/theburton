@@ -601,8 +601,9 @@ main #FacebookBadge {
   .outings main > section > article {
     flex: 3 1 1em;
   }
-  #pagination {
+  #pagination li {
     font-size: 1.5em;
+    margin: 0 .5em 0 0;
   }
 
 }
