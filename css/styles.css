@@ -615,6 +615,10 @@ main #FacebookBadge {
   fieldset {
     grid-template-columns: 10em 10px auto 15em;
   }
+
+  #wrap > div > section {
+    background-image: url("../img/burtonfont_portrait.jpg");
+  }
 }
 
 
