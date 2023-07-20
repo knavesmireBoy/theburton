@@ -3,7 +3,7 @@ main > h2 {
   padding: 0 1em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(31px + (15) * (100vw - 812px) / (1280 - 812));
+  font-size: calc(28px + (20) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
   text-shadow: 1px 1px 2px black;
@@ -47,7 +47,7 @@ article {
   color: #333;
   text-decoration: none;
   border-radius: 50%;
-  background: white url("../img/phone.png") no-repeat center 20%/60%;
+  background: white url("../img/phone_sprite.png") no-repeat center 30%/70%;
   box-shadow: 1px 1px 3px black;
   justify-content: center;
   align-items: center;
@@ -58,14 +58,19 @@ article {
   width: 9em;
   border: 0 solid white;
   height: 9em;
-  line-height: 1;
+  line-height: .9;
 }
 #circle strong {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: hotpink;
+}
+#circle strong:first-child {
+  color:  hsla(360, 84%, 25%, 1);
+  margin: .7em 0 .2em;
 }
 #circle:hover {
   background-color: pink;
+  background-position: center -40%;
 }
 
 #circle img {

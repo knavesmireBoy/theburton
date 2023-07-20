@@ -50,10 +50,10 @@ nav input {
   margin: 0.75em;
   background-color: rgba(255, 255, 255, 0.6);
   background-color: hsla(34, 78%, 91%, 0.6);
-  background-image: url("../img/burtonfont.png");
+  background-image: url("../img/burton_color.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right top;
+  background-position: 95% top;
   box-shadow: 1px 1px 3px black;
   border: solid 1px white;
 }
@@ -395,9 +395,11 @@ p.external a {
   }
   #wrap > div > section {
     background-color: transparent;
-    background-image: url("../img/burtonfont_horizontal.jpg");
-    background-position: 0 50%;
-    height: 4em;
+    background-image: url("../img/burton_white.png");
+    background-position: 5% 100%;
+    background-size: 80%;
+    height: 5em;
+
     box-shadow: none;
     border-width: 0;
     border-radius: 0;
@@ -541,9 +543,14 @@ p.external a {
     margin: 0 .5em 0 0;
   }
 
+  #wrap > div > section {
+    background-image: url("../img/burton_alt.png");
+    background-size: contain;
+  }
+
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 540px) {
   #triangle {
     border-width: 16vw;
   }
@@ -551,9 +558,32 @@ p.external a {
     grid-template-columns: 10em 10px auto 15em;
   }
 
+ 
+}
+@media only screen and (max-width:480px) {
   #wrap > div > section {
-    background-image: url("../img/burtonfont_portrait.jpg");
+    background-image: url("../img/burton_small.png");
+    background-size: contain;
+    background-position: 0% 0%;
+    height: 20vw;
   }
+
+  .accordion label {
+    right:  calc(50px + 34 * (100vw - 320px) / (480 - 320));
+    top:  calc(10px + 10 * (100vw - 320px) / (480 - 320));
+    width:  calc(50px + 14 * (100vw - 320px) / (480 - 320));
+    height:  calc(50px + 14 * (100vw - 320px) / (480 - 320));
+  }
+
+  .accordion ul {
+    width: 140px;
+    top:  calc(65px + 30 * (100vw - 320px) / (480 - 320));
+  }
+
+  .accordion input:checked + ul {
+    left:  calc(130px + 120 * (100vw - 320px) / (480 - 320));
+  }
+
 }
 
 
