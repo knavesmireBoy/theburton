@@ -2,19 +2,19 @@
   margin: 0.5em 0 0;
 }
 
-main > article {
+.contact main > article {
   margin: 4em 0 0;
 }
 
-#wrap > div {
+.contact #wrap > div {
   background-color: hsl(55, 37%, 62%, 0.8);
 }
 
-#wrap > div > section {
+.contact #wrap > div > section {
     background-color: rgba(255, 255, 255, 0.8);
   }
 
-main {
+.contact main {
   background-color: transparent;
   margin: 0;
   padding: .75em;
@@ -22,7 +22,7 @@ main {
   margin: .75em 0 0;
   box-sizing: border-box;
 }
-main > article{
+.contact main > article {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2em;
     border-radius: 16px;
@@ -105,18 +105,16 @@ label {
     grid-row: 2/4;
     grid-column: 1/5;
   }
-  .external {
-    display: none;
-  }
+
 }
 
 @media only screen and (max-width: 812px) {
-  .ribbon-2 {
+  .contact .ribbon-2 {
     color: hsla(0, 68%, 30%, 1);
     text-shadow: none;
   }
 
-  #wrap {
+  .contact #wrap {
     margin: 2em auto;
     width: 90%;
   }
@@ -124,10 +122,10 @@ label {
     margin: 0;
     background-color: transparent;
   }
-  main {
+  .contact main {
     background-color: rgba(255, 255, 255, 0.8);
   }
-  main > article {
+  .contact main > article {
     border-radius: 0;
     box-shadow: none;
     background-color: transparent;
@@ -169,7 +167,7 @@ label {
 }
 
 @media only screen and (max-width: 667px) {
-    #wrap{
+    .contact #wrap{
         margin: 0;
         width: auto;
         padding: 0;

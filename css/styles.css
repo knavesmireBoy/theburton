@@ -351,6 +351,9 @@ main #FacebookBadge {
 @media only screen and (max-width: 812px) {
 
   .outings #wrap, #gallery #wrap {
+    background-image: none;
+  }
+  body {
     background-image: url("../img/wood.jpg");
   }
 

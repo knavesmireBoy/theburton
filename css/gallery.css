@@ -144,13 +144,12 @@ div.control {
   }
   .js main article {
     width: 80%;
-    margin: 15% auto;
+    margin: 5% auto 20%;
   }
 }
 
 @media only screen and (max-width: 668px) {
   .js main article {
     width: 100%;
-    margin: 5% auto;
   }
 }
