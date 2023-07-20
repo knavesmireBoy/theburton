@@ -31,6 +31,7 @@ nav input {
   background-position: center;
   position: relative;
   box-shadow: 0 0 50px black;
+  overflow: hidden;
 }
 
 #wrap > div {
@@ -91,8 +92,13 @@ main > p {
 
 
 main > section > aside a {
-  border: solid black 1px;
   display: block;
+  border-radius: 8px;
+  border: solid black 1px;
+}
+main > section > aside a img {
+  display: block;
+  border-radius: 7px;
 }
 
 main > section > aside a:hover {
@@ -384,9 +390,18 @@ p.external a {
 .outings main article p:last-child {
   margin-top: auto;
 }
-#contact main {
-  background-color: hsla(34, 78%, 91%, 0.9);
+
+#contact #wrap > div {
+  background-color: hsl(55, 37%, 62%, .88);
 }
+
+#contact main {
+  background-color: transparent;
+  margin: 0;
+  overflow: hidden;
+}
+
+
 main #FacebookBadge {
   display: none;
 }
@@ -439,13 +454,21 @@ main #FacebookBadge {
     background-color:hsla(28, 77%, 12%, .5);
   }
 
-  main, .outings main, #gallery main {
+  .outings main, #gallery main {
     color: white;
     background-color: transparent;
   }
   .outings article p, .intro {
     color: white;
     text-shadow: 1px 1px 1px black;
+  }
+
+  main > section > aside a {
+    box-shadow: 1px 1px 2px  black;
+    border-color: hsl(26, 100%, 90%);
+  }
+  main > section > aside a:hover {
+    border-color: white;
   }
 
   main section h2, .ribbon-2 {
@@ -617,6 +640,25 @@ main #FacebookBadge {
   }
   #contact main {
     padding: 2em;
+  }
+
+  #pagination a {
+  background-color: hsl(26, 100%, 70%);
+  color: hsl(32, 66%, 10%);
+  }
+  #contact .ribbon-2 {
+    color: hsla(0, 68%, 30%, 1);
+    text-shadow: none;
+  }
+ 
+  #pagination a:hover,
+  .one #pagination li:nth-child(1) a,
+  .two #pagination li:nth-child(2) a,
+  .three #pagination li:nth-child(3) a {
+    background-color: hsl(26, 100%, 90%);
+  }
+  .outings main > section > article {
+    border-color: white;
   }
 }
 @media only screen and (max-width: 668px) {
