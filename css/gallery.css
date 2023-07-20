@@ -130,6 +130,10 @@ div.control {
   opacity: 1;
 }
 
+main a#FacebookBadge {
+  display: none;
+}
+
 @media only screen and (max-width: 1024px) {
   .js main article {
     width: 90%;

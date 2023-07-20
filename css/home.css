@@ -3,7 +3,7 @@ main > h2 {
   padding: 0 1em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(28px + (20) * (100vw - 812px) / (1280 - 812));
+  font-size: calc(28px + (22) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
   text-shadow: 1px 1px 2px black;
@@ -11,7 +11,7 @@ main > h2 {
   background: none;
   border-radius: 1em 0 0 1em;
   position: relative;
-  bottom: calc(170px + (110) * ((100vw - 812px) / (1280 - 812)));
+  bottom: calc(120px + (200) * ((100vw - 812px) / (1280 - 812)));
 }
 h2 small {
   color: white;
@@ -144,7 +144,7 @@ div.ribbon-2 a:hover {
     color: yellow;
   }
   main h2 {
-    font-size: calc(24px + 9 * (100vw - 320px) / (812 - 550));
+    font-size: calc(22px + 9 * (100vw - 320px) / (812 - 550));
     margin: 0;
     width: 70%;
     bottom: 240px;
