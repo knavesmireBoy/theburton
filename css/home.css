@@ -119,6 +119,9 @@ div.ribbon-2 a:hover {
   main article {
     margin: 0em 1em 1em 1em;
   }
+  main {
+    padding: 1em;
+  }
   #home main article p:last-child {
     margin: 0;
   }
@@ -206,3 +209,11 @@ div.ribbon-2 a:hover {
   }
   
 }
+
+@media only screen and (max-width: 668px) { 
+  #wrap > div {
+    background-image: linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
+  }
+
+}
+

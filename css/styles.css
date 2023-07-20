@@ -389,6 +389,7 @@ p.external a {
   #wrap > div {
     display: block;
     border-width: 0;
+    background-image: linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
   }
   #wrap > div > section footer {
     display: none;
@@ -433,7 +434,7 @@ p.external a {
     height: 5em;
     width: 5em;
     border-radius: 50%;
-    border: solid 1px peachpuff;
+    border: solid 1px white;
     background-position: 50% 100%;
   }
   .accordion label {
@@ -546,6 +547,9 @@ p.external a {
   #wrap > div > section {
     background-image: url("../img/burton_alt.png");
     background-size: contain;
+  }
+  #wrap > div {
+    background-image: none;
   }
 
 }
