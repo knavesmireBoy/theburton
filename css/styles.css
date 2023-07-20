@@ -433,7 +433,7 @@ p.external a {
     height: 5em;
     width: 5em;
     border-radius: 50%;
-    outline: solid 1px white;
+    border: solid 1px peachpuff;
     background-position: 50% 100%;
   }
   .accordion label {
