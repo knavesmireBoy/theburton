@@ -162,7 +162,7 @@ label {
   }
 @media only screen and (max-width: 520px) {
   fieldset {
-    grid-template-columns: 10em 10px auto 15em;
+    grid-template-columns: 1fr 10px auto 1fr;
   }
 }
 

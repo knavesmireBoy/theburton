@@ -550,16 +550,6 @@ p.external a {
 
 }
 
-@media only screen and (max-width: 540px) {
-  #triangle {
-    border-width: 16vw;
-  }
-  fieldset {
-    grid-template-columns: 10em 10px auto 15em;
-  }
-
- 
-}
 @media only screen and (max-width:480px) {
   #wrap > div > section {
     background-image: url("../img/burton_small.png");
