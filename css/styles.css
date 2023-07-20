@@ -37,7 +37,7 @@ nav input {
 #wrap > div {
   display: flex;
   text-align: left;
-  border: solid white 0.5em;
+  border: solid white 1em;
   position: relative;
   box-shadow: 0 0 50px black;
 }

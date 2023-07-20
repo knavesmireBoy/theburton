@@ -93,7 +93,7 @@ figure.snip0022:hover aside {
   margin: 0.5em 0 0;
 }
 
-body#contact main > article {
+main > article {
   margin: 4em 0 0;
 }
 
@@ -102,13 +102,23 @@ body#contact main > article {
 }
 
 #wrap > div > section {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 main {
   background-color: transparent;
   margin: 0;
-  overflow: hidden;
+  padding: 0.75em;
+  color: hsl(0deg, 68%, 30%);
+  margin: 0.75em 0 0;
+  box-sizing: border-box;
+}
+
+main > article {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 1px 1px 3px black;
 }
 
 fieldset {
@@ -200,21 +210,23 @@ label {
     color: hsl(0deg, 68%, 30%);
     text-shadow: none;
   }
-  main {
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgb(49, 2, 73);
-    color: hsl(0deg, 68%, 30%);
-    margin: 0.75em 0 0;
-    padding: 1em;
-  }
   #wrap {
-    margin: 4em auto;
+    margin: 2em auto;
     width: 90%;
   }
   #wrap > div > section {
     margin: 0;
     background-color: transparent;
+  }
+  main {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  main > article {
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0 1em;
+    margin: 3em 0 1em;
   }
   #triangle {
     border-width: 12vw;
@@ -245,6 +257,13 @@ label {
   }
   a#FacebookBadge {
     display: none;
+  }
+}
+@media only screen and (max-width: 667px) {
+  #wrap {
+    margin: 0;
+    width: auto;
+    padding: 0;
   }
 }
 @media only screen and (max-width: 520px) {
