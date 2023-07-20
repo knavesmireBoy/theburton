@@ -335,9 +335,6 @@ p.external a {
   margin-top: auto;
 }
 
-main #FacebookBadge {
-  display: none;
-}
 /*/////////////////////////////////////////////*/
 
 
@@ -529,6 +526,9 @@ main #FacebookBadge {
   }
   .outings main > section > article {
     border-color: white;
+  }
+  a#FacebookBadge {
+    display: none;
   }
 }
 @media only screen and (max-width: 668px) {

@@ -44,10 +44,11 @@ figure.snip0022 {
       transition: opacity 0.4s;
       background-image: linear-gradient(
         -45deg,
-        rgb(129, 66, 24),
+        hsl(24, 40%, 40%),
         transparent 55%
       );
     }
+
     #x {
       position: absolute;
       width: 18px;
@@ -84,12 +85,16 @@ figure.snip0022 {
     width: 100px;
     height: 100px;
   }
-
+  &:hover aside {
+    color: hsl(28, 100%, 82%);
+  }
   &:hover #x {
     opacity: 0.7;
     -webkit-transition-delay: 0.15s;
     transition-delay: 0.15s;
   }
+
+ 
   
 }
 
@@ -103,5 +108,12 @@ figure.snip0022 {
   }
   figure aside strong, a:link {
     color: peachpuff;
+  }
+  figure.snip0022 > div:before {
+    background-image: linear-gradient(
+      -45deg,
+      hsl(24, 55%, 20%),
+      transparent 70%
+    );
   }
 }

@@ -10,7 +10,7 @@
   background-color: hsl(55, 37%, 62%, 0.8);
 }
 
-.contact #wrap > div > section {
+#wrap > div > section {
     background-color: rgba(255, 255, 255, 0.8);
   }
 
@@ -149,20 +149,7 @@ label {
     bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
     right: 1.5em;
   }
-  main a#FacebookBadge {
-    display: block;
-    width: 6em;
-    float: right;
-    position: absolute;
-    right: 0.3em;
-    bottom: 1.8em;
-    z-index: 1;
-    margin-top: -2em;
-    background-color: transparent;
-  }
-  a#FacebookBadge {
-    display: none;
-  }
+
 
 }
 

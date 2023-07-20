@@ -47,7 +47,7 @@ article {
   color: #333;
   text-decoration: none;
   border-radius: 50%;
-  background-image: radial-gradient(yellow 0, white 70%);
+  background: white url("../img/phone.png") no-repeat center 20%/60%;
   box-shadow: 1px 1px 3px black;
   justify-content: center;
   align-items: center;
@@ -55,13 +55,17 @@ article {
   font-size: calc(13px + (2) * (100vw - 812px) / (1280 - 812));
   flex-direction: column;
   margin: auto 0 -2em calc(-90px - (10) * (100vw - 812px) / (1280 - 812));
-  width: 8em;
-  border: 8px solid white;
-  height: 8em;
+  width: 9em;
+  border: 0 solid white;
+  height: 9em;
+  line-height: 1;
 }
 #circle strong {
   font-size: 1.2em;
   color: hotpink;
+}
+#circle:hover {
+  background-color: pink;
 }
 
 #circle img {

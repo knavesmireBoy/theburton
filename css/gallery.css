@@ -146,6 +146,19 @@ div.control {
     width: 80%;
     margin: 5% auto 20%;
   }
+  main a#FacebookBadge {
+    display: block;
+    position: relative;
+    width: 9em;
+    bottom: 1em;
+    background-color: transparent;
+  }
+  main a#FacebookBadge:hover {
+    background-color: rgba(0,0,0,.6);
+  }
+  a#FacebookBadge {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 668px) {
