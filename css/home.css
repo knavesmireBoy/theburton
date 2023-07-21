@@ -268,7 +268,7 @@ div.ribbon-2 a:hover {
     color: yellow;
     text-shadow: 1px 1px 1px black;
   }
-  .banner strong {
+  .banner a:link {
     font-size: 1.6em;
     color: yellow;
     text-shadow: 1px 1px 1px black;
@@ -317,8 +317,8 @@ div.ribbon-2 a:hover {
   }
 
   .article {
-    font-size: .75em;
-    color: red;
+    font-size: .65em;
+    color: gray;
   }
 
 }
