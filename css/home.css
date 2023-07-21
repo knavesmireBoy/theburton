@@ -160,7 +160,7 @@ div.ribbon-2 a:hover {
     display: flex;
     padding: 1em 2em 0;
     flex-direction: column;
-    background-color: hsla(330, 100%, 71%, 0.9);
+    background-color: hsla(330, 100%, 71%, 1);
     text-align: center;
     position: relative;
     z-index: 2;
@@ -188,8 +188,8 @@ div.ribbon-2 a:hover {
     content: "";
     border: solid 4em;
     font-size: 1.25em;
-    border-color: hsla(330, 100%, 71%, 0.88) hsla(330, 100%, 71%, 0.88)
-      transparent hsla(330, 100%, 71%, 0.88);
+    border-color: hsla(330, 100%, 71%, 1) hsla(330, 100%, 71%, 1)
+      transparent hsla(330, 100%, 71%, 1);
     position: relative;
     top: -4em;
     z-index: 1;
