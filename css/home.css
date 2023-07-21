@@ -316,6 +316,10 @@ div.ribbon-2 a:hover {
     background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
   }
 
+  .article {
+    font-size: .75em;
+  }
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -331,9 +335,7 @@ div.ribbon-2 a:hover {
     background-color: transparent;
     border-width: 0;
   }
-  .article {
-    font-size: .75em;
-  }
+
 
   .article p:first-child {
     font-size: 1.05em;
