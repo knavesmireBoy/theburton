@@ -80,6 +80,7 @@ const slice = Array.prototype.slice,
         (...vs) =>
           f(g(...vs))
     ),
+  andcomp = (f1, f2, seed) => comp(f1, f2)(seed),
   curry2 = (f) => (b) => (a) => f(a, b),
   curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
   curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
@@ -95,6 +96,7 @@ const slice = Array.prototype.slice,
     console.log(x);
     return x;
   },
+  always = arg => () => arg,
   lead_slide = document.querySelector("#slides a"),
   $slides = $("slides"),
   $viewer = $("viewer"),
@@ -102,6 +104,7 @@ const slice = Array.prototype.slice,
   appendArticle = ptL(invokeMethod, $article, "appendChild"),
   appendViewer = ptL(invokeMethod, $viewer, "appendChild"),
   doMake = ptL(invokeMethod, document, "createElement"),
+  doMakeDefer = defer(invokeMethod, document, "createElement"),
   doControlKlas = pass(mittelSub("classList", "add")("control")),
   viewerAppend = comp(appendViewer, doControlKlas, doMake),
   setId = mittelPair("setAttribute", "id"),
@@ -125,7 +128,8 @@ const slice = Array.prototype.slice,
   all_slides = slice.call(document.querySelectorAll("#slides a")),
   doViewKlas = ptL(invokeSub, $viewer, "classList"),
   doViewKlasDefer = defer(invokeSub, $viewer, "classList"),
-  $link = comp(
+  link = comp(
+    ptL(andcomp),
     prepAnchor("appendChild"),
     pass(doPreviewKlas),
     comp(appendArticle, doMake)
@@ -169,9 +173,12 @@ const slice = Array.prototype.slice,
     curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener"),
   selectCB = curry4(invokeMethodPair)(select)("click")("addEventListener");
 
-comp($link, doPic)("img");
-comp(forwardCB, pass(setId("forward")), viewerAppend)("div");
-comp(backCB, slideAppend, pass(setId("back")), doControlKlas, doMake)("div");
+link(doPic, "img"),
+decoForward = comp(forwardCB, pass(setId("forward"))),
+decoBack = comp(backCB, slideAppend, pass(setId("back")), doControlKlas);
+
+comp(decoForward, viewerAppend)("div");
+comp(decoBack, doMake)("div");
 selectCB($slides);
 let px = getOffset();
 
