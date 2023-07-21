@@ -1,17 +1,22 @@
-main > h2 {
+#wrap {
+  background-image: url("../img/main_crop2.jpg");
+  background-position: 60% center;
+}
+  
+  main > h2 {
   margin: 8em 0 0.5em 0;
   padding: 0 1em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(28px + (22) * (100vw - 812px) / (1280 - 812));
+  font-size: calc(40px + (8) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
   text-shadow: 1px 1px 2px black;
   background-color: hsla(20, 88%, 25%, 0.8);
   background: none;
-  border-radius: 1em 0 0 1em;
   position: relative;
-  bottom: calc(120px + (200) * ((100vw - 812px) / (1280 - 812)));
+  z-index: 0;
+  bottom: calc(230px + (80) * ((100vw - 812px) / (1280 - 812)));
 }
 h2 small {
   color: white;
@@ -58,15 +63,15 @@ article {
   width: 9em;
   border: 0 solid white;
   height: 9em;
-  line-height: .9;
+  line-height: 0.9;
 }
 #circle strong {
   font-size: 1.1em;
   color: hotpink;
 }
 #circle strong:first-child {
-  color:  hsla(360, 84%, 25%, 1);
-  margin: .7em 0 .2em;
+  color: hsla(360, 84%, 25%, 1);
+  margin: 0.7em 0 0.2em;
 }
 #circle:hover {
   background-color: pink;
@@ -85,7 +90,7 @@ article {
 }
 
 .article p:first-child {
-  font-size: 1.18em;
+  font-size: 1.15em;
 }
 .article p:nth-child(3) {
   margin: 0.5em 1em 0 0;
@@ -95,9 +100,6 @@ article {
   margin: 0.5em 5.5em 0 0;
 }
 
-.article p strong {
-  color: hsla(360, 84%, 25%, 1);
-}
 .banner {
   display: none;
 }
@@ -144,10 +146,15 @@ div.ribbon-2 a:hover {
     color: yellow;
   }
   main h2 {
-    font-size: calc(22px + 9 * (100vw - 320px) / (812 - 550));
+    font-size: 2.8em;
     margin: 0;
-    width: 70%;
     bottom: 240px;
+    border: solid 1px;
+    padding: .3em .5em;
+    padding-right: 180px;
+    text-align: right;
+    background-color: rgba(0,0,0, .6);
+    border-radius: .75em;
   }
   .banner p {
     display: flex;
@@ -156,7 +163,7 @@ div.ribbon-2 a:hover {
     background-color: hsla(330, 100%, 71%, 0.9);
     text-align: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 6em;
   }
   .banner {
@@ -185,6 +192,7 @@ div.ribbon-2 a:hover {
       transparent hsla(330, 100%, 71%, 0.88);
     position: relative;
     top: -4em;
+    z-index: 1;
   }
   main article {
     margin: 0;
@@ -195,6 +203,20 @@ div.ribbon-2 a:hover {
     display: block;
     padding: 0;
   }
+  #wrap {
+    background-image: url("../img/main.jpg");
+  }
+
+  #wrap > div {
+    background-image: linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  #wrap > div {
+    background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
+  }
+ 
 }
 
 @media only screen and (max-width: 550px) {
@@ -202,18 +224,28 @@ div.ribbon-2 a:hover {
     display: none;
   }
   main h2 {
-    width: 90%;
+    width: auto;
     bottom: 0px;
-    font-size: 2.8em;
-    margin: 0.5em .5em 6em;
+    padding: 0;
+    font-size: 2.5em;
+    margin: 0.5em 0 6em;
+    background-color: transparent;
+    border-width: 0;
   }
-  
-}
-
-@media only screen and (max-width: 668px) { 
-  #wrap > div {
-    background-image: linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
+  .article {
+    font-size: .75em;
   }
 
+  .article p:first-child {
+    font-size: 1.05em;
+  }
 }
+@media only screen and (max-width:480px) {
 
+  div.ribbon-2 {
+    margin: 0;
+  }
+  main {
+    padding: 0 1em 1em;
+  }
+}

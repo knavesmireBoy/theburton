@@ -18,6 +18,11 @@ nav input {
   display: none;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 #wrap {
   width: 1024px;
   width: 80%;
@@ -25,8 +30,8 @@ nav input {
   text-align: center;
   margin: 2% auto;
   border: solid 1px;
-  background-image: url("../img/main.jpg");
   background-repeat: no-repeat;
+  background-image: url("../img/main.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -246,41 +251,6 @@ a#FacebookBadge img {
   font-size: 1.5em;
 }
 
-#triangle {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  display: block;
-  border: solid 100px white;
-  width: 0px;
-  border-color: transparent hsl(90, 65%, 60%) hsl(90, 65%, 60%) transparent;
-}
-
-#triangle:before {
-  content: "07966 702640";
-  display: block;
-  position: absolute;
-  bottom: -60px;
-  right: 1em;
-  color: white;
-  width: 100%;
-  white-space: nowrap;
-  font-size: 1.3em;
-  text-shadow: 1px 1px 1px black;
-}
-#triangle:after {
-  content: "call/text Selina";
-  display: block;
-  position: absolute;
-  bottom: -40px;
-  right: 1em;
-  color: white;
-  width: 100%;
-  white-space: nowrap;
-  font-size: 1.3em;
-  text-shadow: 1px 1px 1px black;
-}
-
 .intro {
   margin: 4em 0 1em;
   font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -347,6 +317,11 @@ p.external a {
 
 @media only screen and (max-width: 812px) {
 
+  #wrap {
+    background-image: url("../img/main.jpg");
+    background-position: center;
+  }
+
   .outings #wrap, #gallery #wrap {
     background-image: none;
   }
@@ -384,19 +359,19 @@ p.external a {
   }
   .accordion {
     position: relative;
+    z-index: 3;
   }
 
   #wrap > div {
     display: block;
     border-width: 0;
-    background-image: linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
   }
   #wrap > div > section footer {
     display: none;
   }
   #wrap > div > section {
     background-color: transparent;
-    background-image: url("../img/burton_white.png");
+    background-image: url("../img/burton_white_drop.png");
     background-position: 5% 100%;
     background-size: 80%;
     height: 5em;
@@ -545,7 +520,7 @@ p.external a {
   }
 
   #wrap > div > section {
-    background-image: url("../img/burton_alt.png");
+    background-image: url("../img/burton_alt_drop.png");
     background-size: contain;
   }
   #wrap > div {
@@ -556,17 +531,23 @@ p.external a {
 
 @media only screen and (max-width:480px) {
   #wrap > div > section {
-    background-image: url("../img/burton_small.png");
+    background-image: url("../img/burton_small_drop.png");
     background-size: contain;
     background-position: 0% 0%;
     height: 20vw;
   }
+  div.ribbon-2 {
+    margin: 0;
+  }
+  main {
+    padding: 0 1em 1em;
+  }
 
   .accordion label {
-    right:  calc(50px + 34 * (100vw - 320px) / (480 - 320));
-    top:  calc(10px + 10 * (100vw - 320px) / (480 - 320));
-    width:  calc(50px + 14 * (100vw - 320px) / (480 - 320));
-    height:  calc(50px + 14 * (100vw - 320px) / (480 - 320));
+    right:  calc(48px + 52 * (100vw - 320px) / (480 - 320));
+    top:  calc(12px + 12 * (100vw - 320px) / (480 - 320));
+    width:  calc(44px + 20 * (100vw - 320px) / (480 - 320));
+    height:  calc(44px + 20 * (100vw - 320px) / (480 - 320));
   }
 
   .accordion ul {

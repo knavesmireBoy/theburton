@@ -21,7 +21,7 @@ figure.snip0022 aside {
   top: 35%;
   color: white;
   z-index: 4;
-  background: url("../img/phone.png") no-repeat center top/60%;
+  background: url("../img/phone_color.png") no-repeat center top/60%;
   text-shadow: 1px 1px 1px black;
 }
 figure.snip0022 > * {
@@ -90,6 +90,12 @@ figure.snip0022:hover #x {
   }
   figure.snip0022 > div:before {
     background-image: linear-gradient(-45deg, hsl(24deg, 55%, 20%), transparent 70%);
+  }
+  figure.snip0022 aside {
+    background: url("../img/phone_white.png") no-repeat center top/60%;
+  }
+  figure.snip0022:hover aside {
+    background-image: url("../img/phone_color.png");
   }
 }
 .ribbon-2 {
