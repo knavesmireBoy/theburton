@@ -1,6 +1,23 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 1000 version
+*/
+
 main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0.75em 0.75em 0.75em 0;
   background-color: rgba(255, 255, 255, 0.4);
   background-color: hsla(34, 78%, 91%, 0.6);
@@ -27,11 +44,17 @@ div.control {
   background-color: #666;
   background-image: url("../img/nav.png");
   background-repeat: no-repeat;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   opacity: 0.8;
   cursor: pointer;
   margin: auto;
-  flex: 0 0 1.5em;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 1.5em;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 1.5em;
+          flex: 0 0 1.5em;
 }
 
 .control:hover {
@@ -42,7 +65,9 @@ div.control {
   width: 80%;
   padding: 1em 0;
   margin: 17% auto 19%;
-  box-shadow: 0 0 9px black;
+  -webkit-box-shadow: 0 0 9px black;
+     -moz-box-shadow: 0 0 9px black;
+          box-shadow: 0 0 9px black;
 }
 
 #slides {
@@ -54,6 +79,10 @@ div.control {
   border: solid 1px;
   width: auto;
   background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -63,13 +92,30 @@ div.control {
   width: 90%;
   border: solid 0;
   background-color: black;
+  background: -webkit-radial-gradient(black 15%, transparent 16%) 0 0,
+    -webkit-radial-gradient(black 15%, transparent 16%) 8px 8px,
+    -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background: -moz-radial-gradient(black 15%, transparent 16%) 0 0,
+    -moz-radial-gradient(black 15%, transparent 16%) 8px 8px,
+    -moz-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    -moz-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background: -o-radial-gradient(black 15%, transparent 16%) 0 0,
+    -o-radial-gradient(black 15%, transparent 16%) 8px 8px,
+    -o-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    -o-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
   background: radial-gradient(black 15%, transparent 16%) 0 0,
     radial-gradient(black 15%, transparent 16%) 8px 8px,
     radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
     radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
   background-color: #282828;
-  background-size: 16px 16px;
-  border-radius: 20px 20px 0 0;
+  -webkit-background-size: 16px 16px;
+     -moz-background-size: 16px 16px;
+       -o-background-size: 16px 16px;
+          background-size: 16px 16px;
+  -webkit-border-radius: 20px 20px 0 0;
+     -moz-border-radius: 20px 20px 0 0;
+          border-radius: 20px 20px 0 0;
 }
 
 .no-js #viewer {
@@ -83,13 +129,25 @@ div.control {
 }
 
 .js #slides {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  flex: 1 1 1em;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 1em;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 1em;
+          flex: 1 1 1em;
 }
 
 .js #slides a {
-  flex: 0 0 25%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 25%;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
 }
 
 #slides a,
@@ -107,15 +165,20 @@ div.control {
 }
 
 .js #slides img {
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
 
 .js #slides a {
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
 
 #slides a:hover img {
-  filter: saturate(1.8);
+  -webkit-filter: saturate(1.8);
+          filter: saturate(1.8);
 }
 
 .no-js #slides a:hover img {
@@ -123,7 +186,12 @@ div.control {
 }
 
 #slides a.foo {
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  -o-transition: -o-transform 1s ease-out;
+  -moz-transition: transform 1s ease-out, -moz-transform 1s ease-out;
   transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out, -moz-transform 1s ease-out, -o-transform 1s ease-out;
 }
 
 #forward {

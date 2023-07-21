@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 1000 version
+*/
+
 #wrap {
   background-image: url("../img/main_crop2.jpg");
   background-position: 60% center;
@@ -8,6 +15,8 @@
   padding: 0 1em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
+  font-size: -webkit-calc(40px + (8) * (100vw - 812px) / (1280 - 812));
+  font-size: -moz-calc(40px + (8) * (100vw - 812px) / (1280 - 812));
   font-size: calc(40px + (8) * (100vw - 812px) / (1280 - 812));
   line-height: 0.8;
   text-align: right;
@@ -16,6 +25,8 @@
   background: none;
   position: relative;
   z-index: 0;
+  bottom: -webkit-calc(230px + (80) * ((100vw - 812px) / (1280 - 812)));
+  bottom: -moz-calc(230px + (80) * ((100vw - 812px) / (1280 - 812)));
   bottom: calc(230px + (80) * ((100vw - 812px) / (1280 - 812)));
 }
 h2 small {
@@ -28,10 +39,22 @@ h2 em {
 }
 
 section.article {
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-family: Georgia, "Times New Roman", Times, serif;
   overflow: hidden;
-  align-items: end;
+  -webkit-box-align: end;
+  -webkit-align-items: end;
+     -moz-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -39,26 +62,60 @@ article {
   padding: 1em;
   background-color: rgba(255, 255, 255, 0.6);
   border: solid 1px white;
-  box-shadow: 1px 1px 3px black;
-  border-radius: 14px;
+  -webkit-box-shadow: 1px 1px 3px black;
+     -moz-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+  -webkit-border-radius: 14px;
+     -moz-border-radius: 14px;
+          border-radius: 14px;
   background-color: hsla(34, 78%, 91%, 0.7);
   margin: 0 0 0.75em;
-  flex: 0 0 87%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 87%;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 87%;
+          flex: 0 0 87%;
   font-size: 1.1em;
 }
 
 #circle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   color: #333;
   text-decoration: none;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   background: white url("../img/phone_sprite.png") no-repeat center 30%/70%;
-  box-shadow: 1px 1px 3px black;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-shadow: 1px 1px 3px black;
+     -moz-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.2em;
+  font-size: -webkit-calc(13px + (2) * (100vw - 812px) / (1280 - 812));
+  font-size: -moz-calc(13px + (2) * (100vw - 812px) / (1280 - 812));
   font-size: calc(13px + (2) * (100vw - 812px) / (1280 - 812));
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto 0 -2em -webkit-calc(-90px - (10) * (100vw - 812px) / (1280 - 812));
+  margin: auto 0 -2em -moz-calc(-90px - (10) * (100vw - 812px) / (1280 - 812));
   margin: auto 0 -2em calc(-90px - (10) * (100vw - 812px) / (1280 - 812));
   width: 9em;
   border: 0 solid white;
@@ -152,12 +209,24 @@ div.ribbon-2 a:hover {
     padding-right: 180px;
     text-align: right;
     background-color: rgba(0,0,0, .6);
-    border-radius: .75em;
+    -webkit-border-radius: .75em;
+       -moz-border-radius: .75em;
+            border-radius: .75em;
   }
   .banner p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 1em 2em 0;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: hsla(330, 100%, 71%, 1);
     text-align: center;
     position: relative;
@@ -165,10 +234,28 @@ div.ribbon-2 a:hover {
     width: 6em;
   }
   .banner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: start;
-    align-items: end;
-    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: end;
+    -webkit-align-items: end;
+       -moz-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 0 2em;
     margin: -1em 0 0 0;
     color: white;
@@ -194,7 +281,9 @@ div.ribbon-2 a:hover {
   }
   main article {
     margin: 0;
-    flex-basis: 94%;
+    -webkit-flex-basis: 94%;
+        -ms-flex-preferred-size: 94%;
+            flex-basis: 94%;
   }
 
   section.article {
@@ -206,12 +295,20 @@ div.ribbon-2 a:hover {
   }
 
   #wrap > div {
+    background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(11, 0, 33, .9)), color-stop(25%, transparent));
+    background-image: -webkit-linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
+    background-image: -moz-linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
+    background-image: -o-linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
     background-image: linear-gradient( rgba(11, 0, 33, .9), transparent 25%);
   }
 }
 
 @media only screen and (max-width: 668px) {
   #wrap > div {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 0, 33, 0.9)), color-stop(25%, transparent));
+    background-image: -webkit-linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
+    background-image: -moz-linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
+    background-image: -o-linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
     background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
   }
  
