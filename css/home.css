@@ -188,6 +188,10 @@ div.ribbon-2 a:hover {
   .article p:nth-child(3) {
     margin: 0.5em 0 0 0;
   }
+  .article p:nth-child(4) {
+    margin: 0.5em 0 0 0;
+  }
+ 
   #circle {
     display: none;
   }
@@ -311,7 +315,7 @@ div.ribbon-2 a:hover {
     background-image: -o-linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
     background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
   }
- 
+
 }
 
 @media only screen and (max-width: 550px) {
