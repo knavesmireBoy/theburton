@@ -139,14 +139,10 @@ const slice = Array.prototype.slice,
   doShowEnd = doWhenPred((a, b) => a !== b, doViewKlasDefer("add")("end")),
   doHide = doViewKlas("remove"),
   apply = (pix, flag = false) => {
-    //bit of a bodge
-    let i = 0;
-    if (window.viewportSize.getWidth() < 1140) {
-      i = (1280 / window.viewportSize.getWidth()) * 0.5;
-    }
-    let p = (Math.floor(pix) * 400) / $slides.clientWidth;
+    let p = Math.ceil(pix * 400 / $slides.clientWidth),
+    n = Math.round(p / 100) * 100;
     all_slides.forEach((element) => {
-      element.style.transform = `translateX(${Math.floor(p)}%)`;
+      element.style.transform = `translateX(${n}%)`;
       if (!flag) element.classList.add("foo");
     });
   },

@@ -279,6 +279,9 @@ p.external a {
 .outings main > section:first-of-type {
   margin: 2em 0 3em;
 }
+.outings main > section:last-of-type {
+  margin: 2em 0 5em;
+}
 
 .outings main > section > article {
   flex: 6 1 1em;
@@ -321,20 +324,25 @@ p.external a {
   #wrap {
     background-image: url("../img/main.jpg");
     background-position: center;
+    min-width: auto;
+    width: 100%;
+    margin: 0;
+    border-width: 0;
+    padding: 0;
   }
-
-  .outings #wrap, #gallery #wrap {
+  
+  #wrap.outings, .gallery #wrap {
     background-image: none;
   }
   body {
     background-image: url("../img/wood.jpg");
   }
 
-  .outings #wrap > div{
+   #wrap.outings > div{
     background-color:hsla(28, 77%, 12%, .5);
   }
 
-  .outings main, #gallery main {
+  .outings main, .gallery main {
     color: white;
     background-color: transparent;
   }
@@ -355,14 +363,6 @@ p.external a {
     color: hsl(26, 100%, 70%);
     text-shadow: 1px 1px 1px black;
   }
-  nav {
-    background-color: transparent;
-  }
-  .accordion {
-    position: relative;
-    z-index: 3;
-  }
-
   #wrap > div {
     display: block;
     border-width: 0;
@@ -381,95 +381,11 @@ p.external a {
     border-width: 0;
     border-radius: 0;
   }
-  #wrap {
-    min-width: auto;
-    width: 100%;
-    margin: 0;
-    border-width: 0;
-    padding: 0;
-  }
 
   .outings main,
   main {
     margin: 0;
   }
-  .accordion ul li {
-    margin: 0;
-  }
-  .accordion ul li.hi a {
-    background: hsla(0, 68%, 42%, 1);
-    color: white;
-  }
-  .accordion ul li.hi a:hover {
-    background: black;
-  }
-  .accordion label {
-    position: absolute;
-    top: 0em;
-    right: 2.5em;
-    height: 5em;
-    width: 5em;
-    border-radius: 50%;
-    border: solid 1px white;
-    background-position: 50% 100%;
-  }
-  .accordion label {
-    background: 50% 1% url("../img/wheel.png") no-repeat firebrick;
-    -o-background-size: 100%;
-    -moz-background-size: 100%;
-    -ms-background-size: 100%;
-    -webkit-background-size: 100%;
-    background-size: 100%;
-    -webkit-transition: transform 1s;
-    -o-transition: transform 1s;
-    transition: transform 1s;
-  }
-  .menu {
-    background-color: firebrick;
-  }
-  .menu:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    background-color: hsl(0, 68%, 33%);
-  }
-
-  /*no need to fix advanced selectors for ie as mobile only layout*/
-  .accordion input:checked + ul > li {
-    height: 2.5em;
-  }
-  .accordion ul > li {
-    height: 0;
-    line-height: 2.4;
-    transition: height 0.9s ease-out;
-  }
-  .accordion ul {
-    width: 11em;
-    position: absolute;
-    top: 5.6em;
-    left: -99em;
-    background-color: transparent;
-  }
-
-  .accordion input:checked + ul {
-    z-index: 2;
-    opacity: 0.95;
-    position: relative;
-    left: calc(100% - 11em);
-  }
-
-  .accordion ul li a {
-    border-radius: 0;
-    padding: 0 0.5em;
-    background-color: rgba(0, 0, 20, 0.95);
-    background-color: hsla(0, 68%, 30%, 1);
-    color: white;
-  }
-  .accordion ul li a:hover,
-  .accordion ul li.hi a {
-    background-color: hsla(0, 88%, 10%, 1);
-    color: palegoldenrod;
-  }
-
   .ribbon-2 {
     position: relative;
     padding: 0;
@@ -485,11 +401,6 @@ p.external a {
   }
   .intro {
     margin: 1em 0;
-  }
-
-  .outings #triangle:before,
-  .outings #triangle:after {
-    content: "";
   }
 
   #pagination a {
