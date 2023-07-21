@@ -161,7 +161,7 @@ article {
   display: none;
 }
 
-div.ribbon-2 a {
+div.ribbon-2 a:link {
   color: pink;
   text-decoration: none;
   text-shadow: 1px 1px 1px black;
@@ -318,6 +318,7 @@ div.ribbon-2 a:hover {
 
   .article {
     font-size: .75em;
+    color: red;
   }
 
 }
