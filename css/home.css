@@ -271,6 +271,7 @@ div.ribbon-2 a:hover {
   .banner a:link {
     font-size: 1.6em;
     color: yellow;
+    text-decoration: none;
     text-shadow: 1px 1px 1px black;
   }
   .banner:after {
