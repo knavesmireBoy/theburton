@@ -168,3 +168,9 @@ main.three section:nth-of-type(-n + 8) {
     margin: 0 0.5em 0 0;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .outings main > section:last-of-type {
+    margin: 0 0 7em;
+  }
+}
