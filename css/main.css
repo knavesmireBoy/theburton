@@ -444,6 +444,10 @@ main {
     margin: 0 0.5em 0 0;
   }
 }
+nav input {
+  display: none;
+}
+
 @media only screen and (max-width: 812px) {
   .accordion {
     position: relative;

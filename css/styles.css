@@ -11,65 +11,10 @@ ul {
   list-style: none;
 }
 
-nav input {
-  display: none;
-}
-
 h2 {
   margin: 0;
   padding: 0;
 }
-
-#wrap {
-  width: 1024px;
-  width: 80%;
-  min-width: 720px;
-  text-align: center;
-  margin: 2% auto;
-  border: solid 1px;
-  background-repeat: no-repeat;
-  background-image: url("../img/main.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0 0 50px black;
-  overflow: hidden;
-}
-
-#wrap > div {
-  display: flex;
-  text-align: left;
-  border: solid white 1em;
-  position: relative;
-  box-shadow: 0 0 50px black;
-}
-
-#wrap > div > section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1em;
-  margin: 0.75em;
-  background-color: rgba(255, 255, 255, 0.6);
-  background-color: hsla(34, 78%, 91%, 0.6);
-  background-image: url("../img/burton_color.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 95% top;
-  box-shadow: 1px 1px 3px black;
-  border: solid 1px white;
-}
-
-#wrap > div > section {
-  flex: 2 0 0;
-  min-width: 13.2em;
-  border-radius: 16px;
-}
-
-#wrap > div > main {
-  flex: 7 1 1em;
-}
-
 main > h2 {
   color: black;
   font-weight: normal;
@@ -174,6 +119,56 @@ a#FacebookBadge img {
 .two #pagination li:nth-child(2) a,
 .three #pagination li:nth-child(3) a {
   background-color: hsl(340, 95%, 25%);
+}
+
+#wrap {
+  width: 1024px;
+  width: 80%;
+  min-width: 720px;
+  text-align: center;
+  margin: 2% auto;
+  border: solid 1px;
+  background-repeat: no-repeat;
+  background-image: url("../img/main.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 0 50px black;
+  overflow: hidden;
+}
+
+#wrap > div {
+  display: flex;
+  text-align: left;
+  border: solid white 1em;
+  position: relative;
+  box-shadow: 0 0 50px black;
+}
+
+#wrap > div > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 0.75em;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-color: hsla(34, 78%, 91%, 0.6);
+  background-image: url("../img/burton_color.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 95% top;
+  box-shadow: 1px 1px 3px black;
+  border: solid 1px white;
+}
+
+#wrap > div > section {
+  flex: 2 0 0;
+  min-width: 13.2em;
+  border-radius: 16px;
+}
+
+#wrap > div > main {
+  flex: 7 1 1em;
 }
 
 /*/////////////////////////////////////////////*/
