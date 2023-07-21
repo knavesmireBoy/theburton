@@ -103,6 +103,11 @@ figure.snip0022:hover #x {
     background-image: linear-gradient(-45deg, hsl(133deg, 48%, 55%), transparent 55%);
   }
 }
+form,
+fieldset {
+  width: auto;
+}
+
 .ribbon-2 {
   margin: 0.5em 0 0;
 }
@@ -144,6 +149,8 @@ fieldset {
 }
 
 legend {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
   font-size: 1.5em;
   font-size: calc(1em + 0.5em * (100vw - 564px) / 716);
 }
@@ -268,6 +275,175 @@ label {
     grid-template-columns: auto 10px auto auto;
   }
 }
+.accordion ul {
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  z-index: 1;
+  position: relative;
+  font: 1em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.accordion ul li {
+  margin: 0 0 0.5em;
+}
+
+.accordion ul li a {
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #7c4d19;
+  color: hsl(0deg, 68%, 30%);
+  border-radius: 8px;
+  display: block;
+  border: solid 1px grey;
+  text-decoration: none;
+}
+
+.accordion ul li a:hover {
+  background-color: white;
+  color: hsl(80deg, 100%, 30%);
+}
+
+.accordion ul li.hi a {
+  background-color: white;
+  color: hsl(80deg, 100%, 30%);
+  font-weight: bold;
+}
+
+.accordion ul > li {
+  display: block;
+}
+
+.intro {
+  margin: 4em 0 1em;
+  font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+p.external a {
+  text-decoration: none;
+  color: hsl(32deg, 66%, 29%);
+  font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.external a:hover {
+  color: hsl(80deg, 100%, 25%);
+}
+
+.outings main {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(49, 2, 73);
+  color: hsl(0deg, 68%, 30%);
+  margin: 0.75em;
+  padding: 1em;
+}
+
+.outings main > section {
+  display: flex;
+  align-content: start;
+  margin: 0 0 3em;
+}
+
+.outings main > section:first-of-type {
+  margin: 2em 0 3em;
+}
+
+.outings main > section:last-of-type {
+  margin: 2em 0 5em;
+}
+
+.outings main > section > article {
+  flex: 6 1 1em;
+  border-top: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0.5em 0;
+}
+
+.outings article p {
+  margin: 0;
+  color: #444;
+  font-size: 1.2em;
+}
+
+.outings main img {
+  display: block;
+  width: 100%;
+}
+
+/*https://wpbeaches.com/aligning-last-item-bottom-container-flexbox/*/
+.outings main article p:last-child {
+  margin-top: auto;
+}
+
+main.one section:nth-of-type(n + 5) {
+  display: none;
+}
+
+/*https://css-tricks.com/nth-child-between-two-fixed-indexes/*/
+main.two section:nth-of-type(-n + 4),
+main.two section:nth-last-of-type(-n + 4) {
+  display: none;
+}
+
+main.three section:nth-of-type(-n + 8) {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .external {
+    display: none;
+  }
+  .outings main > section:last-of-type {
+    margin: 0 0 6em;
+  }
+}
+@media only screen and (max-width: 812px) {
+  .outings main {
+    color: white;
+    background-color: transparent;
+  }
+  .outings article p,
+.intro {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  .outings main > section > article {
+    border-color: white;
+  }
+  .outings main,
+main {
+    margin: 0;
+  }
+  .intro {
+    margin: 1em 0;
+  }
+  #pagination a {
+    background-color: hsl(26deg, 100%, 70%);
+    color: hsl(32deg, 66%, 10%);
+  }
+  #pagination a:hover,
+.one #pagination li:nth-child(1) a,
+.two #pagination li:nth-child(2) a,
+.three #pagination li:nth-child(3) a {
+    background-color: hsl(26deg, 100%, 90%);
+  }
+  #wrap.outings {
+    background-image: none;
+  }
+  #wrap.outings > div {
+    background-color: hsla(28deg, 77%, 12%, 0.5);
+  }
+}
+@media only screen and (max-width: 668px) {
+  .outings main > section > article {
+    flex: 3 1 1em;
+  }
+  #pagination li {
+    font-size: 1.5em;
+    margin: 0 0.5em 0 0;
+  }
+}
 @media only screen and (max-width: 812px) {
   .accordion {
     position: relative;
@@ -346,6 +522,29 @@ label {
 .accordion ul li.hi a {
     background-color: hsl(0deg, 88%, 10%);
     color: palegoldenrod;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .accordion label {
+    right: calc(66px + 40 * (100vw - 375px) / 105);
+    top: calc(20px + 10 * (100vw - 375px) / 105);
+    width: calc(48px + 10 * (100vw - 375px) / 105);
+    height: calc(48px + 10 * (100vw - 375px) / 105);
+  }
+  .accordion ul {
+    width: 140px;
+    top: calc(65px + 30 * (100vw - 320px) / 160);
+  }
+  .accordion input:checked + ul {
+    left: calc(130px + 120 * (100vw - 320px) / 160);
+  }
+}
+@media only screen and (max-width: 375px) {
+  .accordion label {
+    right: calc(42px + 24 * (100vw - 269px) / 106);
+    top: calc(6px + 10 * (100vw - 269px) / 106);
+    width: calc(36px + 14 * (100vw - 269px) / 106);
+    height: calc(36px + 14 * (100vw - 269px) / 106);
   }
 }
 

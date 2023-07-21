@@ -1,3 +1,7 @@
+form,
+fieldset {
+  width: auto;
+}
 .ribbon-2 {
   margin: 0.5em 0 0;
 }
@@ -11,22 +15,22 @@
 }
 
 #wrap > div > section {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
 .contact main {
   background-color: transparent;
   margin: 0;
-  padding: .75em;
+  padding: 0.75em;
   color: hsla(0, 68%, 30%, 1);
-  margin: .75em 0 0;
+  margin: 0.75em 0 0;
   box-sizing: border-box;
 }
 .contact main > article {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2em;
-    border-radius: 16px;
-    box-shadow: 1px 1px 3px black;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 1px 1px 3px black;
 }
 
 fieldset {
@@ -37,6 +41,8 @@ fieldset {
   text-align: left;
 }
 legend {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
   font-size: 1.5em;
   font-size: calc(1em + (0.5em) * (100vw - 564px) / (1280 - 564));
 }
@@ -105,7 +111,6 @@ label {
     grid-row: 2/4;
     grid-column: 1/5;
   }
-
 }
 
 @media only screen and (max-width: 812px) {
@@ -132,7 +137,7 @@ label {
     padding: 0 1em;
     margin: 3em 0 1em;
   }
- 
+
   #triangle {
     border-width: 12vw;
   }
@@ -149,21 +154,17 @@ label {
     bottom: calc(-30px - (10) * (100vw - 320px) / (812 - 320));
     right: 1.5em;
   }
-
-
 }
 
 @media only screen and (max-width: 667px) {
-    .contact #wrap{
-        margin: 0;
-        width: auto;
-        padding: 0;
-      }
+  .contact #wrap {
+    margin: 0;
+    width: auto;
+    padding: 0;
   }
+}
 @media only screen and (max-width: 520px) {
   fieldset {
     grid-template-columns: auto 10px auto auto;
   }
-
 }
-

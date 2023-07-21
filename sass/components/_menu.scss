@@ -84,3 +84,33 @@
     color: palegoldenrod;
   }
 }
+
+@media only screen and (max-width: 480px) {
+
+    .accordion label {
+      right: calc(66px + 40 * (100vw - 375px) / (480 - 375));
+      top: calc(20px + 10 * (100vw - 375px) / (480 - 375));
+      width: calc(48px + 10 * (100vw - 375px) / (480 - 375));
+      height: calc(48px + 10 * (100vw - 375px) / (480 - 375));
+    }
+  
+    .accordion ul {
+      width: 140px;
+      top: calc(65px + 30 * (100vw - 320px) / (480 - 320));
+    }
+  
+    .accordion input:checked + ul {
+      left: calc(130px + 120 * (100vw - 320px) / (480 - 320));
+    }
+
+  }
+  
+  @media only screen and (max-width: 375px) {
+    .accordion label {
+      right: calc(42px + 24 * (100vw - 269px) / (375 - 269));
+      top: calc(6px + 10 * (100vw - 269px) / (375 - 269));
+      width: calc(36px + 14 * (100vw - 269px) / (375 - 269));
+      height: calc(36px + 14 * (100vw - 269px) / (375 - 269));
+    }
+  }
+  
