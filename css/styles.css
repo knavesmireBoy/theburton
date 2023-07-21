@@ -95,7 +95,6 @@ main > p {
   margin: 0.25em 0;
 }
 
-
 main > section > aside a {
   display: block;
   border-radius: 8px;
@@ -275,10 +274,10 @@ p.external a {
 .outings main > section {
   display: flex;
   align-content: start;
-  margin: 0 0 5em;
+  margin: 0 0 3em;
 }
 .outings main > section:first-of-type {
-  margin: 2em 0 5em;
+  margin: 2em 0 3em;
 }
 
 .outings main > section > article {
@@ -286,6 +285,7 @@ p.external a {
   border-top: solid 1px black;
   display: flex;
   flex-direction: column;
+  padding: 0.5em .5em 0;
 }
 .outings article p {
   margin: 0;
@@ -297,9 +297,7 @@ p.external a {
   display: block;
   width: 100%;
 }
-.outings main > section > article {
-  padding: 0.5em .5em 0;
-}
+
 /*https://wpbeaches.com/aligning-last-item-bottom-container-flexbox/*/
 .outings main article p:last-child {
   margin-top: auto;
@@ -312,6 +310,9 @@ p.external a {
 
   .external {
     display: none;
+  }
+  .outings main > section:last-of-type {
+    margin: 0 0 6em;
   }
 }
 
@@ -543,11 +544,12 @@ p.external a {
     padding: 0 1em 1em;
   }
 
+
   .accordion label {
-    right:  calc(48px + 52 * (100vw - 320px) / (480 - 320));
-    top:  calc(12px + 12 * (100vw - 320px) / (480 - 320));
-    width:  calc(44px + 20 * (100vw - 320px) / (480 - 320));
-    height:  calc(44px + 20 * (100vw - 320px) / (480 - 320));
+    right:  calc(66px + 40 * (100vw - 375px) / (480 - 375));
+    top:  calc(20px + 10 * (100vw - 375px) / (480 - 375));
+    width:  calc(48px + 10 * (100vw - 375px) / (480 - 375));
+    height:  calc(48px + 10 * (100vw - 375px) / (480 - 375));
   }
 
   .accordion ul {
@@ -562,3 +564,12 @@ p.external a {
 }
 
 
+@media only screen and (max-width:375px) {
+  .accordion label {
+    right:  calc(42px + 24 * (100vw - 269px) / (375 - 269));
+    top:  calc(6px + 10 * (100vw - 269px) / (375 - 269));
+    width:  calc(36px + 14 * (100vw - 269px) / (375 - 269));
+    height:  calc(36px + 14 * (100vw - 269px) / (375 - 269));
+  }
+
+}
