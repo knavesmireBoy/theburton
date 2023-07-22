@@ -9,7 +9,7 @@
 
 /*Box sizing (the nuclear option)*/
 
-
+/*
 html {
   -ms-box-sizing: border-box;
 -webkit-box-sizing: border-box;
@@ -24,8 +24,8 @@ html {
 -moz-box-sizing: inherit;
 box-sizing: inherit;
 }
-
-/* Fix font rendering defaults */
+*/
+/* Fix font rendering defaults 
 
 html, button {
 -ms-text-size-adjust: 100%;
@@ -33,6 +33,7 @@ html, button {
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
+*/
 
 #wrap {
   background-image: url("../img/main_crop2.jpg");
