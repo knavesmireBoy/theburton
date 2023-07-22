@@ -253,8 +253,8 @@ main a#FacebookBadge {
 
 @media only screen and (max-width: 668px) {
   .js main article {
-    width: 70%;
-    margin: 5% auto 0%;
+    width: 65%;
+    margin: 5% auto 20%;
   }
 
 }
