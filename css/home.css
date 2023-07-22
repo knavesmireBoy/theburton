@@ -164,14 +164,10 @@ article {
 div.ribbon-2 a:link {
   color: pink;
   text-decoration: none;
-  text-shadow: 1px 1px 1px black;
 }
 
 div.ribbon-2 a:hover {
   color: white;
-}
-
-@media only screen and (max-width: 1024px) {
 }
 
 @media only screen and (max-width: 812px) {
@@ -183,6 +179,10 @@ div.ribbon-2 a:hover {
   }
   main article p:last-child, main article p:first-child  {
     margin: 0;
+  }
+  div.ribbon-2 a:link {
+    color: gold;
+    margin: 0.5em 0.75em 0;
   }
 
   .article p:nth-child(3) {
@@ -198,12 +198,7 @@ div.ribbon-2 a:hover {
   main .article {
     padding: 0.75em;
   }
-  .ribbon-2 {
-    margin: 0.5em 0.75em 0;
-  }
-  div.ribbon-2 a {
-    color: yellow;
-  }
+
   main h2 {
     font-size: 2.8em;
     margin: 0;
@@ -264,10 +259,7 @@ div.ribbon-2 a:hover {
     margin: -1em 0 0 0;
     color: white;
   }
-  .ribbon-2 {
-    color: yellow;
-    text-shadow: 1px 1px 1px black;
-  }
+
   .banner a:link {
     font-size: 1.6em;
     color: yellow;
@@ -318,7 +310,7 @@ div.ribbon-2 a:hover {
   }
 
   .article {
-    font-size: .65em;
+    font-size: .8em;
   }
 
 }
@@ -349,5 +341,8 @@ div.ribbon-2 a:hover {
   }
   main {
     padding: 0 1em 1em;
+  }
+  .article {
+    font-size: .7em;
   }
 }
