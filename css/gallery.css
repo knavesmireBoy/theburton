@@ -251,7 +251,7 @@ main a#FacebookBadge {
   }
 }
 
-@media only screen and (max-width: 668px) {
+@media only screen and (orientation: landscape) and(max-width: 668px) {
   .js main article {
     width: 65%;
     margin: 5% auto 20%;
