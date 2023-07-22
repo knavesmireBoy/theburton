@@ -252,9 +252,10 @@ main a#FacebookBadge {
   }
 }
 
-@media only screen  and (max-width: 668px) and (orientation: landscape) {
+@media only screen  and (max-width: 668px) and (orientation: landscape) and (pointer: coarse) {
   .js main article {
     width: 65%;
     margin: 5% auto 20%;
+    color: red;
   }
 }
