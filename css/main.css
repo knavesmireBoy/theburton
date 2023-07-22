@@ -315,7 +315,7 @@ a#FacebookBadge img {
             border-radius: 0;
   }
 }
-@media only screen and (max-width: 668px) {
+@media only screen and (max-width: 668px) and (orientation: landscape) {
   #wrap > div > section {
     background-image: url("../img/burton_alt_drop.png");
     -webkit-background-size: contain;

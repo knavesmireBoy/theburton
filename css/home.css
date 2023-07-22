@@ -314,6 +314,13 @@ div.ribbon-2 a:hover {
   }
 
 }
+@media only screen  and (max-width: 668px) and (orientation: landscape)  and (pointer: coarse){
+  .article {
+    font-size: .7em;
+    color: red;
+  }
+}
+
 
 @media only screen and (max-width: 550px) {
   .banner {
@@ -328,7 +335,6 @@ div.ribbon-2 a:hover {
     background-color: transparent;
     border-width: 0;
   }
-
 
   .article p:first-child {
     font-size: 1.05em;
