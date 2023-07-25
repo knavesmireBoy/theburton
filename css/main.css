@@ -909,51 +909,43 @@ figure.snip0022:hover #x {
 #wrap.outings > div {
   background-color: hsla(28deg, 77%, 12%, 0.5);
 }
-
-.outings main {
+#wrap.outings main {
   color: white;
 }
-
-.outings main > section:last-of-type {
+#wrap.outings main section {
+  margin: 0 0 3em;
+  display: flex;
+  align-content: start;
+  color: white;
+}
+#wrap.outings main section:last-of-type {
   margin: 0 0 7em;
 }
-
-.outings article {
+#wrap.outings main section article {
   border-top: solid 1px white;
   padding: 0.5em 0.5em 0;
   display: flex;
   flex-direction: column;
   flex: 5 1 1em;
 }
-
-.outings main > section {
-  margin: 0 0 3em;
-  display: flex;
-  align-content: start;
-  color: white;
-}
-
-p.intro {
-  margin: 1em 0;
-  font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.outings p {
+#wrap.outings main section article p {
   margin: 0;
   font-size: 1.2em;
   text-shadow: 1px 1px 1px black;
 }
-
-.external {
+#wrap.outings main section article .external {
   display: none;
 }
-
-.outings main img {
+#wrap.outings main section article img {
   display: block;
   width: 100%;
 }
+#wrap.outings main > p.intro {
+  margin: 1em 0;
+  font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-main.one section:nth-of-type(n + 5) {
+.outings main main.one section:nth-of-type(n + 5) {
   display: none;
 }
 
@@ -1016,53 +1008,59 @@ main.three section:nth-of-type(-n + 8) {
   }
 }
 @media only screen and (min-width: 813px) {
-  .outings main {
+  #wrap.outings {
+    background-image: url("../img/main.jpg");
+  }
+  #wrap.outings > div {
+    background-color: transparent;
+  }
+  #wrap.outings main {
     background-color: rgba(255, 255, 255, 0.8);
     color: rgb(49, 2, 73);
     margin: 0.75em;
     padding: 1em;
   }
-  .outings main > section {
+  #wrap.outings main > section {
     color: black;
   }
-  .outings main > section:first-of-type {
+  #wrap.outings main > section:first-of-type {
     margin: 2em 0 3em;
   }
-  .outings main > section:last-of-type {
+  #wrap.outings main > section:last-of-type {
     margin: 2em 0 5em;
   }
-  .outings main > section article p {
+  #wrap.outings main > section article {
+    border-color: black;
+    flex: 7 1 1em;
+  }
+  #wrap.outings main > section article p {
     font-size: 1.2em;
     text-shadow: none;
     color: black;
   }
-  .outings main > section article p .external {
+  #wrap.outings main > section article p .external {
     display: block;
   }
-  .outings main > section article p .external a {
+  #wrap.outings main > section article p .external a {
     text-decoration: none;
     color: hsl(32deg, 66%, 29%);
     font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  .outings main > section article p .external a:hover {
+  #wrap.outings main > section article p .external a:hover {
     color: hsl(80deg, 100%, 25%);
   }
-  .outings main > section article p:last-child {
+  #wrap.outings main > section article p:last-child {
     margin-top: auto;
   }
-  .outings main p.intro {
-    margin: 4em 0 1em;
-  }
-  .outings main > section:last-of-type {
+  #wrap.outings main > section article p:last-of-type {
     margin: 0 0 6em;
   }
-  main > section h2 {
+  #wrap.outings main > section article h2 {
     color: hsl(0deg, 68%, 30%);
     text-shadow: none;
   }
-  .outings article {
-    border-color: black;
-    flex: 7 1 1em;
+  #wrap.outings main > p.intro {
+    margin: 4em 0 1em;
   }
   #pagination a {
     background-color: hsl(340deg, 95%, 15%);
@@ -1074,12 +1072,6 @@ main.three section:nth-of-type(-n + 8) {
 .two #pagination li:nth-child(2) a,
 .three #pagination li:nth-child(3) a {
     background-color: hsl(340deg, 95%, 25%);
-  }
-  #wrap.outings {
-    background-image: url("../img/main.jpg");
-  }
-  #wrap.outings > div {
-    background-color: transparent;
   }
 }
 /*https://wpbeaches.com/aligning-last-item-bottom-container-flexbox/*/
