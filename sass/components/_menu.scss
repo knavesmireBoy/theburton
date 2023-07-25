@@ -1,122 +1,163 @@
-
 nav input {
-    display: none;
-  }
-  
-  
-  
-  @media only screen and (max-width: 812px) {
+  display: none;
+}
 
 .accordion {
-    position: relative;
-    z-index: 3;
-    background-color: transparent;
-  }
+  position: relative;
+  z-index: 3;
+  background-color: transparent;
+  font: 1em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  .accordion ul li {
-    margin: 0;
-  }
-  .accordion ul li.hi a {
-    background: hsla(0, 68%, 42%, 1);
-    color: white;
-  }
-  .accordion ul li.hi a:hover {
-    background: black;
-  }
-  .accordion label {
-    position: absolute;
-    top: 0em;
-    right: 2.5em;
-    height: 5em;
-    width: 5em;
-    border-radius: 50%;
-    border: solid 1px white;
-    background-position: 50% 100%;
-  }
-  .accordion label {
-    background: 50% 1% url("../img/wheel.png") no-repeat firebrick;
-    -o-background-size: 100%;
-    -moz-background-size: 100%;
-    -ms-background-size: 100%;
-    -webkit-background-size: 100%;
-    background-size: 100%;
-    -webkit-transition: transform 1s;
-    -o-transition: transform 1s;
-    transition: transform 1s;
-  }
-  .menu {
-    background-color: firebrick;
-  }
-  .menu:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    background-color: hsl(0, 68%, 33%);
-  }
+.accordion ul li {
+  margin: 0;
+  display: block;
+}
 
-  /*no need to fix advanced selectors for ie as mobile only layout*/
-  .accordion input:checked + ul > li {
-    height: 2.5em;
-  }
-  .accordion ul > li {
-    height: 0;
-    line-height: 2.4;
-    transition: height 0.9s ease-out;
+.accordion ul li a {
+  display: block;
+  border: solid 1px grey;
+}
+.accordion ul li.hi a {
+  background: hsla(0, 68%, 42%, 1);
+  color: white;
+}
+.accordion ul li.hi a:hover {
+  background-color: black;
+}
+
+.accordion label {
+  background: 50% 1% url("../img/wheel.png") no-repeat firebrick;
+  -o-background-size: 100%;
+  -moz-background-size: 100%;
+  -ms-background-size: 100%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  -webkit-transition: transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  border-radius: 50%;
+  border: solid 1px white;
+}
+
+.menu:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  background-color: hsl(0, 68%, 33%);
+}
+
+/*no need to fix advanced selectors for ie as mobile only layout*/
+.accordion input:checked + ul > li {
+  height: 2.5em;
+}
+.accordion ul > li {
+  height: 0;
+  line-height: 2.4;
+  transition: height 0.9s ease-out;
+}
+.accordion ul {
+  width: 11em;
+  position: absolute;
+  top: 6.5em;
+  left: -99em;
+  background-color: transparent;
+}
+
+.accordion input:checked + ul {
+  z-index: 2;
+  opacity: 0.95;
+  left: calc(100% - 11em);
+}
+
+.accordion ul li a {
+  border-radius: 0;
+  padding: 0 0.5em;
+  background-color: rgba(0, 0, 20, 0.95);
+  background-color: hsla(0, 68%, 30%, 1);
+  color: white;
+}
+.accordion ul li a:hover,
+.accordion ul li.hi a {
+  background-color: hsla(0, 88%, 10%, 1);
+  color: palegoldenrod;
+}
+.accordion label {
+  position: absolute;
+  right: calc(54px + 22 * (100vw - 269px) / (375 - 269));
+  top: calc(20px + 10 * (100vw - 269px) / (375 - 269));
+  width: calc(36px + 14 * (100vw - 269px) / (375 - 269));
+  height: calc(36px + 14 * (100vw - 269px) / (375 - 269));
+}
+
+@media only screen and (min-width: 376px) {
+  .accordion label {
+    right: calc(77px + 23 * (100vw - 375px) / (480 - 375));
+    top: calc(30px + 12 * (100vw - 375px) / (480 - 375));
+    width: calc(50px + 10 * (100vw - 375px) / (480 - 375));
+    height: calc(50px + 10 * (100vw - 375px) / (480 - 375));
   }
   .accordion ul {
-    width: 11em;
-    position: absolute;
-    top: 5.6em;
-    left: -99em;
-    background-color: transparent;
+    top: calc(88px + 15 * (100vw - 320px) / (480 - 375));
   }
-
   .accordion input:checked + ul {
-    z-index: 2;
-    opacity: 0.95;
-    position: relative;
-    left: calc(100% - 11em);
-  }
-
-  .accordion ul li a {
-    border-radius: 0;
-    padding: 0 0.5em;
-    background-color: rgba(0, 0, 20, 0.95);
-    background-color: hsla(0, 68%, 30%, 1);
-    color: white;
-  }
-  .accordion ul li a:hover,
-  .accordion ul li.hi a {
-    background-color: hsla(0, 88%, 10%, 1);
-    color: palegoldenrod;
+    left: calc(180px + 50 * (100vw - 320px) / (480 - 375));
   }
 }
 
-@media only screen and (max-width: 480px) {
-
-    .accordion label {
-      right: calc(66px + 40 * (100vw - 375px) / (480 - 375));
-      top: calc(20px + 10 * (100vw - 375px) / (480 - 375));
-      width: calc(48px + 10 * (100vw - 375px) / (480 - 375));
-      height: calc(48px + 10 * (100vw - 375px) / (480 - 375));
-    }
-  
-    .accordion ul {
-      width: 140px;
-      top: calc(65px + 30 * (100vw - 320px) / (480 - 320));
-    }
-  
-    .accordion input:checked + ul {
-      left: calc(130px + 120 * (100vw - 320px) / (480 - 320));
-    }
-
+@media only screen and (min-width: 481px) {
+  .accordion label {
+    position: absolute;
+    top: 1.25em;
+    right: 2em;
+    height: 5em;
+    width: 5em;
+    background-position: 50% 100%;
   }
-  
-  @media only screen and (max-width: 375px) {
-    .accordion label {
-      right: calc(42px + 24 * (100vw - 269px) / (375 - 269));
-      top: calc(6px + 10 * (100vw - 269px) / (375 - 269));
-      width: calc(36px + 14 * (100vw - 269px) / (375 - 269));
-      height: calc(36px + 14 * (100vw - 269px) / (375 - 269));
-    }
+  .accordion ul {
+    top: 7em;
   }
-  
+  .accordion input:checked + ul {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 813px) {
+  .accordion ul {
+    width: 70%;
+    z-index: 1;
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  .accordion ul li {
+    margin: 0 0 0.5em;
+    height: auto;
+    line-height: normal;
+  }
+  .accordion ul li a {
+    padding: 0.5em;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: hsla(0, 68%, 30%, 1);
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .accordion ul li a:hover, .accordion ul li.hi a:hover {
+    background-color: white;
+    color: hsl(80, 100%, 30%);
+  }
+  .accordion ul li.hi a {
+    background-color: white;
+    color: hsl(80, 100%, 30%);
+    font-weight: bold;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .accordion input:checked + ul > li,
+  .accordion ul > li {
+    height: auto;
+  }
+}

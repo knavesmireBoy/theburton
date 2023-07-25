@@ -1,0 +1,233 @@
+body {
+  font-size: 0.8em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: url("../img/wood.jpg");
+}
+
+main {
+  padding: 0 1em 1em;
+}
+
+main h2 {
+  margin: 0 0 0.25em;
+}
+
+main > h2 {
+  font-size: 1.7em;
+  margin: 0 0 0.5em;
+}
+
+main > section > aside {
+  flex: 1 1 1em;
+  margin: 0 1em auto 0;
+  align-self: top;
+
+}
+
+main section h2,
+.ribbon-2 {
+  color: hsl(26, 100%, 70%);
+  text-shadow: 1px 1px 1px black;
+}
+
+main > p {
+  margin: 0.25em 0;
+}
+
+main > section > aside a {
+  display: block;
+  border-radius: 8px;
+  border: solid hsl(60, 60%, 70%) 1px;
+  box-shadow: 1px 1px 2px black;
+}
+main > section > aside a:hover {
+  border-color: white;
+}
+
+main > section > aside a img {
+  display: block;
+  border-radius: 7px;
+}
+
+#wrap > div {
+  text-align: left;
+  border: solid white 1em;
+  position: relative;
+  box-shadow: 0 0 50px black;
+}
+
+.ribbon-2 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin: 0.5em 0 0;
+  font-size: 1.8em;
+  border: solid 1px;
+  font-weight: bold;
+  border-width: 0 0 1px;
+}
+
+#wrap > div > section {
+  background-image: url("../img/burton_small_drop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  height: 0;
+  padding: 0;
+  padding-bottom: calc(100% * (100 / 433));
+  padding-bottom: 26%;
+}
+
+main > section h2,
+.ribbon-2 {
+  font-weight: bold;
+  color: hsl(60, 60%, 70%);
+  text-shadow: 1px 1px 1px black;
+}
+a#FacebookBadge {
+  position: relative;
+  width: 9em;
+  margin: 0 0 1em;
+  background-color: transparent;
+}
+
+a#FacebookBadge:hover {
+  background-color: #4267b2;
+  background-color: hsl(60, 30%, 60%);
+}
+a#FacebookBadge img {
+  display: block;
+  width: 100%;
+}
+
+a#FacebookBadge {
+  display: none;
+}
+
+main a#FacebookBadge {
+  display: block;
+}
+
+@media only screen and (min-width: 481px) {
+  #wrap > div > section {
+    background-image: url("../img/burton_alt_drop.png");
+    background-size: contain;
+    padding-bottom: 20%;
+  }
+}
+
+@media only screen and (min-width: 668px) {
+  #wrap > div > section {
+    background-color: transparent;
+    background-image: url("../img/burton_white_drop.png");
+    background-position: 5% 100%;
+    background-size: 80%;
+    padding-bottom: 15%;
+    box-shadow: none;
+    border-width: 0;
+    border-radius: 0;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 813px) {
+
+  #wrap > div {
+    display: flex;
+  }
+  #wrap > div > section footer {
+    display: none;
+  }
+  #wrap > div > section {
+    padding: 1em;
+    margin: 0.75em;
+    background-color: hsla(34, 78%, 91%, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url("../img/burton_color.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 95% top;
+    box-shadow: 1px 1px 3px black;
+    border: solid 1px white;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #wrap > div > section {
+    flex: 2 0 0;
+    min-width: 13.2em;
+    border-radius: 16px;
+  }
+
+  #wrap > div > main {
+    flex: 7 1 1em;
+  }
+
+  .ribbon-2 {
+    --f: 10px; /* control the folded part*/
+    --r: 15px; /* control the ribbon shape */
+    --t: 10px; /* the top offset */
+    color: whitesmoke;
+    position: absolute;
+    inset: var(--t) calc(-1 * var(--f)) auto auto;
+    padding: 10px 10px 20px calc(10px + var(--r));
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - var(--f)),
+      calc(100% - var(--f)) 100%,
+      calc(100% - var(--f)) calc(100% - var(--f)),
+      0 calc(100% - var(--f)),
+      var(--r) calc(50% - var(--f) / 2)
+    );
+    background: rgba(49, 2, 73, 1);
+    background-color: hsla(0, 68%, 30%, 1);
+    color: hsl(350, 100%, 92%);
+    box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+    margin: 0.5em 0 0;
+    font-size: 1.5em;
+  }
+
+  main > section > aside a {
+    border-color: black;
+    box-shadow: none;
+  }
+  main > section > aside a:hover {
+    filter: saturate(2);
+    border-color: blue;
+  }
+  a#FacebookBadge {
+    width: 50%;
+    padding: 3px 0;
+    border-radius: 4px;
+    background-color: hsla(0, 68%, 30%, 1);
+    margin: auto 0 1em;
+    display: block;
+  }
+  main a#FacebookBadge {
+   display: none;
+  }
+
+  .js #wrap, .no-js #wrap{
+    width: 1024px;
+    width: 80%;
+    min-width: 720px;
+    text-align: center;
+    margin: 2% auto;
+    border: solid 1px;
+    background-repeat: no-repeat;
+    background-image: url("../img/main.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 0 50px black;
+    overflow: hidden;
+  }
+  .js #wrap > div, .no-js #wrap > div  {
+    background-color: transparent;
+  }
+
+}
+
+/*https://codepen.io/t_afif/pen/dyZOBex*/

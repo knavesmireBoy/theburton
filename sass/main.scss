@@ -1,4 +1,6 @@
-@import 'components/curl';
-@import 'components/contact';
-@import 'components/outings';
+@import 'base/reset';
+@import 'components/base';
 @import 'components/menu';
+@import 'components/curl';
+@import 'components/outings';
+@import 'components/contact';

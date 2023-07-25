@@ -1,15 +1,16 @@
 figure.snip0022 {
   position: absolute;
   overflow: hidden;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   text-align: center;
   float: right;
   right: 0;
   bottom: 0;
-  margin: 2em 0 0;
+  margin: 0;
   font-size: 1.25em;
   color: hsl(0, 75%, 20%);
+  color: white;
   border: solid 0 red;
 
   aside {
@@ -19,9 +20,8 @@ figure.snip0022 {
     position: relative;
     padding: 20% 0 0 0;
     top: 35%;
-    color: white;
     z-index: 4;
-    background: url("../img/phone_color.png") no-repeat center top/60%;
+    background: url("../img/phone_white.png") no-repeat center top/60%;
     text-shadow: 1px 1px 1px black;
   }
 
@@ -44,8 +44,8 @@ figure.snip0022 {
       transition: opacity 0.4s;
       background-image: linear-gradient(
         -45deg,
-        hsl(24, 40%, 40%),
-        transparent 55%
+        hsl(24, 55%, 20%),
+        transparent 70%
       );
     }
  
@@ -85,50 +85,29 @@ figure.snip0022 {
     width: 100px;
     height: 100px;
   }
-  &:hover aside {
-    color: hsl(28, 100%, 82%);
+  &:hover {
+    color: hsl(60, 60%, 70%);
   }
   &:hover #x {
     opacity: 0.7;
     -webkit-transition-delay: 0.15s;
     transition-delay: 0.15s;
   }
-
 }
-  
 
-@media only screen and (max-width: 813px) {
-  .curl {
-    width: 70px;
-    height: 70px;
-  }
-  #x {
-    opacity: 1;
-  }
-  figure aside strong, a:link {
-    color: peachpuff;
-  }
-  figure.snip0022 > div:before {
-    background-image: linear-gradient(
-      -45deg,
-      hsl(24, 55%, 20%),
-      transparent 70%
-    );
-  }
-  figure.snip0022 aside {
-    background: url("../img/phone_white.png") no-repeat center top/60%;
-  }
-  figure.snip0022:hover aside {
-    background-image: url("../img/phone_color.png");
-  }
- 
-}
 @media only screen and (min-width: 813px) {
 .outings figure.snip0022 > div, .gallery figure.snip0022 > div{
   background-image: linear-gradient(
     -45deg,
-    hsl(133, 48%, 55%),
+   olive,
     transparent 55%
   );
 }
+figure.snip0022 > div:before {
+  background-image: none;
+}
+figure.snip0022:hover aside {
+  background-image: url("../img/phone_color.png");
+}
+
 }
