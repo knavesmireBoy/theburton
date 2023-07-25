@@ -1,15 +1,8 @@
-.outings p {
-  margin: 0;
-  font-size: 1.2em;
-  text-shadow: 1px 1px 1px black;
-}
-
-.outings main {
-  color: white;
-}
-
 #wrap.outings > div {
   background-color: hsla(28, 77%, 12%, 0.5);
+}
+.outings main {
+  color: white;
 }
 
 .outings main > section:last-of-type {
@@ -31,6 +24,12 @@
 p.intro {
   margin: 1em 0;
   font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.outings p {
+  margin: 0;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px black;
 }
 
 .external {
@@ -84,80 +83,71 @@ main.three section:nth-of-type(-n + 8) {
   line-height: 2;
 }
 
-
 @media only screen and (min-width: 668px) {
-  .outings main {
-    color: white;
-    background-color: transparent;
-  }
-
-  .outings main,
-  main {
-    margin: 0;
-  }
-
-  .intro {
-    margin: 1em 0;
-  }
-
-  .outings article {
-    flex: 6 1 1em;
-  }
-
   #wrap.outings {
     background-image: none;
+    main {
+      color: white;
+      background-color: transparent;
+      margin: 0;
+
+      .intro {
+        margin: 1em 0;
+      }
+
+      article {
+        flex: 6 1 1em;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 813px) {
-  .outings main {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgba(49, 2, 73, 1);
-    margin: 0.75em;
-    padding: 1em;
-  }
-  .outings main > section {
-    color: black;
-  }
+  .outings {
+    main {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: rgba(49, 2, 73, 1);
+      margin: 0.75em;
+      padding: 1em;
+      > section {
+        color: black;
 
-  p.intro {
-    margin: 4em 0 1em;
-  }
+        &:first-of-type {
+          margin: 2em 0 3em;
+        }
+        &:last-of-type {
+          margin: 2em 0 5em;
+        }
+        article p {
+          font-size: 1.2em;
+          text-shadow: none;
+          color: black;
 
-  .external {
-    display: block;
-  }
-
-  p.external a {
-    text-decoration: none;
-    color: hsl(32, 66%, 29%);
-    font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  .external a:hover {
-    color: hsl(80, 100%, 25%);
-  }
-  .outings main > section:first-of-type {
-    margin: 2em 0 3em;
-  }
-  .outings main > section:last-of-type {
-    margin: 2em 0 5em;
-  }
-
-  .outings article p {
-    font-size: 1.2em;
-  }
-
-  .outings main article p:last-child {
-    margin-top: auto;
+          .external {
+            display: block;
+            a {
+              text-decoration: none;
+              color: hsl(32, 66%, 29%);
+              font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial,
+                sans-serif;
+              &:hover {
+                color: hsl(80, 100%, 25%);
+              }
+            }
+          }
+          &:last-child {
+            margin-top: auto;
+          }
+        }
+      }
+      p.intro {
+        margin: 4em 0 1em;
+      }
+    }
   }
 
   .outings main > section:last-of-type {
     margin: 0 0 6em;
-  }
-
-  .outings p {
-    text-shadow: none;
-    color: black;
   }
 
   main > section h2 {
@@ -171,7 +161,7 @@ main.three section:nth-of-type(-n + 8) {
   #pagination a {
     background-color: hsl(340, 95%, 15%);
     color: white;
-    font-size: .8em;
+    font-size: 0.8em;
   }
   #pagination a:hover,
   .one #pagination li:nth-child(1) a,

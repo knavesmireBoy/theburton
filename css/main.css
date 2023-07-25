@@ -906,18 +906,12 @@ figure.snip0022:hover #x {
     margin: 20% auto;
   }
 }
-.outings p {
-  margin: 0;
-  font-size: 1.2em;
-  text-shadow: 1px 1px 1px black;
+#wrap.outings > div {
+  background-color: hsla(28deg, 77%, 12%, 0.5);
 }
 
 .outings main {
   color: white;
-}
-
-#wrap.outings > div {
-  background-color: hsla(28deg, 77%, 12%, 0.5);
 }
 
 .outings main > section:last-of-type {
@@ -942,6 +936,12 @@ figure.snip0022:hover #x {
 p.intro {
   margin: 1em 0;
   font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.outings p {
+  margin: 0;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px black;
 }
 
 .external {
@@ -1000,22 +1000,19 @@ main.three section:nth-of-type(-n + 8) {
 }
 
 @media only screen and (min-width: 668px) {
-  .outings main {
-    color: white;
-    background-color: transparent;
-  }
-  .outings main,
-main {
-    margin: 0;
-  }
-  .intro {
-    margin: 1em 0;
-  }
-  .outings article {
-    flex: 6 1 1em;
-  }
   #wrap.outings {
     background-image: none;
+  }
+  #wrap.outings main {
+    color: white;
+    background-color: transparent;
+    margin: 0;
+  }
+  #wrap.outings main .intro {
+    margin: 1em 0;
+  }
+  #wrap.outings main article {
+    flex: 6 1 1em;
   }
 }
 @media only screen and (min-width: 813px) {
@@ -1028,38 +1025,36 @@ main {
   .outings main > section {
     color: black;
   }
-  p.intro {
-    margin: 4em 0 1em;
-  }
-  .external {
-    display: block;
-  }
-  p.external a {
-    text-decoration: none;
-    color: hsl(32deg, 66%, 29%);
-    font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  .external a:hover {
-    color: hsl(80deg, 100%, 25%);
-  }
   .outings main > section:first-of-type {
     margin: 2em 0 3em;
   }
   .outings main > section:last-of-type {
     margin: 2em 0 5em;
   }
-  .outings article p {
+  .outings main > section article p {
     font-size: 1.2em;
+    text-shadow: none;
+    color: black;
   }
-  .outings main article p:last-child {
+  .outings main > section article p .external {
+    display: block;
+  }
+  .outings main > section article p .external a {
+    text-decoration: none;
+    color: hsl(32deg, 66%, 29%);
+    font: 0.9em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .outings main > section article p .external a:hover {
+    color: hsl(80deg, 100%, 25%);
+  }
+  .outings main > section article p:last-child {
     margin-top: auto;
+  }
+  .outings main p.intro {
+    margin: 4em 0 1em;
   }
   .outings main > section:last-of-type {
     margin: 0 0 6em;
-  }
-  .outings p {
-    text-shadow: none;
-    color: black;
   }
   main > section h2 {
     color: hsl(0deg, 68%, 30%);
