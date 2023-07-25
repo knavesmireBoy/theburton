@@ -894,24 +894,18 @@ figure.snip0022:hover #x {
 }
 
 @media only screen and (min-width: 812px) {
-  .js main article {
-    width: 90%;
-    margin: 20% auto;
-  }
   .gallery #wrap {
     background-image: url(../img/main.jpg);
   }
-  .gallery main {
+  .gallery #wrap main {
     background-color: hsla(34deg, 78%, 91%, 0.6);
     margin: 0.75em 0.75em 0.75em 0;
   }
+  .js .gallery #wrap main article {
+    width: 90%;
+    margin: 20% auto;
+  }
 }
-/*
-.slide {
-  background-color: rgb(183, 251, 232);
-  outline: solid 1px white;
-}
-*/
 .outings p {
   margin: 0;
   font-size: 1.2em;
