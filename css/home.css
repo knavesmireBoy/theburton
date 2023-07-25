@@ -3,7 +3,6 @@ main {
 }
 
 main > h2 {
-  margin: 8em 0 0;
   color: hsl(80, 90%, 50%);
   font-family: Whisper, Georgia, "Times New Roman", Times, serif;
   font-size: calc(28px + (15) * (100vw - 320px) / (550 - 320));
@@ -11,11 +10,11 @@ main > h2 {
   line-height: 0.8;
   text-align: right;
   text-shadow: 1px 1px 1px black;
-  background-color: hsla(20, 88%, 25%, 0.8);
-  background: none;
+  background-color: none;
+  margin: 8em 0 0;
+  padding: 0 0.5em 0 0;
   position: relative;
   z-index: 0;
-  padding: 0 0.5em 0 0;
   bottom: calc(215px + (120) * ((100vw - 320px) / (550 - 320)));
 }
 h2 small {
@@ -49,9 +48,9 @@ article {
   background-color: rgba(255, 255, 255, 0.6);
   border: solid 1px white;
   box-shadow: 1px 1px 3px black;
-  border-radius: 14px;
   background-color: hsla(34, 78%, 91%, 0.7);
   margin: 0 0 0.75em;
+  border-radius: 14px;
 }
 
 article p {
@@ -91,11 +90,11 @@ article p {
   }
 
   main h2 {
-    margin: 0;
-    padding: 0.3em 0 0.3em 0.2em;
     text-align: right;
     background-color: rgba(0, 0, 0, 0.6);
     font-size: calc(26px + (10) * (100vw - 550px) / (813 - 550));
+    margin: 0;
+    padding: 0.3em 0 0.3em 0.2em;
     bottom: calc(222px + (0) * ((100vw - 550px) / (813 - 550)));
     padding-right: calc(160px - (20) * (100vw - 550px) / (813 - 550));
   }
@@ -104,27 +103,27 @@ article p {
   }
 
   .banner {
+    padding: 0 2em;
+    color: white;
+    text-align: center;
     display: flex;
     justify-content: start;
     align-items: end;
     flex-direction: column;
-    padding: 0 2em;
-    color: white;
-    text-align: center;
   }
 
   .banner p {
-    display: flex;
-    padding: 1em 2em 0;
-    flex-direction: column;
     background-color: hsl(330, 100%, 71%);
     text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 1em 2em 0;
     position: relative;
     z-index: 2;
     width: 5em;
     box-sizing: content-box;
-    font-weight: bold;
-    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
   }
 
   .banner a {
@@ -194,17 +193,10 @@ article p {
   }
 
   #circle {
-    display: flex;
     color: #333;
     text-decoration: none;
-    border-radius: 50%;
     background: white url("../img/phone_sprite.png") no-repeat center 30%/70%;
-    justify-content: center;
-    align-items: center;
     font-size: calc(13px + (2) * (100vw - 812px) / (1280 - 812));
-    flex-direction: column;
-    margin: auto 0 -2em calc(-50px - (10) * (100vw - 812px) / (1280 - 812));
-    margin: auto 0 -2em -99em;
     margin: 0;
     border: 0.4em solid white;
     line-height: 0.9;
@@ -213,6 +205,11 @@ article p {
     right: -2em;
     width: 9em;
     height: 9em;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   #circle strong {
     font-size: 1.1em;
