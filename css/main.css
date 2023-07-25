@@ -141,6 +141,7 @@ main > section > aside a:hover {
 main > section > aside a img {
   display: block;
   border-radius: 7px;
+  width: 100%;
 }
 
 #wrap > div {
@@ -481,8 +482,8 @@ figure.snip0022 {
   height: 130px;
   text-align: center;
   float: right;
-  right: 0;
-  bottom: 0;
+  right: 10px;
+  bottom: 10px;
   margin: 0;
   font-size: 1.25em;
   color: hsl(0deg, 75%, 20%);
@@ -944,17 +945,13 @@ figure.snip0022:hover #x {
   margin: 1em 0;
   font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-.outings main main.one section:nth-of-type(n + 5) {
+#wrap.outings main.one section:nth-of-type(n + 5) {
   display: none;
 }
-
-main.two section:nth-of-type(-n + 4),
-main.two section:nth-last-of-type(-n + 4) {
+#wrap.outings main.two section:nth-of-type(-n + 4), #wrap.outings main.two section:nth-last-of-type(-n + 4) {
   display: none;
 }
-
-main.three section:nth-of-type(-n + 8) {
+#wrap.outings main.three section:nth-of-type(-n + 8) {
   display: none;
 }
 

@@ -38,20 +38,21 @@
       font: 1.04em/1.4 Montserrat, "Helvetica Neue", Helvetica, Arial,
         sans-serif;
     }
+    &.one section:nth-of-type(n + 5) {
+      display: none;
+    }
+    &.two section:nth-of-type(-n + 4),
+    &.two section:nth-last-of-type(-n + 4) {
+      display: none;
+    }
+    
+    &.three section:nth-of-type(-n + 8) {
+      display: none;
+    }
   }
 }
 
-.outings main main.one section:nth-of-type(n + 5) {
-  display: none;
-}
-main.two section:nth-of-type(-n + 4),
-main.two section:nth-last-of-type(-n + 4) {
-  display: none;
-}
 
-main.three section:nth-of-type(-n + 8) {
-  display: none;
-}
 #pagination li {
   display: inline-block;
   font-size: 1.5em;
