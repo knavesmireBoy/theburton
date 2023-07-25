@@ -272,12 +272,11 @@ div.ribbon-2 a:hover {
   main {
     padding: 1em;
   }
-  main article p:last-child, main article p:first-child  {
+  #home main article p:last-child {
     margin: 0;
   }
-  div.ribbon-2 a:link {
-    color: gold;
-    margin: 0.5em 0.75em 0;
+  #home main article p:first-child {
+    margin: 0;
   }
 
   .article p:nth-child(3) {
@@ -290,7 +289,7 @@ div.ribbon-2 a:hover {
   #circle {
     display: none;
   }
-  main .article {
+  #home main .article {
     padding: 0.75em;
   }
 
