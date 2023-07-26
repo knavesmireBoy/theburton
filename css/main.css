@@ -1043,70 +1043,57 @@ figure.snip0022:hover #x {
 }
 /*https://wpbeaches.com/aligning-last-item-bottom-container-flexbox/*/
 /*https://css-tricks.com/nth-child-between-two-fixed-indexes/*/
-form {
-  text-align: center;
-}
-
 body.contact {
   background-image: none;
 }
-
-fieldset {
-  border-width: 1px;
-  text-align: left;
-  padding: 0.5em;
+body.contact #wrap {
+  background: transparent no-repeat url("../img/main.jpg") center top/cover;
 }
-
-legend {
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 1.4em;
+body.contact #wrap > div {
+  background-color: hsla(55deg, 37%, 62%, 0.8);
 }
-
-form #save {
-  margin: 0 auto;
-}
-
-fieldset label,
-fieldset input,
-fieldset textarea {
-  width: 100%;
-  display: block;
-}
-
-fieldset:last-of-type {
-  margin: 0 0 1em;
-}
-
-.contact main {
+body.contact #wrap > div main {
   margin: 0;
   padding: 1em;
   color: hsl(0deg, 68%, 30%);
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
 }
-
-.contact main > article {
+body.contact #wrap > div main .ribbon-2 {
+  color: hsl(0deg, 68%, 30%);
+  text-shadow: none;
+}
+body.contact #wrap > div main > article {
   border-radius: 0;
   background-color: transparent;
   padding: 0.6em;
   margin: 0.75em 0 0;
 }
 
-.contact .ribbon-2 {
-  color: hsl(0deg, 68%, 30%);
-  text-shadow: none;
+form {
+  text-align: center;
 }
-
-.contact #wrap > div {
-  background-color: hsla(55deg, 37%, 62%, 0.8);
+form #save {
+  margin: 0 auto;
 }
-
-.contact main {
-  background-color: rgba(255, 255, 255, 0.8);
+form fieldset {
+  border-width: 1px;
+  text-align: left;
+  padding: 0.5em;
 }
-
-.contact #wrap {
-  background: transparent no-repeat url("../img/main.jpg") center top/cover;
+form fieldset legend {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+form fieldset label,
+form fieldset input,
+form fieldset textarea {
+  width: 100%;
+  display: block;
+}
+form fieldset:last-of-type {
+  margin: 0 0 1em;
 }
 
 @media only screen and (min-width: 668px) {
@@ -1120,12 +1107,6 @@ fieldset:last-of-type {
   }
   fieldset:nth-child(-n+2) label {
     text-align: right;
-  }
-  fieldset input:first-of-type {
-    grid-column: 3/5;
-  }
-  fieldset input:last-of-type {
-    grid-column: 3/5;
   }
   fieldset label:first-of-type {
     grid-row: 1/2;
@@ -1171,44 +1152,52 @@ fieldset:last-of-type {
   body.contact {
     background-image: url(../img/wood.jpg);
   }
-  .contacts #wrap > div > section {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .contact #wrap {
+  body.contact #wrap {
     margin: 2% auto;
     width: 90%;
   }
-  .contact main {
+  body.contact #wrap > div {
+    background-color: hsla(55deg, 37%, 62%, 0.8);
+  }
+  body.contact #wrap > div > section {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  body.contact #wrap > div main {
     background-color: transparent;
     padding: 0.75em;
     margin: 0.75em 0 0;
+    flex: 6 1 1em;
   }
-  .contact #wrap > div {
-    background-color: hsla(55deg, 37%, 62%, 0.8);
-  }
-  .contact main > article {
+  body.contact #wrap > div main > article {
     border-radius: 16px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2em;
     margin: 4em 0 0;
     box-shadow: 1px 1px 3px black;
   }
-  fieldset {
-    margin: 0 0 4em;
-  }
-  .contact .ribbon-2 {
+  body.contact #wrap > div main .ribbon-2 {
     margin: 0.5em 0 0;
     color: pink;
     text-shadow: 1px 1px 1px black;
   }
-  legend {
-    font-size: 1.5em;
+  body.contact fieldset {
+    margin: 0 0 4em;
   }
-  .contact #wrap > div > main {
-    flex: 6 1 1em;
+  body.contact fieldset legend {
+    font-size: 1.5em;
   }
 }
 @media only screen and (min-width: 1025px) {
+  .contact main > article {
+    margin: 4em 0 0;
+  }
+  .contact #wrap > div > main {
+    flex: 7 1 1em;
+  }
+  .contact #wrap {
+    margin: 2% auto;
+    width: 80%;
+  }
   fieldset {
     grid-template-columns: 15em 10px auto 10em;
     grid-template-rows: auto 10px auto;
@@ -1235,16 +1224,6 @@ fieldset {
   }
   .ribbon-2 {
     margin: 0.5em 0 0;
-  }
-  .contact main > article {
-    margin: 4em 0 0;
-  }
-  .contact #wrap > div > main {
-    flex: 7 1 1em;
-  }
-  .contact #wrap {
-    margin: 2% auto;
-    width: 80%;
   }
 }
 
