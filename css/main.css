@@ -92,6 +92,15 @@ ol, ul, dl {
   list-style: none;
 }
 
+/*.selector {
+  @include prefix(transform, rotate(45deg), webkit ms);
+}
+*/
+/* a = (current browser width(100vw) - minimum operating size) DIVIDED by (max-range - min range)
+    b = (max-font-size(42) - base-font-size(28))
+    c = b * a
+    result = base-font-size + c
+*/
 body {
   font-size: 0.8em;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -287,67 +296,40 @@ main > section h2,
   }
 }
 /*https://codepen.io/t_afif/pen/dyZOBex*/
-nav input {
-  display: none;
-}
-
 .accordion {
   position: relative;
   z-index: 3;
   background-color: transparent;
   font: 1em Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-.accordion ul li {
-  margin: 0;
-  display: block;
+.accordion input {
+  display: none;
 }
-
-.accordion ul li a {
-  display: block;
-  border: solid 1px grey;
+.accordion input:checked + ul {
+  z-index: 2;
+  opacity: 0.95;
+  left: calc(100% - 11em);
 }
-
-.accordion ul li.hi a {
-  background: hsl(0deg, 68%, 42%);
-  color: white;
+.accordion input:checked + ul > li {
+  height: 2.5em;
 }
-
-.accordion ul li.hi a:hover {
-  background-color: black;
-}
-
 .accordion label {
   background: 50% 1% url("../img/wheel.png") no-repeat firebrick;
-  -o-background-size: 100%;
-  -moz-background-size: 100%;
-  -ms-background-size: 100%;
-  -webkit-background-size: 100%;
   background-size: 100%;
-  -webkit-transition: transform 1s;
-  -o-transition: transform 1s;
   transition: transform 1s;
   border-radius: 50%;
   border: solid 1px white;
+  position: absolute;
+  right: calc(54px + 22 * (100vw - 269px) / 106);
+  top: calc(20px + 10 * (100vw - 269px) / 106);
+  width: calc(36px + 14 * (100vw - 269px) / 106);
+  height: calc(36px + 14 * (100vw - 269px) / 106);
 }
-
-.menu:hover {
+.accordion label:hover {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
   background-color: hsl(0deg, 68%, 33%);
 }
-
-/*no need to fix advanced selectors for ie as mobile only layout*/
-.accordion input:checked + ul > li {
-  height: 2.5em;
-}
-
-.accordion ul > li {
-  height: 0;
-  line-height: 2.4;
-  transition: height 0.9s ease-out;
-}
-
 .accordion ul {
   width: 11em;
   position: absolute;
@@ -355,33 +337,35 @@ nav input {
   left: -99em;
   background-color: transparent;
 }
-
-.accordion input:checked + ul {
-  z-index: 2;
-  opacity: 0.95;
-  left: calc(100% - 11em);
+.accordion ul li {
+  margin: 0;
+  display: block;
 }
-
-.accordion ul li a {
+.accordion ul > li {
+  height: 0;
+  line-height: 2.4;
+  transition: height 0.9s ease-out;
+}
+.accordion ul > li a {
+  display: block;
+  border: solid 1px grey;
   border-radius: 0;
   padding: 0 0.5em;
   background-color: rgba(0, 0, 20, 0.95);
   background-color: hsl(0deg, 68%, 30%);
   color: white;
 }
-
-.accordion ul li a:hover,
-.accordion ul li.hi a {
+.accordion ul > li a:hover {
   background-color: hsl(0deg, 88%, 10%);
   color: palegoldenrod;
 }
-
-.accordion label {
-  position: absolute;
-  right: calc(54px + 22 * (100vw - 269px) / 106);
-  top: calc(20px + 10 * (100vw - 269px) / 106);
-  width: calc(36px + 14 * (100vw - 269px) / 106);
-  height: calc(36px + 14 * (100vw - 269px) / 106);
+.accordion ul > li.hi a {
+  background: hsl(0deg, 68%, 42%);
+  color: white;
+}
+.accordion ul > li.hi a:hover {
+  background-color: hsl(0deg, 88%, 10%);
+  color: palegoldenrod;
 }
 
 @media only screen and (min-width: 376px) {
@@ -416,39 +400,42 @@ nav input {
   }
 }
 @media only screen and (min-width: 813px) {
-  .accordion ul {
+  nav.accordion ul {
     width: 70%;
     z-index: 1;
     position: relative;
     left: auto;
     top: auto;
   }
-  .accordion ul li {
+  nav.accordion ul > li {
     margin: 0 0 0.5em;
     height: auto;
     line-height: normal;
   }
-  .accordion ul li a {
+  nav.accordion ul > li a {
     padding: 0.5em;
     background-color: rgba(255, 255, 255, 0.8);
     color: hsl(0deg, 68%, 30%);
     border-radius: 8px;
     text-decoration: none;
   }
-  .accordion ul li a:hover, .accordion ul li.hi a:hover {
+  nav.accordion ul > li a:hover {
     background-color: white;
     color: hsl(80deg, 100%, 30%);
   }
-  .accordion ul li.hi a {
+  nav.accordion ul > li.hi a {
     background-color: white;
     color: hsl(80deg, 100%, 30%);
     font-weight: bold;
   }
-  .menu {
+  nav.accordion ul > li.hi a:hover {
+    background-color: white;
+    color: hsl(80deg, 100%, 30%);
+  }
+  nav.accordion label {
     display: none;
   }
-  .accordion input:checked + ul > li,
-.accordion ul > li {
+  nav.accordion input:checked + ul > li {
     height: auto;
   }
 }

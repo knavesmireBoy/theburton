@@ -1,0 +1,152 @@
+@mixin footy () {
+	background-repeat: no-repeat;
+    background-image: url("../assets/grass_ipad.png");
+}
+
+@mixin highlight () {
+    background-color: hsla(0, 88%, 10%, 1);
+    color: palegoldenrod;
+}
+
+@mixin highlight2 () {
+    background-color: white;
+    color: hsl(80, 100%, 30%);
+}
+
+
+@mixin mainpara ($t:.5em, $r: 35%, $b: .5em, $l: 0, $h: 1.2) {
+    margin: .5em 35% .5em 0; 
+    line-height: $h;
+}
+
+@mixin alpacas ($w: 126%, $r: -25%, $b: 13%, $m: 60em) {
+    width: $w;
+	right: $r;
+	bottom: $b;
+    max-width: $m;
+}
+
+@mixin alpaca-margin ($t:.5em, $r: 35%, $b: .5em, $l: 0) {
+    margin: $t $r $b $l;
+}
+
+@mixin alpaca-mask ($url, $x: -1px, $y: -1px) {
+    -webkit-mask:  url(../images/#{$url}) $x $y / cover;
+    mask:  url(../images/#{$url}) $x $y / cover;
+}
+
+@mixin grassy-hi ($bg: null, $size: 100%) {
+    background: $bg url(../assets/grass.png) no-repeat 0% 100%;
+    background-size: $size;
+}
+
+@mixin header-hi ($bg: 'header_ipad.png', $size: 100%, $pos: 90% 0, $imp: null) {
+    background: url(../assets/#{$bg}) no-repeat $pos $imp;
+    background-size: $size;
+}
+
+@mixin clear () {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@mixin hide () {
+    position: absolute;
+	left: -9999px;
+}
+
+@mixin border ($style: solid, $weight: 1px, $color: black) {
+    border: $style $weight $color;
+}
+
+@mixin wavy {
+    background-image: url(../assets/links.jpg);
+	background-repeat: no-repeat;
+	background-position: 0 -4%;
+    color: $nav;
+}
+
+@mixin flexy () {
+    display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+/// Mixin to prefix a property
+/// @author Kitty Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+//EXAMPLE USAGE
+/*.selector {
+  @include prefix(transform, rotate(45deg), webkit ms);
+}
+*/
+
+@mixin postfix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    $property: #{'-' + $prefix + '-' + $value}
+  }
+  // Output standard non-prefixed declaration
+    $property: #{$value};
+}
+
+@function add($a, $b){
+    @return $a + $b;
+}
+
+@function subtract($a, $b){
+    @return $a - $b;
+}
+
+@function multiply($a, $b){
+    @return $a * $b;
+}
+
+@function divide($a, $b){
+    @return $a / $b;
+}
+
+@function sizerange($maxpx, $minpx, $maxrange, $minrange){
+    @return divide(subtract($maxpx, $minpx), subtract($maxrange, $minrange));
+}
+
+@mixin mycalc($props) {
+  $vendor-prefixes: ("moz", "o", "webkit");
+
+  @each $prop, $i in $props {
+    @each $prefix in $vendor-prefixes {
+      #{$prop}: -#{$prefix}-calc(#{$i});
+    }
+
+    #{$prop}: calc(#{$i});
+  } 
+}
+     /* a = (current browser width(100vw) - minimum operating size) DIVIDED by (max-range - min range)
+        b = (max-font-size(42) - base-font-size(28))
+        c = b * a
+        result = base-font-size + c
+    */
+@mixin doFontSize($fm, $fx, $max, $min){
+    $vendor-prefixes: ("moz", "o", "webkit");
+/*font-size: -moz-calc(($fm * 1px) + ($fx - $fm) * (100vw - ($min * 1px)) / ($max - $min));
+font-size: -o-calc(($fm * 1px) + ($fx - $fm) * (100vw - ($min * 1px)) / ($max - $min));
+font-size: -webkit-calc(($fm * 1px) + ($fx - $fm) * (100vw - ($min * 1px)) / ($max - $min));
+    */
+     @each $prefix in $vendor-prefixes {
+     // font-size: -#{$prefix}-calc(($fm * 1px) + ($fx - $fm) * (100vw - ($min * 1px)) / ($max - $min));
+    }
+      font-size: calc(($fm * 1px) + ($fx - $fm) * (100vw - ($min * 1px)) / ($max - $min));
+}
+
+
