@@ -45,38 +45,22 @@
     &.two section:nth-last-of-type(-n + 4) {
       display: none;
     }
-    
+
     &.three section:nth-of-type(-n + 8) {
       display: none;
     }
   }
 }
 
-
 #pagination li {
   display: inline-block;
   font-size: 1.5em;
-  margin: 0 0.5em 0 0;
-}
-
-#pagination a {
-  background-color: hsl(26, 100%, 70%);
-  color: hsl(32, 66%, 10%);
-}
-
-#pagination a:hover,
-.one #pagination li:nth-child(1) a,
-.two #pagination li:nth-child(2) a,
-.three #pagination li:nth-child(3) a {
-  background-color: hsl(26, 100%, 90%);
-}
-
-#pagination li {
-  display: inline-block;
   margin: 0 0.2em 0 0;
 }
 
 #pagination a {
+  background-color:  hsl(60, 60%, 70%);
+  color: hsl(32, 66%, 10%);
   width: 2em;
   height: 2em;
   display: block;
@@ -84,6 +68,14 @@
   text-decoration: none;
   border-radius: 50%;
   line-height: 2;
+}
+
+#pagination a:hover,
+.one #pagination li:nth-child(1) a,
+.two #pagination li:nth-child(2) a,
+.three #pagination li:nth-child(3) a {
+  background-color:  hsl(60, 60%, 40%);
+  color: white;
 }
 
 @media only screen and (min-width: 668px) {
