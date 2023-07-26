@@ -1188,42 +1188,42 @@ form fieldset:last-of-type {
   }
 }
 @media only screen and (min-width: 1025px) {
-  .contact main > article {
-    margin: 4em 0 0;
-  }
-  .contact #wrap > div > main {
-    flex: 7 1 1em;
-  }
   .contact #wrap {
     margin: 2% auto;
     width: 80%;
   }
-  fieldset {
+  .contact #wrap > div > main {
+    flex: 7 1 1em;
+  }
+  .contact #wrap > div > main .ribbon-2 {
+    margin: 0.5em 0 0;
+  }
+  .contact #wrap > div > main > article {
+    margin: 4em 0 0;
+  }
+  form {
+    width: auto;
+  }
+  form fieldset {
     grid-template-columns: 15em 10px auto 10em;
     grid-template-rows: auto 10px auto;
     margin: 0 0 4em;
     text-align: left;
+    width: auto;
   }
-  fieldset:last-of-type label {
-    text-align: left;
+  form fieldset legend {
+    font-size: calc(1em + 0.5em * (100vw - 564px) / 716);
   }
-  fieldset:last-of-type {
+  form fieldset:last-of-type {
     row-gap: 10px;
   }
-  fieldset:last-of-type textarea {
+  form fieldset:last-of-type textarea {
     margin: 0 0 1em;
     grid-row: 2/4;
     grid-column: 1/5;
   }
-  form,
-fieldset {
-    width: auto;
-  }
-  legend {
-    font-size: calc(1em + 0.5em * (100vw - 564px) / 716);
-  }
-  .ribbon-2 {
-    margin: 0.5em 0 0;
+  form fieldset:last-of-type label {
+    text-align: left;
   }
 }
 
