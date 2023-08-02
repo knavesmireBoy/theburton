@@ -693,12 +693,15 @@ figure.snip0022:hover #x {
   .home #wrap main .banner {
     display: none;
   }
+  .home #wrap main .ribbon-2 {
+    margin: 0;
+  }
   .home #wrap main .ribbon-2 a {
     color: pink;
     text-decoration: none;
     text-shadow: 1px 1px 1px black;
   }
-  .home #wrap main .ribbon-2 a :hover {
+  .home #wrap main .ribbon-2 a:hover {
     color: white;
   }
   .home #wrap main section.article {

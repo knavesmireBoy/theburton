@@ -193,15 +193,17 @@
         display: none;
       }
 
-      .ribbon-2 a {
+      .ribbon-2 {
+        margin: 0;
+        a {
         color: pink;
         text-decoration: none;
         text-shadow: 1px 1px 1px black;
-
-        & :hover {
+        &:hover {
           color: white;
         }
       }
+    }
       section.article {
         margin: 0;
         padding: 0;
