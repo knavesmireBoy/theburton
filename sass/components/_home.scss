@@ -176,13 +176,14 @@
 
 @media only screen and (min-width: 813px) {
   .home {
+    #wrap {
     main {
       margin: 1em;
       padding: 0;
 
       h2 {
         bottom: 0;
-        margin: 44px 0 6em;
+        margin: 59px 0 6em;
         padding: 0 1em;
         background-color: transparent;
         font-size: calc(36px + (10) * (100vw - 813px) / (1280 - 813));
@@ -261,6 +262,7 @@
         }
       }
     }
+  }
 
     #wrap {
       background-image: url("../img/main_crop2.jpg");
