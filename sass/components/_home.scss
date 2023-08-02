@@ -1,4 +1,5 @@
 .home {
+ 
   main {
     padding: 0 1em 1em;
 
@@ -64,8 +65,8 @@
   }
 
   #wrap {
-    background-image: url("../img/main.jpg");
-    background-position: 60% center;
+    background-image: none;
+    background-color:lightcyan;
 
     > div {
       background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
@@ -73,8 +74,26 @@
   }
 }
 
+#mainpic {
+  width: 90%;
+  display: block;
+  margin: -15em auto 2em;
+  text-align: center;
+  border: solid 1px white;
+}
+#mainpic img {
+  width: 100%;
+  display: block;
+}
+
+
 @media only screen and (min-width: 551px) {
   .home {
+    #wrap {
+      background-image: url("../img/main.jpg");
+      background-position: 60% top;
+      background-repeat: no-repeat;
+      background-size: cover;
     main {
       padding: 1em 0;
 
@@ -131,6 +150,8 @@
             color: yellow;
             margin: 0.3em 0 0;
             text-shadow: 1px 1px 1px black;
+          }
+        }
 
             &:after {
               content: "";
@@ -146,8 +167,12 @@
         }
       }
     }
-  }
-}
+      #mainpic {
+        display: none;
+      }
+     
+    }
+
 
 @media only screen and (min-width: 813px) {
   .home {

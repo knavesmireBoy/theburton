@@ -584,18 +584,37 @@ figure.snip0022:hover #x {
   display: none;
 }
 .home #wrap {
-  background-image: url("../img/main.jpg");
-  background-position: 60% center;
+  background-image: none;
+  background-color: lightcyan;
 }
 .home #wrap > div {
   background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
 }
 
+#mainpic {
+  width: 90%;
+  display: block;
+  margin: -15em auto 2em;
+  text-align: center;
+  border: solid 1px white;
+}
+
+#mainpic img {
+  width: 100%;
+  display: block;
+}
+
 @media only screen and (min-width: 551px) {
-  .home main {
+  .home #wrap {
+    background-image: url("../img/main.jpg");
+    background-position: 60% top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .home #wrap main {
     padding: 1em 0;
   }
-  .home main h2 {
+  .home #wrap main h2 {
     text-align: right;
     background-color: rgba(0, 0, 0, 0.6);
     font-size: calc(26px + 10 * (100vw - 550px) / 263);
@@ -604,21 +623,21 @@ figure.snip0022:hover #x {
     bottom: calc(222px + 0 * (100vw - 550px) / 263);
     padding-right: calc(160px - 20 * (100vw - 550px) / 263);
   }
-  .home main .ribbon-2 {
+  .home #wrap main .ribbon-2 {
     margin: 0.5em 0.75em 0;
   }
-  .home main section.article {
+  .home #wrap main section.article {
     padding: 0.75em;
     font-size: 1em;
   }
-  .home main section.article article {
+  .home #wrap main section.article article {
     margin: 0em 1em;
   }
-  .home main section.article article p:last-child,
-.home main section.article article p:first-child {
+  .home #wrap main section.article article p:last-child,
+.home #wrap main section.article article p:first-child {
     margin: 0;
   }
-  .home main .banner {
+  .home #wrap main .banner {
     padding: 0 2em;
     color: white;
     text-align: center;
@@ -627,7 +646,7 @@ figure.snip0022:hover #x {
     align-items: end;
     flex-direction: column;
   }
-  .home main .banner p {
+  .home #wrap main .banner p {
     background-color: hsl(330deg, 100%, 71%);
     text-align: center;
     font-weight: bold;
@@ -640,13 +659,13 @@ figure.snip0022:hover #x {
     display: flex;
     flex-direction: column;
   }
-  .home main .banner p a {
+  .home #wrap main .banner p a {
     font-size: 1.4em;
     color: yellow;
     margin: 0.3em 0 0;
     text-shadow: 1px 1px 1px black;
   }
-  .home main .banner p a:after {
+  .home #wrap main .banner:after {
     content: "";
     border: solid 3.39em;
     font-size: 1.2em;
@@ -654,6 +673,9 @@ figure.snip0022:hover #x {
     position: relative;
     top: -2.5em;
     z-index: 1;
+  }
+  #mainpic {
+    display: none;
   }
 }
 @media only screen and (min-width: 813px) {
