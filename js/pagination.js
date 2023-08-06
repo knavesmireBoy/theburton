@@ -20,22 +20,22 @@ const $ = (id) => document.getElementById(id),
       return toString.call(obj) === tag;
     };
   },
-  curry2 = (f) => (b) => (a) => f(a, b),
-  curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
-  curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
   isFunction = tagTester("Function"),
   isArray = tagTester("Array"),
   pass = (f) => (o) => {
     f(o);
     return o;
   },
-  F = (o) => (isFunction(o) ? o() : o),
   comp = (...fns) =>
     fns.reduce(
       (f, g) =>
         (...vs) =>
           f(g(...vs))
     ),
+  F = (o) => (isFunction(o) ? o() : o),
+  curry2 = (f) => (b) => (a) => f(a, b),
+  curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
+  curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
   doPartial = (flag) => {
     return function p(f, ...args) {
       if (f.length === args.length) {
@@ -65,9 +65,9 @@ const $ = (id) => document.getElementById(id),
   setId = pass(mittelPair("setAttribute", "id")("pagination")),
   myNav = comp(setId, andAppend("nav")),
   nodes = lookup.map(comp(doTextNow, (el, i) => i + 1)),
-  links = nodes.map((node) => {
+  links = nodes.map((txtnode) => {
     let f = andAppend("a");
-    return comp(setHref, parent, f)(node);
+    return comp(setHref, parent, f)(txtnode);
   }),
   lists = links.map((a) => {
     let f = andAppend("li");

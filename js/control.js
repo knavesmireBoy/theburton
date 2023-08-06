@@ -53,6 +53,7 @@ const slice = Array.prototype.slice,
   },
   isFunction = tagTester("Function"),
   isArray = tagTester("Array"),
+  F = (o) => (isFunction(o) ? o() : o),
   doPartial = (flag) => {
     return function p(f, ...args) {
       if (f.length === args.length) {
@@ -74,6 +75,11 @@ const slice = Array.prototype.slice,
     f(o);
     return o;
   },
+  invoke = (f, o) => f(o),
+  wrap =
+    (f) =>
+    (...args) =>
+      f(...args),
   comp = (...fns) =>
     fns.reduce(
       (f, g) =>
@@ -84,7 +90,6 @@ const slice = Array.prototype.slice,
   curry2 = (f) => (b) => (a) => f(a, b),
   curry3 = (f) => (c) => (b) => (a) => f(a, b, c),
   curry4 = (f) => (d) => (c) => (b) => (a) => f(a, b, c, d),
-  F = (o) => (isFunction(o) ? o() : o),
   invokeMethod = (o, m, v) => F(o)[m](v),
   invokeMethodPair = (o, m, p, v) => F(o)[m](p, v),
   invokeSub = (o, m, k, v) => o[m][k](v),
@@ -96,7 +101,14 @@ const slice = Array.prototype.slice,
     console.log(x);
     return x;
   },
-  always = arg => () => arg,
+  always = (arg) => () => arg,
+  identity = (arg) => arg,
+  build =
+    (...funcs) =>
+    (o) => {
+      funcs.forEach(f => f(o));
+      return o;
+    },
   lead_slide = document.querySelector("#slides a"),
   $slides = $("slides"),
   $viewer = $("viewer"),
@@ -108,17 +120,16 @@ const slice = Array.prototype.slice,
   doControlKlas = pass(mittelSub("classList", "add")("control")),
   viewerAppend = comp(appendViewer, doControlKlas, doMake),
   setId = mittelPair("setAttribute", "id"),
-  setAlt = pass(mittelPair("setAttribute", "alt")("preview pic")),
-  setSrc = pass(
-    mittelPair("setAttribute", "src")(lead_slide.getAttribute("href"))
-  ),
+  setAlt = mittelPair("setAttribute", "alt")("preview pic"),
+  setSrc = mittelPair("setAttribute", "src")(lead_slide.getAttribute("href")),
+  setPreview = setId("preview"),
   doPreviewKlas = mittelSub("classList", "add")("prev"),
-  doPic = comp(
-    pass(mittelPair("setAttribute", "id")("preview")),
-    setAlt,
-    setSrc,
-    doMake
-  ),
+  prepPic =
+    (...funcs) =>
+    (seed) => {
+      return build(...funcs)(seed);
+    },
+  doPic = prepPic(setPreview, setAlt, setSrc),
   setFore = comp(doControlKlas, setId("forward")),
   setAft = comp(doControlKlas, setId("back")),
   factor = 4,
@@ -139,8 +150,8 @@ const slice = Array.prototype.slice,
   doShowEnd = doWhenPred((a, b) => a !== b, doViewKlasDefer("add")("end")),
   doHide = doViewKlas("remove"),
   apply = (pix, flag = false) => {
-    let p = Math.ceil(pix * 400 / $slides.clientWidth),
-    n = Math.round(p / 100) * 100;
+    let p = Math.ceil((pix * 400) / $slides.clientWidth),
+      n = Math.round(p / 100) * 100;
     all_slides.forEach((element) => {
       element.style.transform = `translateX(${n}%)`;
       if (!flag) element.classList.add("foo");
@@ -169,9 +180,9 @@ const slice = Array.prototype.slice,
     curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener"),
   selectCB = curry4(invokeMethodPair)(select)("click")("addEventListener");
 
-link(doPic, "img"),
-decoForward = comp(forwardCB, pass(setId("forward"))),
-decoBack = comp(backCB, slideAppend, pass(setId("back")), doControlKlas);
+link(doPic, doMake("img")),
+  (decoForward = comp(forwardCB, pass(setId("forward")))),
+  (decoBack = comp(backCB, slideAppend, pass(setId("back")), doControlKlas));
 
 comp(decoForward, viewerAppend)("div");
 comp(decoBack, doMake)("div");
