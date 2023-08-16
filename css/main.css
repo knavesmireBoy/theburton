@@ -566,16 +566,20 @@ figure.snip0022:hover #x {
 }
 .home section.article {
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: calc(9px + 3 * (100vw - 320px) / 230);
+  font-size: calc(10px + 3 * (100vw - 320px) / 230);
+  text-align: center;
 }
 .home section.article article {
-  padding: 1em;
+  padding: 1.5em 1em 1em;
   background-color: rgba(255, 255, 255, 0.6);
   border: solid 1px white;
-  box-shadow: 1px 1px 3px black;
   background-color: hsla(34deg, 78%, 91%, 0.7);
-  margin: 0 0 0.75em;
-  border-radius: 14px;
+  border-radius: 0 0 14px 14px;
+  border-width: 0 1px 1px;
+  text-align: justify;
+  margin: -2em auto 0.75em;
+  z-index: 1;
+  position: relative;
 }
 .home section.article article p {
   margin: 0 0 0.5em;
@@ -589,18 +593,21 @@ figure.snip0022:hover #x {
 .home #wrap > div {
   background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
 }
-.home #fallback {
+
+#fallback {
   width: 100%;
   display: block;
   margin: -24em auto 2em;
   text-align: center;
   border: solid 1px white;
-  border-radius: 14px;
+  border-radius: 14px 14px 0 0;
+  border-width: 1px 1px 0;
 }
-.home #fallback img {
+
+#fallback img {
   width: 100%;
   display: block;
-  border-radius: 13px;
+  border-radius: 13px 13px 0 0;
 }
 
 @media only screen and (min-width: 551px) {
@@ -631,6 +638,10 @@ figure.snip0022:hover #x {
   }
   .home #wrap main section.article article {
     margin: 0em 1em;
+    border-radius: 14px;
+    border-width: 1px;
+    padding: 1em;
+    position: static;
   }
   .home #wrap main section.article article p:last-child,
 .home #wrap main section.article article p:first-child {
@@ -708,18 +719,18 @@ figure.snip0022:hover #x {
     padding: 0;
     position: relative;
   }
-  .home #wrap main section.article p {
+  .home #wrap main section.article article p {
     margin: 0 0 0.5em 0;
     line-height: 1.3;
   }
-  .home #wrap main section.article p :first-child {
+  .home #wrap main section.article article p:first-child {
     font-size: 1.15em;
   }
-  .home #wrap main section.article p :nth-child(3) {
+  .home #wrap main section.article article p:nth-child(3) {
     margin: 0.5em 1em 0 0;
   }
-  .home #wrap main section.article p:nth-child(4) {
-    margin: 0.5em 5.5em 0 0;
+  .home #wrap main section.article article p:nth-child(4) {
+    margin: 0.5em 6.5em 0 0;
   }
   .home #wrap main section.article #circle {
     color: #333;
@@ -762,6 +773,11 @@ figure.snip0022:hover #x {
   }
   .home #wrap > div {
     background-image: none;
+  }
+}
+@media only screen and (min-width: 1111px) {
+  .home #wrap main section.article article p:nth-child(3) {
+    margin: 0.5em 5em 0 0;
   }
 }
 .no-js #viewer {
