@@ -66,25 +66,27 @@
 
   #wrap {
     background-image: none;
-    background-color:lightcyan;
 
     > div {
       background-image: linear-gradient(rgba(11, 0, 33, 0.9), transparent 25%);
     }
   }
+  #fallback {
+    width: 100%;
+    display: block;
+    margin: -24em auto 2em;
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 14px;
+  }
+  #fallback img {
+    width: 100%;
+    display: block;
+    border-radius: 13px;
+  }
 }
 
-#mainpic {
-  width: 90%;
-  display: block;
-  margin: -15em auto 2em;
-  text-align: center;
-  border: solid 1px white;
-}
-#mainpic img {
-  width: 100%;
-  display: block;
-}
+
 
 
 @media only screen and (min-width: 551px) {
@@ -167,7 +169,8 @@
         }
       }
     }
-      #mainpic {
+
+      #fallback {
         display: none;
       }
      
