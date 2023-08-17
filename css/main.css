@@ -672,7 +672,7 @@ figure.snip0022:hover #x {
     flex-direction: column;
   }
   .home #wrap main .banner p {
-    background-color: hsl(330deg, 100%, 71%);
+    background-color: hsl(80deg, 60%, 40%);
     text-align: center;
     font-weight: bold;
     font-size: 0.9em;
@@ -694,7 +694,8 @@ figure.snip0022:hover #x {
     content: "";
     border: solid 3.39em;
     font-size: 1.2em;
-    border-color: hsl(330deg, 100%, 71%) hsl(330deg, 100%, 71%) transparent hsl(330deg, 100%, 71%);
+    --col: hsla(80, 60%, 40%, 1);
+    border-color: var(--col) var(--col) transparent var(--col);
     position: relative;
     top: -2.5em;
     z-index: 1;

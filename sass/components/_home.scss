@@ -149,7 +149,7 @@
           flex-direction: column;
 
           p {
-            background-color: hsl(330, 100%, 71%);
+            background-color: hsl(80, 60%, 40%);
             text-align: center;
             font-weight: bold;
             font-size: 0.9em;
@@ -173,8 +173,9 @@
             content: "";
             border: solid 3.39em;
             font-size: 1.2em;
-            border-color: hsla(330, 100%, 71%, 1) hsla(330, 100%, 71%, 1)
-              transparent hsla(330, 100%, 71%, 1);
+            --col: hsla(80, 60%, 40%, 1);
+            border-color: var(--col) var(--col)
+              transparent var(--col);
             position: relative;
             top: -2.5em;
             z-index: 1;
