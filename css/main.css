@@ -914,7 +914,7 @@ figure.snip0022:hover #x {
   background-image: none;
 }
 
-@media only screen and (min-width: 551px) and (orientation: landscape) {
+@media only screen and (min-width: 551px) {
   .gallery main article {
     width: 80%;
   }
