@@ -3,19 +3,16 @@
     padding: 0 1em 1em;
 
     > h2 {
-      color: hsl(80, 90%, 50%);
-      font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-      font-size: calc(28px + (15) * (100vw - 320px) / (550 - 320));
-      font-weight: normal;
-      line-height: 0.8;
-      text-align: right;
+      color: hsl(80, 70%, 70%);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: calc(20px + (8) * (100vw - 320px) / (550 - 320));
       text-shadow: 1px 1px 1px black;
-      background-color: none;
-      margin: 8em 0 0;
+      margin: .5em 0;
+      text-align: center;
+      line-height: 1;
       padding: 0 0.5em 0 0;
       position: relative;
       z-index: 0;
-      bottom: calc(215px + (120) * ((100vw - 320px) / (550 - 320)));
 
       small {
         color: white;
@@ -54,11 +51,17 @@
       border-radius: 0 0 14px 14px;
       border-width: 0 1px 1px;
       text-align: justify;
-      margin: -2em auto 0.75em;
+      margin: 0 auto 0.75em;
       z-index: 1;
       position: relative;
+      p:first-child {
+        font-size: 1.2em;
+      }
       p {
         margin: 0 0 0.5em;
+        &:last-child::after {
+          content: "Please phone or text Selina on 07966 702640"
+        }
       }
     }
 
@@ -78,7 +81,7 @@
 #fallback {
   width: 100%;
   display: block;
-  margin: -24em auto 2em;
+  margin: 0 auto;
   text-align: center;
   border: solid 1px white;
   border-radius: 14px 14px 0 0;
@@ -102,6 +105,9 @@
 
         h2 {
           text-align: right;
+          font-family: Whisper, Georgia, "Times New Roman", Times, serif;
+          color: hsl(80, 90%, 50%);
+          font-weight: normal;
           background-color: rgba(0, 0, 0, 0.6);
           font-size: calc(26px + (10) * (100vw - 550px) / (813 - 550));
           margin: 0;
@@ -123,11 +129,13 @@
             border-width: 1px;
             padding: 1em;
             position: static;
-            p:last-child,
-            p:first-child {
+            p:last-child {
               margin: 0;
-            }
+              &::after {
+                content: none;
+              }
           }
+        }
         }
         .banner {
           padding: 0 2em;

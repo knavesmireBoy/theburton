@@ -442,12 +442,12 @@ main > section h2,
 figure.snip0022 {
   position: absolute;
   overflow: hidden;
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   text-align: center;
   float: right;
-  right: 10px;
-  bottom: 10px;
+  right: 0px;
+  bottom: 0px;
   margin: 0;
   font-size: 1.25em;
   color: hsl(0deg, 75%, 20%);
@@ -533,19 +533,16 @@ figure.snip0022:hover #x {
   padding: 0 1em 1em;
 }
 .home main > h2 {
-  color: hsl(80deg, 90%, 50%);
-  font-family: Whisper, Georgia, "Times New Roman", Times, serif;
-  font-size: calc(28px + 15 * (100vw - 320px) / 230);
-  font-weight: normal;
-  line-height: 0.8;
-  text-align: right;
+  color: hsl(80deg, 70%, 70%);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: calc(20px + 8 * (100vw - 320px) / 230);
   text-shadow: 1px 1px 1px black;
-  background-color: none;
-  margin: 8em 0 0;
+  margin: 0.5em 0;
+  text-align: center;
+  line-height: 1;
   padding: 0 0.5em 0 0;
   position: relative;
   z-index: 0;
-  bottom: calc(215px + 120 * (100vw - 320px) / 230);
 }
 .home main > h2 small {
   color: white;
@@ -577,12 +574,18 @@ figure.snip0022:hover #x {
   border-radius: 0 0 14px 14px;
   border-width: 0 1px 1px;
   text-align: justify;
-  margin: -2em auto 0.75em;
+  margin: 0 auto 0.75em;
   z-index: 1;
   position: relative;
 }
+.home section.article article p:first-child {
+  font-size: 1.2em;
+}
 .home section.article article p {
   margin: 0 0 0.5em;
+}
+.home section.article article p:last-child::after {
+  content: "Please phone or text Selina on 07966 702640";
 }
 .home section.article #circle {
   display: none;
@@ -597,7 +600,7 @@ figure.snip0022:hover #x {
 #fallback {
   width: 100%;
   display: block;
-  margin: -24em auto 2em;
+  margin: 0 auto;
   text-align: center;
   border: solid 1px white;
   border-radius: 14px 14px 0 0;
@@ -622,6 +625,9 @@ figure.snip0022:hover #x {
   }
   .home #wrap main h2 {
     text-align: right;
+    font-family: Whisper, Georgia, "Times New Roman", Times, serif;
+    color: hsl(80deg, 90%, 50%);
+    font-weight: normal;
     background-color: rgba(0, 0, 0, 0.6);
     font-size: calc(26px + 10 * (100vw - 550px) / 263);
     margin: 0;
@@ -643,9 +649,11 @@ figure.snip0022:hover #x {
     padding: 1em;
     position: static;
   }
-  .home #wrap main section.article article p:last-child,
-.home #wrap main section.article article p:first-child {
+  .home #wrap main section.article article p:last-child {
     margin: 0;
+  }
+  .home #wrap main section.article article p:last-child::after {
+    content: none;
   }
   .home #wrap main .banner {
     padding: 0 2em;
@@ -1107,6 +1115,7 @@ form fieldset {
   border-width: 1px;
   text-align: left;
   padding: 0.5em;
+  margin: 1em 0;
 }
 form fieldset legend {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
