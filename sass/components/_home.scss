@@ -27,6 +27,8 @@
 
   .ribbon-2 {
     margin: 0;
+    text-align: center;
+
 
     a {
       color: hsl(55, 100%, 60%);
@@ -117,6 +119,7 @@
         }
         .ribbon-2 {
           margin: 0.5em 0.75em 0;
+          text-align: left;
         }
 
         section.article {

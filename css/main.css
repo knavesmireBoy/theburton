@@ -553,6 +553,7 @@ figure.snip0022:hover #x {
 }
 .home .ribbon-2 {
   margin: 0;
+  text-align: center;
 }
 .home .ribbon-2 a {
   color: hsl(55deg, 100%, 60%);
@@ -637,6 +638,7 @@ figure.snip0022:hover #x {
   }
   .home #wrap main .ribbon-2 {
     margin: 0.5em 0.75em 0;
+    text-align: left;
   }
   .home #wrap main section.article {
     padding: 0.75em;
