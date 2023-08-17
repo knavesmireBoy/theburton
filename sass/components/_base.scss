@@ -69,6 +69,8 @@ main {
   border: solid 1px;
   font-weight: bold;
   border-width: 0 0 1px;
+  text-align: center;
+
 }
 
 a#FacebookBadge {
@@ -100,6 +102,11 @@ main > section h2,
     background-size: contain;
     padding-bottom: 20%;
   }
+}
+@media only screen and (min-width: 551px) {
+#wrap .ribbon-2 {
+  text-align: left;
+}
 }
 
 @media only screen and (min-width: 668px) {

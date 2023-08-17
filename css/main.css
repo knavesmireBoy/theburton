@@ -169,6 +169,7 @@ main a#FacebookBadge {
   border: solid 1px;
   font-weight: bold;
   border-width: 0 0 1px;
+  text-align: center;
 }
 
 a#FacebookBadge {
@@ -199,6 +200,11 @@ main > section h2,
     background-image: url("../img/burton_alt_drop.png");
     background-size: contain;
     padding-bottom: 20%;
+  }
+}
+@media only screen and (min-width: 551px) {
+  #wrap .ribbon-2 {
+    text-align: left;
   }
 }
 @media only screen and (min-width: 668px) {
@@ -553,7 +559,6 @@ figure.snip0022:hover #x {
 }
 .home .ribbon-2 {
   margin: 0;
-  text-align: center;
 }
 .home .ribbon-2 a {
   color: hsl(55deg, 100%, 60%);
@@ -826,9 +831,9 @@ figure.snip0022:hover #x {
 }
 .gallery main article {
   background-color: white;
-  width: 80%;
+  width: 90%;
   padding: 1em 0;
-  margin: 15% auto 20%;
+  margin: 10% auto 20%;
   box-shadow: 0 0 9px black;
   z-index: 2;
 }
@@ -855,6 +860,7 @@ figure.snip0022:hover #x {
   background-color: black;
   background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
   background-color: #282828;
+  background: black;
   background-size: 16px 16px;
   border-radius: 20px 20px 0 0;
 }

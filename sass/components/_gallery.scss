@@ -34,9 +34,9 @@
 
     article {
       background-color: white;
-      width: 80%;
+      width: 90%;
       padding: 1em 0;
-      margin: 15% auto 20%;
+      margin: 10% auto 20%;
       box-shadow: 0 0 9px black;
       z-index: 2;
 
@@ -67,6 +67,7 @@
           radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
           radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
         background-color: #282828;
+        background: black;
         background-size: 16px 16px;
         border-radius: 20px 20px 0 0;
 
