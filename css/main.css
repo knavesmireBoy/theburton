@@ -831,7 +831,7 @@ figure.snip0022:hover #x {
 }
 .gallery main article {
   background-color: white;
-  width: 90%;
+  width: 94%;
   padding: 1em 0;
   margin: 10% auto 20%;
   box-shadow: 0 0 9px black;
@@ -914,6 +914,11 @@ figure.snip0022:hover #x {
   background-image: none;
 }
 
+@media only screen and (min-width: 551px) and (orientation: landscape) {
+  .gallery article {
+    width: 80%;
+  }
+}
 @media only screen and (min-width: 812px) {
   .gallery #wrap {
     background-image: url(../img/main.jpg);
