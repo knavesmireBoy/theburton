@@ -7,7 +7,7 @@
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: calc(20px + (8) * (100vw - 320px) / (550 - 320));
       text-shadow: 1px 1px 1px black;
-      margin: .5em 0;
+      margin: 0.5em 0;
       text-align: center;
       line-height: 1;
       padding: 0 0.5em 0 0;
@@ -27,7 +27,6 @@
 
   .ribbon-2 {
     margin: 0;
-
 
     a {
       color: hsl(55, 100%, 60%);
@@ -61,7 +60,7 @@
       p {
         margin: 0 0 0.5em;
         &:last-child::after {
-          content: "Please phone or text Selina on 07966 702640"
+          content: "Please phone or text Selina on 07966 702640";
         }
       }
     }
@@ -136,8 +135,8 @@
               &::after {
                 content: none;
               }
+            }
           }
-        }
         }
         .banner {
           padding: 0 2em;
@@ -174,8 +173,7 @@
             border: solid 3.39em;
             font-size: 1.2em;
             --col: hsla(80, 60%, 40%, 1);
-            border-color: var(--col) var(--col)
-              transparent var(--col);
+            border-color: var(--col) var(--col) transparent var(--col);
             position: relative;
             top: -2.5em;
             z-index: 1;
