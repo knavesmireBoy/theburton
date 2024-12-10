@@ -180,9 +180,9 @@ const slice = Array.prototype.slice,
     curry4(invokeMethodPair)(foreButtonCB)("click")("addEventListener"),
   selectCB = curry4(invokeMethodPair)(select)("click")("addEventListener");
 
-link(doPic, doMake("img")),
-  (decoForward = comp(forwardCB, pass(setId("forward")))),
-  (decoBack = comp(backCB, slideAppend, pass(setId("back")), doControlKlas));
+link(doPic, doMake("img"));
+  const decoForward = comp(forwardCB, pass(setId("forward"))),
+  decoBack = comp(backCB, slideAppend, pass(setId("back")), doControlKlas);
 
 comp(decoForward, viewerAppend)("div");
 comp(decoBack, doMake)("div");
